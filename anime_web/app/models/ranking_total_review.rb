@@ -1,0 +1,2 @@
+class RankingTotalReview < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class RankingTotalMylist < ApplicationRecord
+end

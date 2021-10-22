@@ -1,0 +1,2 @@
+class RankingTotalVoice < ApplicationRecord
+end

@@ -1,0 +1,1968 @@
+// Place all the styles related to the user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//--------------PC-----------
+@media screen and (min-width: 640px) {
+
+//エラー文
+.form-error{
+  background-color: #FFF1D3;
+  color:#E78B1F;
+  padding: 10px;
+  font-size: 13px;
+  margin: 10px 0px 10px 0px;
+}
+.top-wrapper-mylist{
+  position: relative;
+  width:730px;
+  height: 250px;
+}
+
+//背景
+.user-image-background{
+  width:730px;
+  height: 200px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//画像上エリア全体
+.user-image-on-area{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:730px;
+}
+
+//ユーザーメイン情報エリア
+.user-main-profile-area{
+  padding: 0px 10px;
+  display: flex;
+  align-items:flex-end;
+  justify-content: space-between;
+}
+
+//プロフ編集ボタン
+.user-profile-btn-area{
+  display: inline-block;
+  color: #00C091;
+  border: 1px solid #00C091;
+  font-size: 13px;
+  padding:3px 15px;
+  border-radius: 10px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+}
+.user-profile-btn-area:hover{
+  transition: 0.3s;
+  background-color: #00C091;
+  color: #fff;
+}
+
+
+//フォローボタン
+.user-follow-btn{
+  display: inline-block;
+  color: #00C091;
+  border: 1px solid #00C091;
+  font-size: 13px;
+  padding:3px 15px;
+  border-radius: 10px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+}
+.user-follow-btn:hover{
+  transition: 0.3s;
+  background-color: #00C091;
+  color: #fff;
+}
+
+//ユーザーアイコン
+.user-image-on-icon{
+  width:130px;
+  height:130px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+//ユーザー名＋役職＋IDエリア
+.user-main-profile-area-1{
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+//ユーザー名エリア
+.user-name-mypage-area{
+  display: flex;
+  align-items: center;
+}
+//ユーザー名
+.user-name-mypage{
+  font-size: 15px;
+  font-weight: bold;
+  color:#444444;
+}
+//job
+.user-job-mypage{
+  display: inline-block;
+  font-size: 11px;
+  color:#fff;
+  background-color: #F8637A;
+  margin-left: 2px;
+  margin-right: 5px;
+  padding:0px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+//ユーザーID
+.user-id-mypage{
+  font-size: 14px;
+  color:#777777;
+  margin-left: 5px;
+}
+
+//自己紹介エリア
+.user-intro-area{
+  font-size: 13px;
+  margin:10px 0px;
+  color:#444444;
+}
+//自己紹介
+.user-intro{
+  color:#444444;
+  font-size: 13px;
+}
+
+//作成日
+.user-create-date{
+  font-size: 12px;
+  color:#666666;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.user-create-date i{
+  color:#868686;
+  font-size: 12px;
+}
+
+
+
+//--------メニュー----------------------------------------
+.user-menu-mypage{
+  width:730px;
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 50px;
+  display: flex;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+
+//メニュー単体
+.user-menu-mypage p{
+ width: 130px;
+ text-align: center;
+ align-items: center;
+ font-size: 13px;
+}
+.user-menu-mypage p i{
+ font-size: 20px;
+}
+//カウント
+.user-menu-mypage p b{
+ font-weight: normal;
+ font-size: 12px;
+ color:#a6a6a6;
+}
+
+//リンク
+.user-menu-mypage p a {
+    display: block;
+    color: #1c1c1c;
+    text-decoration: none;
+}
+.user-menu-mypage p a:hover{
+    color:#00A1D6;
+    transition: all .3s;
+}
+
+//リンク
+.user-menu-mypage .now-currentmypage a {
+    display: block;
+    color: #00A1D6;
+    text-decoration: none;
+}
+
+.user-menu-mypage-bar {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 130px;
+    height: 2px;
+    background: #00A1D6;
+    -webkit-transition: all .5s;
+    transition: all .3s;
+}
+
+.user-menu-mypage p:nth-child(1).now-currentmypage ~ .user-menu-mypage-bar {
+    left: 0px;
+}
+.user-menu-mypage p:nth-child(2).now-currentmypage ~ .user-menu-mypage-bar {
+    left: 130px;
+}
+.user-menu-mypage p:nth-child(3).now-currentmypage ~ .user-menu-mypage-bar {
+    left: 260px;
+}
+.user-menu-mypage p:nth-child(4).now-currentmypage ~ .user-menu-mypage-bar {
+    left: 390px;
+}
+.user-menu-mypage p:nth-child(5).now-currentmypage ~ .user-menu-mypage-bar {
+    left: 520px;
+}
+
+
+.user-menu-mypage p:nth-child(1):hover ~ .user-menu-mypage-bar {
+    left: 0;
+}
+.user-menu-mypage p:nth-child(2):hover ~ .user-menu-mypage-bar {
+    left: 130px;
+}
+.user-menu-mypage p:nth-child(3):hover ~ .user-menu-mypage-bar {
+    left: 260px;
+}
+.user-menu-mypage p:nth-child(4):hover ~ .user-menu-mypage-bar {
+    left: 390px;
+}
+.user-menu-mypage p:nth-child(5):hover ~ .user-menu-mypage-bar {
+    left: 520px;
+}
+
+
+//-----------------メニュー終了----------------------------
+
+
+
+//左コンテンツエリア1
+.mypage-left-dogs-m1{
+  padding:10px 0px 10px 0px;
+}
+
+//見出し
+.user-mypage-midasi-1{
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #1C1C1C;
+}
+//見出しアイコン
+.user-mypage-midasi-1 i{
+  font-size: 20px;
+  color: #FFB37C;
+}
+
+//見出ししたインフォ
+.user-mypage-midasi-bottom-info{
+  background-color: #ECF2F9;
+  padding:10px;
+  color:#222222;
+  font-size: 13px;
+}
+//活動記録エリア単体
+.mypage-left-active-area-one{
+  display: flex;
+  padding:10px 10px 10px 10px;
+  border-bottom: 1px solid #ECF2F9;
+}
+//最後のボーダーなしに
+.mypage-left-active-area-one:last-child{
+  border: none;
+}
+
+//活動記録アイコン
+.active-area-user-image{
+  width:50px;
+  height:50px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 50%;
+}
+
+//活動記録エリア右-----------
+.mypage-left-active-area-one-datails{
+  margin-left: 10px;
+}
+
+
+//名前とデータタイム
+.mypage-active-top-area{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+//名前
+.mypage-active-name{
+  color:#444444;
+  margin-right: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-decoration: none;
+}
+
+//id
+.mypage-active-id{
+  color:#99A2B2;
+  font-size: 13px;
+}
+//活動記録データタイム
+.mypage-active-datatime{
+  color:#99A2B2;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+
+//活動本文
+.mypage-active-actibity{
+  margin-top: 10px;
+  font-size: 13px;
+  color:#444444;
+}
+
+//感想本文
+.mypage-active-anime-review-honbun{
+  font-size: 13px;
+  color:#525252;
+  width:650px;
+}
+//リンク
+.mypage-active-actibity a{
+  text-decoration: none;
+  color:#222222;
+}
+.mypage-active-actibity a:hover{
+  transition: 0.3s;
+  color:#00A1D6;
+}
+
+//アニメエリア
+.mypage-active-anime-area{
+  display: flex;
+  margin-top: 5px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  width:520px;
+}
+//サムネ
+.mypage-active-anime-image{
+  width:80px;
+  height:80px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+//内容
+.mypage-active-anime-area-right{
+  padding:10px;
+}
+
+//タイトル
+.mypage-active-anime-title{
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+//あらすじ
+.mypage-active-anime-arasuzi{
+  font-size: 11px;
+  color:#a6a6a6;
+}
+
+.mypage-active-anime-wrapper a{
+  text-decoration: none;
+  color:#444444;
+}
+.mypage-active-anime-wrapper a:hover{
+  transition: 0.3s;
+  color:#00A1D6;
+}
+
+//もっと見るボタン
+.more-userlog-btn{
+  width:300px;
+  text-align: center;
+  padding:5px 0px 5px 0px;
+  color:#fff;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #00A1D6;
+  border-radius: 4px;
+}
+//もっと見るボタン（内）
+.more-userlog-area{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.more-userlog-area a{
+  display: block;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.more-userlog-area a:hover{
+  background-color: #00B5E5;
+  transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+//右コンテンツエリア2
+.mypage-right-dogs-m2{
+  border: 1px solid #DFE5E8;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+//見出し
+.mypage-right-dogs-m2 h1{
+  padding:5px;
+  font-size: 15px;
+  font-weight: normal;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #1C1C1C;
+  background-color: #ECF2F9;
+}
+
+//ないとき
+.mypage-right-dogs-m2-no{
+  font-size: 12px;
+  color:#a6a6a6;
+  margin-bottom: 40px;
+  padding:10px;
+}
+
+//マイリスエリア
+.mypage-side-mylist-area{
+  padding:10px 5px;
+}
+//単体
+.mypage-side-mylist-one{
+  padding:10px 5px;
+  border-top: 1px solid #DFE5E8;
+  font-size: 14px;
+  color:#444444;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  p{
+    margin-right: 10px;
+  }
+  b{
+    color:#A6AEC5;
+    font-weight: normal;
+    font-size: 13px;
+  }
+  i{
+    font-size: 16px;
+    margin-right: 5px;
+    color:#a6a6a6;
+  }
+}
+.mypage-side-mylist-one:first-child{
+  border: none;
+}
+.mypage-side-mylist-one:hover{
+  transition: 0.2s;
+  background-color: #fbfbfb;
+  p{
+    color:#00A1D6;
+  }
+}
+
+
+//ステータスエリア
+.mypage-state-area{
+  padding:10px;
+}
+//ステータス単体
+.mypage-state{
+  margin-bottom: 5px;
+  font-size: 13px;
+  color:#444444;
+}
+
+//-----------------投稿ページ(一覧)-------------------------
+
+//左コンテンツエリア
+.mypage-left-dogs-m2{
+  background-color:#fff;
+  border :2px dotted #CBD0D8;
+  padding:10px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  padding:20px 200px 20px 200px;
+  margin:0px 30px 30px 30px;
+}
+
+//選択ボタン全体
+.mypage-post-select-anime-btn-area{
+  text-align: center;
+}
+//アイコン
+.mypage-post-select-anime-btn-icon{
+  font-size: 50px;
+  color:#CBD0D8;
+}
+//アニメ選択ボタン本文
+.mypage-post-select-anime-btn{
+  font-size: 14px;
+  color:#525252;
+}
+.mypage-left-dogs-m2:hover{
+  transition: 0.5s;
+  border :2px dotted #00A1D6;
+  .mypage-post-select-anime-btn-icon{
+    color:#00A1D6;
+    transition: 0.5s;
+  }
+  .mypage-post-select-anime-btn{
+    color:#00A1D6;
+    transition: 0.5s;
+  }
+}
+//背景
+.post-anime-select-modal-are_bg{
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index:1000;
+}
+//モーダル全体
+.post-anime-select-modall-all{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+//アニメ一覧モーダルエリア
+.post-anime-select-modal-area{
+  width:980px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  z-index: 99999;
+  padding:0px 10px 10px 10px;
+}
+
+//マイリス選択
+.post-anime-select-mylist-area{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+//マイリス単体
+.post-anime-select-mylist-area-one{
+  display: flex;
+  font-size: 13px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  width: 190px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; //指
+  cursor: hand; //指
+}
+//カウント
+.post-anime-select-mylist-area-one b{
+ font-weight: normal;
+ font-size: 12px;
+ color:#a6a6a6;
+}
+//アクティブ
+.is-active-select{
+  border-bottom: 2px solid #00A1D6;
+}
+//アニメ表示全体
+.post-oepn-anime-area-wall{
+  overflow-y: scroll;
+  height:500px;
+}
+//アニメ表示全体内部
+.post-oepn-anime-area-in-wall{
+
+}
+//アニメ表示
+.post-oepn-anime-area{
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//単体
+.post-oepn-anime-image-area{
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  width:140px;
+  height:auto;
+}
+//画像
+.post-oepn-anime-image{
+  width:140px;
+  height:190px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border: 1px solid #e7e7e7;
+}
+
+//画像上文字
+.post-oepn-anime-image-on{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:140px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+//文字本体
+.post-oepn-anime-image-on-text{
+  font-size: 13px;
+  color:#fff;
+  padding:10px;
+}
+
+
+//--左エリア3
+.mypage-left-dogs-m3{
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  padding:50px 60px 10px 60px;
+  margin-bottom: 40px;
+}
+
+//画像エリア全体
+.mypage-left-dog-m4{
+  position: relative;
+}
+
+
+//背景
+.mypage-left-dog-m4-background{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//画像上エリア全体
+.mypage-left-dog-m4-image-on-area{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  height:150px;
+  width: 100%;
+  background-image: linear-gradient(-180deg, transparent, rgba(0,0,0,.5));
+}
+
+//画像上エリア内部(外)
+.mypage-left-dog-m4-image-on-area-in{
+  position: absolute;
+  left:10px;
+  bottom:10px;
+  color:#fff;
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+//エピ・平均エリア
+.mypage-epi-total-area{
+  display: flex;
+  align-items: center;
+}
+
+//エピソード選択エリア
+.mypage-episode-select-area{
+  width:280px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.mypage-episode-select-area p{
+  font-size: 13px;
+  margin-right: 15px;
+}
+
+
+//リアタイエリア全体
+.real-time-tota-area{
+  width:300px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-left: 50px;
+}
+.real-time-tota-area b{
+  font-weight: normal;
+}
+//点数本体（りあたい）
+.real-time-total{
+  color:#FFAB40;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+//感想それぞれの評価エリア全体
+.review-star-area{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
+  margin-top: 20px;
+}
+
+//単体
+.review-star-one{
+  display: flex;
+  margin-bottom: 30px;
+  width:280px;
+}
+
+//それぞれの評価セレクト
+.review-star-select-area-story select{
+  font-size: 15px;
+  width:180px;
+  color:#FFAB40;
+}
+.review-star-select-area-story select:focus{
+  outline:none;
+}
+.review-star-select-area-draw select{
+  font-size: 15px;
+  width:180px;
+  color:#FFAB40;
+}
+.review-star-select-area-draw select:focus{
+  outline:none;
+}
+.review-star-select-area-music select{
+  font-size: 15px;
+  width:180px;
+  color:#FFAB40;
+}
+.review-star-select-area-music select:focus{
+  outline:none;
+}
+.review-star-select-area-voice select{
+  font-size: 15px;
+  width:180px;
+  color:#FFAB40;
+}
+.review-star-select-area-voice select:focus{
+  outline:none;
+}
+.review-star-select-area-chara select{
+  font-size: 15px;
+  width:180px;
+  color:#FFAB40;
+}
+.review-star-select-area-chara select:focus{
+  outline:none;
+}
+
+//見出しエリア
+.review-star-one-midasi{
+  width:100px;
+}
+
+//見出し
+.review-star-one-midasi{
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  color:#2E2E2E;
+  background-color: #E5E9EF;
+  border-radius: 10px;
+  padding:2px 8px 2px 8px;
+  margin-right: 10px;
+}
+
+//感想テキストエリア
+.mypage-text-area{
+  text-align: center;
+}
+.mypage-text-area textarea{
+  -webkit-appearance:none;
+  max-width:600px;
+  min-width:600px;
+  height: 100px;
+  min-height: 100px;
+  background-color: #E5E9EF;
+  border: 1px solid #E5E9EF;
+  border-radius: 4px;
+  padding:10px;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.mypage-text-area textarea:focus{
+  outline:1px solid #00B5E5;
+}
+
+
+//自己紹介編集テキスト
+.mypage-edit-text-area{
+  text-align: center;
+}
+
+//文字数カウントエリア
+.show-count-area{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  margin-right: 5px;
+}
+//区切り線
+.show-count-area p{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+
+.submit-area input[type="submit"] {
+  -webkit-appearance: none;
+  border:none;
+  background-color: #00A1D6;
+  color: #fff;
+  cursor: pointer;
+  width: 160px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 8px 10px 8px 10px;
+}
+
+.submit-area input:hover[type="submit"]{
+  background-color: #00B5E5;
+  color: #fff;
+  transition: 0.3s;
+}
+
+
+//------------マイリスト-----------------------
+.mypage-all-doc-m1{
+  padding:0px 0px 10px 0px;
+  margin-bottom: 40px;
+  min-height: 400px;
+}
+
+//アニメ表示
+.mypage-all-doc-m1-anime-area{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding:10px;
+}
+
+.mypage-all-doc-m1-anime-area a{
+  text-decoration: none;
+}
+
+//単体全体
+.mypage-alldoc-one{
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+//単体
+.mypage-all-doc-m1-anime-image-area{
+  position: relative;
+  cursor: pointer; //指
+  cursor: hand; //指
+  width:132px;
+  height:auto;
+}
+//画像
+.mypage-all-doc-m1-anime-image{
+  width:130px;
+  height: 180px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+//画像上文字
+.mypage-all-doc-m1-anime-image-on{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:132px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+//文字本体
+.mypage-all-doc-m1-anime-image-on-text{
+  font-size: 13px;
+  color:#fff;
+  padding:10px;
+}
+
+//画像下文字
+.mylist-not-on-title{
+  width:132px;
+  font-size: 13px;
+  color:#337AB7;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//マイリス見出し
+.mypage-doc-m1-notice-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.mypage-doc-m1-notice-area p{
+  font-size: 12px;
+  color:#a8a8a8;
+}
+
+//マイリスヒント
+.mypage-doc-m1-notice-hinto{
+  background-color: #ECF2F9;
+  padding:10px;
+  font-size: 13px;
+  color:#222222;
+  margin-bottom: 30px;
+}
+
+
+}
+//--------------PC-----------
+
+
+//------------スマホ---------------
+ @media screen and (max-width: 640px){
+
+   //エラー文
+   .form-error{
+     background-color: #FFF1D3;
+     color:#E78B1F;
+     padding: 10px;
+     font-size: 13px;
+     margin: 10px 0px 10px 0px;
+     ul{
+       list-style: none;
+     }
+   }
+
+   .top-wrapper-mylist{
+     position: relative;
+     width:100%;
+     height: 200px;
+   }
+
+   //背景
+   .user-image-background{
+     width:100%;
+     height: 150px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //画像上エリア全体
+   .user-image-on-area{
+     position: absolute;
+     bottom: 0;
+     left:0;
+     width:100%;
+   }
+
+   //ユーザーメイン情報エリア
+   .user-main-profile-area{
+     padding: 0px 2%;
+     display: flex;
+     align-items:flex-end;
+     justify-content: space-between;
+   }
+
+   //プロフ編集ボタン
+   .user-profile-btn-area{
+     display: inline-block;
+     color: #00C091;
+     border: 1px solid #00C091;
+     font-size: 13px;
+     padding:3px 15px;
+     border-radius: 10px;
+     cursor: pointer; //指
+     cursor: hand; //指
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     text-decoration: none;
+   }
+
+
+   //フォローボタン
+   .user-follow-btn{
+     display: inline-block;
+     color: #00C091;
+     border: 1px solid #00C091;
+     font-size: 13px;
+     padding:3px 15px;
+     border-radius: 10px;
+     cursor: pointer; //指
+     cursor: hand; //指
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     text-decoration: none;
+   }
+
+   //ユーザーアイコン
+   .user-image-on-icon{
+     width:100px;
+     height:100px;
+     object-fit: cover;
+     vertical-align: bottom;
+     border-radius: 50%;
+     border: 3px solid #fff;
+   }
+
+   //ユーザー名＋役職＋IDエリア
+   .user-main-profile-area-1{
+     margin:5px 2% 10px 2%;
+   }
+   //ユーザー名エリア
+   .user-name-mypage-area{
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+   }
+   //ユーザー名
+   .user-name-mypage{
+     font-size: 15px;
+     font-weight: bold;
+     color:#444444;
+   }
+   //job
+   .user-job-mypage{
+     display: inline-block;
+     font-size: 11px;
+     color:#fff;
+     background-color: #F8637A;
+     margin-left: 2px;
+     margin-right: 5px;
+     padding:0px 5px 0px 5px;
+     border-radius: 5px;
+   }
+
+   //ユーザーID
+   .user-id-mypage{
+     font-size: 14px;
+     color:#777777;
+     margin-left: 5px;
+   }
+
+   //自己紹介エリア
+   .user-intro-area{
+     font-size: 13px;
+     margin:10px 0px;
+     color:#444444;
+   }
+   //自己紹介
+   .user-intro{
+     color:#444444;
+     font-size: 13px;
+   }
+
+   //作成日
+   .user-create-date{
+     font-size: 12px;
+     color:#666666;
+     margin-top: 5px;
+   }
+   .user-create-date i{
+     color:#868686;
+     font-size: 12px;
+   }
+
+
+   //--------メニュー----------------------------------------
+   .user-menu-mypage{
+     width:100%;
+     margin-bottom: 20px;
+     position: relative;
+     line-height: 50px;
+     display: flex;
+     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+   }
+
+
+   //メニュー単体
+   .user-menu-mypage p{
+    width: 25%;
+    text-align: center;
+    align-items: center;
+    font-size: 13px;
+   }
+   .user-menu-mypage p i{
+    font-size: 20px;
+   }
+   //カウント
+   .user-menu-mypage p b{
+    font-weight: normal;
+    font-size: 12px;
+    color:#a6a6a6;
+   }
+
+   //リンク
+   .user-menu-mypage p a {
+       display: block;
+       color: #1c1c1c;
+       text-decoration: none;
+   }
+   .user-menu-mypage p a:hover{
+       color:#00A1D6;
+       transition: all .3s;
+   }
+
+   //リンク
+   .user-menu-mypage .now-currentmypage a {
+       display: block;
+       color: #00A1D6;
+       text-decoration: none;
+   }
+
+   .user-menu-mypage-bar {
+       position: absolute;
+       display: block;
+       bottom: 0;
+       left: 0;
+       width: 25%;
+       height: 2px;
+       background: #00A1D6;
+       -webkit-transition: all .5s;
+       transition: all .3s;
+   }
+
+   .user-menu-mypage p:nth-child(1).now-currentmypage ~ .user-menu-mypage-bar {
+       left: 0px;
+   }
+   .user-menu-mypage p:nth-child(2).now-currentmypage ~ .user-menu-mypage-bar {
+       left: 25%;
+   }
+   .user-menu-mypage p:nth-child(3).now-currentmypage ~ .user-menu-mypage-bar {
+       left: 50%;
+   }
+   .user-menu-mypage p:nth-child(4).now-currentmypage ~ .user-menu-mypage-bar {
+       left: 75%;
+   }
+   .user-menu-mypage p:nth-child(5).now-currentmypage ~ .user-menu-mypage-bar {
+       left: 100%;
+   }
+
+
+   .user-menu-mypage p:nth-child(1):hover ~ .user-menu-mypage-bar {
+       left: 0;
+   }
+   .user-menu-mypage p:nth-child(2):hover ~ .user-menu-mypage-bar {
+       left: 25%;
+   }
+   .user-menu-mypage p:nth-child(3):hover ~ .user-menu-mypage-bar {
+       left: 50%;
+   }
+   .user-menu-mypage p:nth-child(4):hover ~ .user-menu-mypage-bar {
+       left: 75%;
+   }
+   .user-menu-mypage p:nth-child(5):hover ~ .user-menu-mypage-bar {
+       left: 100%;
+   }
+
+
+   //-----------------メニュー終了----------------------------
+
+   //左コンテンツエリア1
+   .mypage-left-dogs-m1{
+     padding:10px 0px 10px 0px;
+   }
+
+   //見出し
+   .user-mypage-midasi-1{
+     padding-left: 10px;
+     font-size: 15px;
+     font-family: 'Noto Sans JP', sans-serif;
+     color: #1C1C1C;
+   }
+   //見出しアイコン
+   .user-mypage-midasi-1 i{
+     font-size: 20px;
+     color: #FFB37C;
+   }
+
+   //見出ししたインフォ
+   .user-mypage-midasi-bottom-info{
+     background-color: #ECF2F9;
+     padding:10px;
+     color:#222222;
+     font-size: 13px;
+   }
+   //活動記録エリア単体
+   .mypage-left-active-area-one{
+     display: flex;
+     width:96%;
+     padding:10px 2% 10px 2%;
+     border-bottom: 1px solid #ECF2F9;
+   }
+   //最後のボーダーなしに
+   .mypage-left-active-area-one:last-child{
+     border: none;
+   }
+
+   //活動記録アイコン
+   .active-area-user-image{
+     width:35px;
+     height:35px;
+     object-fit: cover;
+     vertical-align: bottom;
+     border-radius: 50%;
+   }
+
+   //活動記録エリア右-----------
+   .mypage-left-active-area-one-datails{
+     margin-left: 10px;
+     width: 85%;
+   }
+
+
+   //名前とデータタイム
+   .mypage-active-top-area{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+   }
+   //名前
+   .mypage-active-name{
+     color:#444444;
+     margin-right: 5px;
+     font-size: 13px;
+     font-weight: bold;
+     font-family: 'Noto Sans JP', sans-serif;
+     text-decoration: none;
+   }
+
+   //id
+   .mypage-active-id{
+     color:#99A2B2;
+     font-size: 13px;
+   }
+   //活動記録データタイム
+   .mypage-active-datatime{
+     color:#99A2B2;
+     font-size: 13px;
+     margin-left: 10px;
+   }
+
+
+   //活動本文
+   .mypage-active-actibity{
+     margin-top: 10px;
+     font-size: 13px;
+     color:#444444;
+   }
+
+   //感想本文
+   .mypage-active-anime-review-honbun{
+     font-size: 13px;
+     color:#525252;
+   }
+   //リンク
+   .mypage-active-actibity a{
+     text-decoration: none;
+     color:#222222;
+   }
+   .mypage-active-actibity a:hover{
+     transition: 0.3s;
+     color:#00A1D6;
+   }
+
+   //アニメエリア
+   .mypage-active-anime-area{
+     display: flex;
+     margin-top: 5px;
+     border: 1px solid #e5e5e5;
+     border-radius: 4px;
+     width:98%;
+   }
+   //サムネ
+   .mypage-active-anime-image{
+     width:80px;
+     height:80px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+   //内容
+   .mypage-active-anime-area-right{
+     padding:10px;
+     width:80%;
+   }
+
+   //タイトル
+   .mypage-active-anime-title{
+     font-size: 14px;
+     margin-bottom: 5px;
+     font-family: 'Noto Sans JP', sans-serif;
+   }
+   //あらすじ
+   .mypage-active-anime-arasuzi{
+     display: none;
+   }
+
+
+   .mypage-active-anime-wrapper a{
+     text-decoration: none;
+     color:#444444;
+   }
+   .mypage-active-anime-wrapper a:hover{
+     transition: 0.3s;
+     color:#00A1D6;
+   }
+
+   //もっと見るボタン
+   .more-userlog-btn{
+     width:300px;
+     text-align: center;
+     padding:5px 0px 5px 0px;
+     color:#fff;
+     font-size: 14px;
+     font-family: 'Noto Sans JP', sans-serif;
+     background-color: #00A1D6;
+     border-radius: 4px;
+   }
+   //もっと見るボタン（内）
+   .more-userlog-area{
+     margin-top: 20px;
+     margin-bottom: 10px;
+   }
+   .more-userlog-area a{
+     display: block;
+     text-decoration: none;
+     margin-left: auto;
+     margin-right: auto;
+   }
+   .more-userlog-area a:hover{
+     background-color: #00B5E5;
+     transition: 0.5s;
+   }
+
+
+
+   //右コンテンツエリア2
+   .mypage-right-dogs-m2{
+     border-top: 1px solid #DFE5E8;
+     border-bottom: 1px solid #DFE5E8;
+     margin-bottom: 20px;
+   }
+
+   //見出し
+   .mypage-right-dogs-m2 h1{
+     padding:5px;
+     font-size: 15px;
+     font-weight: normal;
+     font-family: 'Noto Sans JP', sans-serif;
+     color: #1C1C1C;
+     background-color: #ECF2F9;
+   }
+
+   //ないとき
+   .mypage-right-dogs-m2-no{
+     font-size: 12px;
+     color:#a6a6a6;
+     margin-bottom: 40px;
+     padding:10px;
+   }
+
+   //マイリスエリア
+   .mypage-side-mylist-area{
+     padding:10px 5px;
+   }
+   //単体
+   .mypage-side-mylist-one{
+     padding:10px 5px;
+     border-top: 1px solid #DFE5E8;
+     font-size: 14px;
+     color:#444444;
+     display: flex;
+     text-decoration: none;
+     align-items: center;
+     p{
+       margin-right: 10px;
+     }
+     b{
+       color:#A6AEC5;
+       font-weight: normal;
+       font-size: 13px;
+     }
+     i{
+       font-size: 16px;
+       margin-right: 5px;
+       color:#a6a6a6;
+     }
+   }
+   .mypage-side-mylist-one:first-child{
+     border: none;
+   }
+
+
+   //ステータスエリア
+   .mypage-state-area{
+     padding:10px;
+   }
+   //ステータス単体
+   .mypage-state{
+     margin-bottom: 5px;
+     font-size: 13px;
+     color:#444444;
+   }
+
+   //-----------------投稿ページ(一覧)-------------------------
+
+   //左コンテンツエリア
+   .mypage-left-dogs-m2{
+     background-color:#fff;
+     border :2px dotted #CBD0D8;
+     cursor: pointer; //指
+     cursor: hand; //指
+     width:90%;
+     padding:20px 0 20px 0;
+     margin:0px 5% 30px 5%;
+   }
+
+   //選択ボタン全体
+   .mypage-post-select-anime-btn-area{
+     text-align: center;
+   }
+   //アイコン
+   .mypage-post-select-anime-btn-icon{
+     font-size: 50px;
+     color:#CBD0D8;
+   }
+   //アニメ選択ボタン本文
+   .mypage-post-select-anime-btn{
+     font-size: 14px;
+     color:#525252;
+   }
+   .mypage-left-dogs-m2:hover{
+     transition: 0.5s;
+     border :2px dotted #00A1D6;
+     .mypage-post-select-anime-btn-icon{
+       color:#00A1D6;
+       transition: 0.5s;
+     }
+     .mypage-post-select-anime-btn{
+       color:#00A1D6;
+       transition: 0.5s;
+     }
+   }
+   //背景
+   .post-anime-select-modal-are_bg{
+     background-color: rgba(0, 0, 0, 0.3);
+     height: 100vh;
+     position: absolute;
+     width: 100%;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     z-index:1000;
+   }
+   //モーダル全体
+   .post-anime-select-modall-all{
+     display: none;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 999;
+   }
+
+   //アニメ一覧モーダルエリア
+   .post-anime-select-modal-area{
+     width:100%;
+     background-color: #fff;
+     border-radius: 4px;
+     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+     position: absolute;
+     left: 50%;
+     top: 5%;
+     transform: translate(-50%);
+     z-index: 99999;
+     padding:0px 10px 10px 10px;
+   }
+
+   //マイリス選択
+   .post-anime-select-mylist-area{
+     display: flex;
+     justify-content: space-around;
+     margin-bottom: 30px;
+   }
+
+   //マイリス単体
+   .post-anime-select-mylist-area-one{
+     font-size: 13px;
+     padding-bottom: 5px;
+     padding-top: 20px;
+     width: 25%;
+     text-align: center;
+     align-items: center;
+     cursor: pointer; //指
+     cursor: hand; //指
+   }
+   //カウント
+   .post-anime-select-mylist-area-one b{
+    font-weight: normal;
+    font-size: 12px;
+    color:#a6a6a6;
+    text-align: center;
+   }
+   //アクティブ
+   .is-active-select{
+     border-bottom: 2px solid #00A1D6;
+   }
+   //アニメ表示全体
+   .post-oepn-anime-area-wall{
+     overflow-y: scroll;
+     height:70vh;
+   }
+   //アニメ表示全体内部
+   .post-oepn-anime-area-in-wall{
+
+   }
+   //アニメ表示
+   .post-oepn-anime-area{
+     margin-top: 20px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     width:100%;
+     a{
+      width:48%;
+      padding:0 1%;
+     }
+   }
+
+   //単体
+   .post-oepn-anime-image-area{
+     position: relative;
+     margin-bottom: 20px;
+     cursor: pointer; //指
+     cursor: hand; //指
+     width:100%;
+     height:auto;
+   }
+   //画像
+   .post-oepn-anime-image{
+     width:100%;
+     height:auto;
+     object-fit: cover;
+     vertical-align: bottom;
+     border: 1px solid #e7e7e7;
+   }
+
+   //画像上文字
+   .post-oepn-anime-image-on{
+     position: absolute;
+     top:0px;
+     left:0px;
+     width:100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.3);
+     display: none;
+   }
+
+   //文字本体
+   .post-oepn-anime-image-on-text{
+     font-size: 13px;
+     color:#fff;
+     padding:10px;
+   }
+
+
+   //--左エリア3
+   .mypage-left-dogs-m3{
+     width:96%;
+     padding:50px 2% 10px 2%;
+     margin-bottom: 40px;
+   }
+
+   //画像エリア全体
+   .mypage-left-dog-m4{
+     position: relative;
+   }
+
+
+   //背景
+   .mypage-left-dog-m4-background{
+     width: 100%;
+     height: 150px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //画像上エリア全体
+   .mypage-left-dog-m4-image-on-area{
+     position: absolute;
+     bottom: 0;
+     left:0;
+     height:150px;
+     width: 100%;
+     background-image: linear-gradient(-180deg, transparent, rgba(0,0,0,.5));
+   }
+
+   //画像上エリア内部(外)
+   .mypage-left-dog-m4-image-on-area-in{
+     position: absolute;
+     left:10px;
+     bottom:10px;
+     color:#fff;
+     font-size: 16px;
+     font-family: 'Noto Sans JP', sans-serif;
+   }
+
+
+   //エピ・平均エリア
+   .mypage-epi-total-area{
+   }
+
+   //エピソード選択エリア
+   .mypage-episode-select-area{
+     width:94%;
+     display: flex;
+     align-items: center;
+     padding:0px 3%;
+     margin-bottom: 20px;
+   }
+   .mypage-episode-select-area p{
+     font-size: 13px;
+     margin-right: 15px;
+   }
+
+
+   //リアタイエリア全体
+   .real-time-tota-area{
+     width:94%;
+     display: flex;
+     align-items: center;
+     font-size: 13px;
+     padding:0px 3%;
+   }
+   .real-time-tota-area b{
+     font-weight: normal;
+   }
+   //点数本体（りあたい）
+   .real-time-total{
+     color:#FFAB40;
+     font-weight: bold;
+     font-size: 15px;
+     margin-left: 10px;
+   }
+
+   //感想それぞれの評価エリア全体
+   .review-star-area{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0px 10px 0px 10px;
+     margin-top: 20px;
+   }
+
+   //単体
+   .review-star-one{
+     display: flex;
+     margin-bottom: 30px;
+     width:100%;
+   }
+
+   .mypage-review-anime-select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     color:#444444;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+
+   //それぞれの評価セレクト
+   .review-star-select-area-story select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     width:180px;
+     color:#FFAB40;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+   .review-star-select-area-story select:focus{
+     outline:none;
+   }
+   .review-star-select-area-draw select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     width:180px;
+     color:#FFAB40;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+   .review-star-select-area-draw select:focus{
+     outline:none;
+   }
+   .review-star-select-area-music select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     width:180px;
+     color:#FFAB40;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+   .review-star-select-area-music select:focus{
+     outline:none;
+   }
+   .review-star-select-area-voice select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     width:180px;
+     color:#FFAB40;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+   .review-star-select-area-voice select:focus{
+     outline:none;
+   }
+   .review-star-select-area-chara select{
+     -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+     font-size: 16px;
+     width:180px;
+     color:#FFAB40;
+     padding:0 10px;
+     border: 1px solid #E5E9EF;
+   }
+   .review-star-select-area-chara select:focus{
+     outline:none;
+   }
+
+   //見出しエリア
+   .review-star-one-midasi{
+     width:100px;
+   }
+
+   //見出し
+   .review-star-one-midasi{
+     text-align: center;
+     display: inline-block;
+     font-size: 12px;
+     font-weight: normal;
+     color:#2E2E2E;
+     background-color: #E5E9EF;
+     border-radius: 10px;
+     padding:2px 8px 2px 8px;
+     margin-right: 10px;
+   }
+
+   //感想テキストエリア
+   .mypage-text-area{
+     text-align: center;
+   }
+   .mypage-text-area textarea{
+     -webkit-appearance:none;
+     max-width:98%;
+     min-width:98%;
+     height: 100px;
+     min-height: 100px;
+     background-color: #E5E9EF;
+     border: 1px solid #E5E9EF;
+     border-radius: 4px;
+     padding:10px 1%;
+     font-family: 'Sawarabi Gothic', sans-serif;
+     font-size: 16px;
+   }
+
+   .mypage-text-area textarea:focus{
+     outline:1px solid #00B5E5;
+   }
+
+   //文字数カウントエリア
+   .show-count-area{
+     display: flex;
+     justify-content: flex-end;
+     font-size: 13px;
+     margin-right: 5px;
+   }
+   //区切り線
+   .show-count-area p{
+     margin-left: 3px;
+     margin-right: 3px;
+   }
+
+   .submit-area{
+     text-align: center;
+   }
+
+
+   .submit-area input[type="submit"] {
+     -webkit-appearance: none;
+     border:none;
+     background-color: #00A1D6;
+     color: #fff;
+     cursor: pointer;
+     width: 160px;
+     border-radius: 2px;
+     -webkit-border-radius:2px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     padding: 8px 10px 8px 10px;
+   }
+
+
+   //------------マイリスト-----------------------
+   .mypage-all-doc-m1{
+     padding:0px 0px 10px 0px;
+     margin-bottom: 40px;
+     min-height: 400px;
+   }
+
+   //アニメ表示
+   .mypage-all-doc-m1-anime-area{
+     display: flex;
+     justify-content: flex-start;
+     flex-wrap: wrap;
+     padding:10px;
+   }
+
+   .mypage-all-doc-m1-anime-area a{
+     text-decoration: none;
+     width:48%;
+     padding:0 1%;
+   }
+
+   //単体全体
+   .mypage-alldoc-one{
+     margin-bottom: 30px;
+   }
+
+   //単体
+   .mypage-all-doc-m1-anime-image-area{
+     width: 100%;
+     height:auto;
+     cursor: pointer; //指
+     cursor: hand; //指
+   }
+   //画像
+   .mypage-all-doc-m1-anime-image{
+     width:100%;
+     height: auto;
+     object-fit: cover;
+     vertical-align: bottom;
+     border: 1px solid rgba(0,0,0,.1);
+   }
+
+   //画像上文字
+   .mypage-all-doc-m1-anime-image-on{
+     display: none;
+   }
+
+   //画像下文字
+   .mylist-not-on-title{
+     width:100%;
+     font-size: 13px;
+     color:#337AB7;
+     font-weight: bold;
+     text-decoration: none;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+   }
+
+   //マイリス見出し
+   .mypage-doc-m1-notice-area{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     font-size: 14px;
+     margin-bottom: 10px;
+   }
+   .mypage-doc-m1-notice-area p{
+     font-size: 12px;
+     color:#a8a8a8;
+   }
+
+   //マイリスヒント
+   .mypage-doc-m1-notice-hinto{
+     background-color: #ECF2F9;
+     padding:10px;
+     font-size: 13px;
+     color:#222222;
+     margin-bottom: 30px;
+   }
+
+
+ }
+//------------スマホ---------------

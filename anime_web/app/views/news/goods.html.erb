@@ -1,0 +1,76 @@
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+<div class="wrapper-new-doc-m1"><!--メニューカラム-->
+
+<%= render partial:'/sidebar/sidebar_left' %>
+  </div><!--メニューカラム-->
+
+
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム-->
+
+    <div class="news-mobile-menu-m2"><!--スマホ版メニュー-->
+
+    <div class="news-page-seach-area-mobile"><!--検索-->
+    <%= search_form_for @search_news, url: "/news/search" do |f| %>
+      <%= f.text_field :article_title_cont ,placeholder: 'ニュースを検索...' %>
+    <% end %>
+    </div><!--検索終了-->
+    <div class="genre-select-area"><!--ジャンル選択-->
+      <div class="genre-select-area-one"><%= link_to("/news") do %><% end %><i class="fas fa-circle" style='color:#FFB042; font-size:12px;'></i> <p>総合</p></div><!--単体終了-->
+      <div class="genre-select-area-one"><%= link_to("/news/category/anime") do %><% end %><i class="fas fa-circle" style='color:#F97E76; font-size:12px;'></i> <p>アニメ</p></div><!--単体終了-->
+      <div class="genre-select-area-one is-active"><%= link_to("/news/category/goods") do %><% end %><i class="fas fa-circle" style='color:#00A1D6; font-size:12px;'></i> <p>グッズ</p></div><!--単体終了-->
+      <div class="genre-select-area-one"><%= link_to("/news/category/event") do %><% end %><i class="fas fa-circle" style='color:#F1D75A; font-size:12px;'></i> <p>イベント</p></div><!--単体終了-->
+      <div class="genre-select-area-one"><%= link_to("/news/category/decision") do %><% end %><i class="fas fa-circle" style='color:#67BFC1; font-size:12px;'></i> <p>制作決定</p></div><!--単体終了-->
+    </div><!--ジャンル選択終了-->
+
+    </div><!--スマホ版メニュー終了-->
+
+
+    <div class="news-doc-m2-midasi"><i class="fas fa-info-circle"></i><p>ニュースの更新は遅いでし・・・申し訳ないです</p></div>
+    <% @news.each do |news| %>
+    <div class="news-article-one-doc1-wall"><!--リンク用-->
+    <%= link_to("/news/#{news.id}") do %>
+    <div class="news-article-one-doc1"><!--単体-->
+      <div class="news-article-one-doc1-title-area"><!--タイトルエリア-->
+        <div class="news-article-one-doc1-dtails"><!--日付、カテゴリ-->
+          <div class="news-article-one-doc1-relation-area"><!--カテゴリエリア-->
+            <% if news.relation == 'アニメ' %>
+            <div class='news-article-one-doc1-relation-m1'><%= news.relation %></div>
+           <% elsif news.relation == '制作決定' %>
+           <div class='news-article-one-doc1-relation-m2'><%= news.relation %></div>
+           <% elsif news.relation == 'グッズ' %>
+            <div class='news-article-one-doc1-relation-m3'><%= news.relation %></div>
+           <% elsif news.relation == 'イベント' %>
+            <div class='news-article-one-doc1-relation-m4'><%= news.relation %></div>
+            <% end %>
+        </div><!--カテゴリエリア終了-->
+        <div class='news-article-one-doc1-date'><%= news.updated_at.strftime("%Y-%m-%d %H:%M") %></div>
+        </div><!--日付・カテゴリ終了-->
+      <div class="news-article-one-doc1-title"><%= news.article_title %></div><!--タイトル-->
+      </div><!--タイトルエリア終了-->
+
+      <div class="news-article-one-doc1-img-area"><!--画像エリア-->
+      <img src=<%= news.samune_img %> class="news-article-one-doc1-img">
+      </div><!--画像エリア終了-->
+
+      </div><!--単体終了-->
+      <% end %>
+      </div><!--リンク用-->
+      <% end %>
+
+      <%= paginate @news, prev_label: '&lt 前へ', next_label: '次へ &gt' %>
+
+
+  </div><!--内容カラム終了-->
+
+
+  <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+    <%= render partial:'/sidebar/sidebar' %>
+    </div><!--サイドバーカラム終了-->
+
+    </div><!--wrapper-->

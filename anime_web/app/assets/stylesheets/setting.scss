@@ -1,0 +1,469 @@
+// Place all the styles related to the setting controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//--------------PC-----------
+@media screen and (min-width: 640px) {
+.setting-wrapper-doc-m1{
+  width:980px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  border-radius: 4px;
+  display: flex;
+}
+
+//左エリア
+.wrapper-setting-left{
+  background-color: #FAFAFA;
+  width:200px;
+  padding:10px 0px 10px 0px;
+}
+.wrapper-setting-left a{
+  text-decoration: none;
+}
+
+
+
+//見出し
+.setting-select-midasi{
+  color:#99A2AA;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px  solid #e8e8e8;
+}
+
+//単体
+.setting-one{
+  font-size: 14px;
+  color:#2b2b2b;
+  padding:10px 10px 10px 20px;
+  cursor: pointer; //指
+  cursor: hand; //指
+}
+
+
+.setting-one i{
+  width:30px;
+  color:#C0C0C0;
+}
+
+//最後のボーダーなしに
+.setting-one:last-child{
+  border: none;
+}
+
+.setting-select-is-active{
+  background-color: #00A1D7;
+  color:#fff;
+}
+.setting-select-is-active i{
+  color:#fff;
+}
+
+.setting-select-not-active:hover{
+  background-color: #E5E9EF;
+  transition: 0.3s;
+}
+
+
+//右エリア
+.wrapper-setting-right{
+  width:780px;
+}
+
+//左エリア見出し
+.setting-form-heading{
+  border-bottom: 1px  solid #e8e8e8;
+  padding:10px 20px 15px 20px;
+}
+
+.setting-form-heading p{
+  font-size: 14px;
+  color: #00A1D7;
+  border-left: 4px solid #00A1D7;
+  padding-left: 5px;
+}
+
+
+//ログインフォーム全体
+.settiing-form-area{
+  padding:20px;
+}
+
+
+//入力単体
+.user-input-area{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+//入力単体空白
+.user-setting-area-hr{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  border-bottom: 1px  solid #e8e8e8;
+}
+
+//入力見出し
+.user-input-area-h1{
+  font-size: 13px;
+  color: #48576A;
+  width:100px;
+  padding-right: 30px;
+  text-align: right;
+  margin-top: 4px;
+}
+
+//入力見出し2
+.user-input-area-h2{
+  font-size: 13px;
+  color: #48576A;
+  width:130px;
+  padding-right: 30px;
+  text-align: right;
+  margin-top: 4px;
+}
+
+//入力エリア
+.user-input-area-in{
+
+}
+.user-input-area-in input{
+  -webkit-appearance: none;
+  border: 1px solid #BFCBD9;
+  border-radius: 4px;
+  padding:5px;
+  width:300px;
+}
+.user-input-area-in input:focus{
+  outline: 0;
+  border: 1px solid #00A1D7;
+}
+
+.edit-text-area textarea{
+  -webkit-appearance:none;
+  max-width:450px;
+  min-width:450px;
+  max-height: 100px;
+  min-height: 100px;
+  background-color: #E5E9EF;
+  border: 1px solid #E5E9EF;
+  border-radius: 3px;
+  padding:10px;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.edit-text-area textarea:focus{
+  outline:1px solid #00B5E5;
+}
+
+
+//入力注意
+.user-input-area-text{
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 13px;
+  color:#AAB2C8;
+}
+
+//入力注意サイド
+.user-input-area-text-side{
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 13px;
+  color:#AAB2C8;
+}
+
+
+//画像インプット
+#image-select{
+  border: 1px solid #C2CDDB;
+  background-color: #F4F4F4;
+}
+
+
+//ワーニングメッセージ
+.setting-form-delete-warning{
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+
+.submit-area1 input[type="submit"] {
+  -webkit-appearance: none;
+  border:none;
+  background-color: #00A1D6;
+  color: #fff;
+  cursor: pointer;
+  width: 160px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 8px 10px 8px 10px;
+}
+
+.submit-area1 input:hover[type="submit"]{
+  background-color: #00B5E5;
+  color: #fff;
+  transition: 0.3s;
+}
+
+
+//ボタン2エリア
+.submit-area2-area{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+//ボタン2
+.submit-area2 input[type="submit"] {
+  -webkit-appearance: none;
+  border:none;
+  background-color: #ED6969;
+  color: #fff;
+  cursor: pointer;
+  width: 160px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 8px 10px 8px 10px;
+}
+
+.submit-area2 input:hover[type="submit"]{
+  background-color: #EF7B7B;
+  color: #fff;
+  transition: 0.3s;
+}
+
+}
+//--------------PC-----------
+
+
+//------------スマホ---------------
+ @media screen and (max-width: 640px){
+
+   .setting-wrapper-doc-m1{
+     width:100%;
+   }
+
+   //左エリア
+   .wrapper-setting-left{
+     width:100%;
+     background-color: #FAFAFA;
+     margin-bottom: 40px;
+   }
+   .wrapper-setting-left a{
+     text-decoration: none;
+   }
+
+   //見出し
+   .setting-select-midasi{
+     color:#99A2AA;
+     font-size: 18px;
+     padding-left: 20px;
+     padding-bottom: 10px;
+     border-bottom: 1px  solid #e8e8e8;
+   }
+
+   //単体
+   .setting-one{
+     font-size: 14px;
+     color:#2b2b2b;
+     padding:10px 10px 10px 20px;
+     cursor: pointer; //指
+     cursor: hand; //指
+   }
+
+
+   .setting-one i{
+     width:30px;
+     color:#C0C0C0;
+   }
+
+   //最後のボーダーなしに
+   .setting-one:last-child{
+     border: none;
+   }
+
+   .setting-select-is-active{
+     background-color: #00A1D7;
+     color:#fff;
+   }
+   .setting-select-is-active i{
+     color:#fff;
+   }
+
+   .setting-select-not-active:hover{
+     background-color: #E5E9EF;
+     transition: 0.3s;
+   }
+
+
+
+   //右エリア
+   .wrapper-setting-right{
+     width:100%;
+   }
+
+   //左エリア見出し
+   .setting-form-heading{
+     border-bottom: 1px  solid #e8e8e8;
+     padding:10px 10px 15px 2%;
+   }
+
+   .setting-form-heading p{
+     font-size: 14px;
+     color: #00A1D7;
+     border-left: 4px solid #00A1D7;
+     padding-left: 5px;
+   }
+
+
+   //ログインフォーム全体
+   .settiing-form-area{
+     padding:20px;
+   }
+
+
+   //入力単体
+   .user-input-area{
+     margin-bottom: 30px;
+   }
+   //入力単体空白
+   .user-setting-area-hr{
+     margin-top: 80px;
+     margin-bottom: 30px;
+     border-bottom: 1px  solid #e8e8e8;
+   }
+
+   //入力見出し
+   .user-input-area-h1{
+     font-size: 13px;
+     color: #48576A;
+     margin-top: 4px;
+   }
+
+   //入力見出し2
+   .user-input-area-h2{
+     font-size: 13px;
+     color: #48576A;
+     margin-top: 4px;
+   }
+
+   //入力エリア
+   .user-input-area-in{
+
+   }
+   .user-input-area-in input{
+     font-size: 16px;
+     -webkit-appearance: none;
+     border: 1px solid #BFCBD9;
+     border-radius: 4px;
+     padding:5px;
+     width:90%;
+   }
+   .user-input-area-in input:focus{
+     outline: 0;
+     border: 1px solid #00A1D7;
+   }
+
+   .edit-text-area textarea{
+     font-size: 16px;
+     -webkit-appearance:none;
+     max-width:96%;
+     min-width:96%;
+     max-height: 100px;
+     min-height: 100px;
+     background-color: #E5E9EF;
+     border: 1px solid #E5E9EF;
+     border-radius: 3px;
+     padding:10px 2%;
+     font-family: 'Sawarabi Gothic', sans-serif;
+   }
+
+   .edit-text-area textarea:focus{
+     outline:1px solid #00B5E5;
+   }
+
+
+   //入力注意
+   .user-input-area-text{
+     margin-top: 5px;
+     margin-left: 5px;
+     font-size: 13px;
+     color:#AAB2C8;
+   }
+
+   //入力注意サイド
+   .user-input-area-text-side{
+     margin-top: 5px;
+     font-size: 13px;
+     color:#AAB2C8;
+   }
+
+
+   //画像インプット
+   #image-select{
+     border: 1px solid #C2CDDB;
+     background-color: #F4F4F4;
+   }
+
+
+   //ワーニングメッセージ
+   .setting-form-delete-warning{
+     font-size: 13px;
+     margin-bottom: 20px;
+   }
+
+
+   .submit-area1 input[type="submit"] {
+     -webkit-appearance: none;
+     border:none;
+     background-color: #00A1D6;
+     color: #fff;
+     cursor: pointer;
+     width: 160px;
+     border-radius: 2px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     padding: 8px 10px 8px 10px;
+   }
+
+   .submit-area1 input:hover[type="submit"]{
+     background-color: #00B5E5;
+     color: #fff;
+     transition: 0.3s;
+   }
+
+
+   //ボタン2エリア
+   .submit-area2-area{
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 30px;
+   }
+   //ボタン2
+   .submit-area2 input[type="submit"] {
+     -webkit-appearance: none;
+     border:none;
+     background-color: #ED6969;
+     color: #fff;
+     cursor: pointer;
+     width: 160px;
+     border-radius: 2px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     padding: 8px 10px 8px 10px;
+   }
+
+   .submit-area2 input:hover[type="submit"]{
+     background-color: #EF7B7B;
+     color: #fff;
+     transition: 0.3s;
+   }
+
+
+}
+ //------------スマホ---------------

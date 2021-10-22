@@ -1,0 +1,29 @@
+<% @select_will.each do |anime| %>
+<% @one = AnimeList.find_by(id: anime.anime_id) %>
+<%= link_to("/user/#{@user.userid}/post/review=#{@one.id}") do %>
+<div class="post-oepn-anime-image-area" id="post-oepn-anime-image-area-num-<%= @one.id %>">
+  <% if @one.year and @one.season != nil %>
+  <img src="/anime/<%= @one.year %>/<%= @one.season %>/<%= @one.id %>/<%= @one.id %>.jpg" class="post-oepn-anime-image"><!--画像-->
+  <% else %>
+  <img src="/anime/unknown/<%= @one.id %>/<%= @one.id%>.jpg" class="post-oepn-anime-image"><!--画像-->
+  <% end %>
+<div class="post-oepn-anime-image-on" id="post-oepn-anime-image-on-num-<%= @one.id %>">
+  <div class="post-oepn-anime-image-on-text"><%= @one.title %></div>
+</div>
+</div>
+<% end %>
+<script type="text/javascript">
+$(function(){
+  $('.post-oepn-anime-image-area' + '#post-oepn-anime-image-area-num-<%= @one.id %>').hover(function(){
+    sethover = setTimeout(function(){
+    $('.post-oepn-anime-image-on' + '#post-oepn-anime-image-on-num-<%= @one.id %>').fadeIn();
+  },500);
+  },
+  function() {
+$('.post-oepn-anime-image-on' + '#post-oepn-anime-image-on-num-<%= @one.id %>').fadeOut();
+clearTimeout(sethover);
+
+});
+});
+</script>
+<% end %>

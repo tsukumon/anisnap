@@ -1,0 +1,2 @@
+class RankingWeekly < ApplicationRecord
+end

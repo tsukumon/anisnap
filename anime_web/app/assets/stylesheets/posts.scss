@@ -1,0 +1,3895 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//--------------pC-----------
+@media screen and (min-width: 640px) {
+
+  .post-graf-area-sp{
+    display: none;
+  }
+  .post-sp-title{
+    display: none;
+  }
+  .sp-hyoka-area{
+    display: none;
+  }
+  .sp-mylist-area{
+    display: none;
+  }
+  .sp-comment-area{
+    display: none;
+  }
+  .select-mylist-kansou-sp-post{
+    display: none;
+  }
+  .post-datails-text-sp{
+    display: none;
+  }
+  .post-graf-total-sp{
+    display: none;
+  }
+  //-----------------追加--------------------------------
+
+  //スマホメニュー非表示
+  #nav-drawer{
+    display: none;
+  }
+  .post-ave-review-count-mobile{
+    display: none;
+  }
+  .post-open-review-btn-mobile{
+    display: none;
+  }
+  .post-open-mylist-review-area-mobile{
+    display: none;
+  }
+  .review-select-area-mobile{
+    display: none;
+  }
+  .post-rank-and-company-datails-area{
+    display: none;
+  }
+
+
+
+//---パンくずリスト--//
+
+//パンくずリスト
+.post-title{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:15px 10px;
+  background-color: #F5F8FA;
+}
+.post-title a{
+  text-decoration: none;
+}
+.post-title a h2:hover{
+  color:#00A1D6;
+  transition: 0.2s;
+}
+.post-title h2{
+  font-size: 12px;
+  color:#2b2b2b;
+  font-weight: normal;
+}
+//矢印
+.post-title p{
+  font-size: 13px;
+  color:#9e9e9e;
+  margin:0px 5px 0px 5px;
+}
+//---パンくずリスト--//
+
+
+
+//--タグエリア--//
+.post-tag{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:10px;
+}
+
+//タグアイコン
+.post-tag i{
+  color:#656D78;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+
+.post-tag-one{
+  text-decoration: none;
+  background-color: #fff;
+  border:1px solid #8C8C8C;
+  color:#656D78;
+  display: inline-block;
+  margin:5px;
+  padding:1px 7px 1px 7px;
+  font-size: 11px;
+}
+.post-tag-one:hover{
+  transition: 0.3s;
+  background-color: #41C9B4;
+  border:1px solid #41C9B4;
+  color:#fff;
+}
+
+.post-tag-one-media{
+  text-decoration: none;
+  background-color: #fff;
+  border:1px solid #8C8C8C;
+  color:#656D78;
+  display: inline-block;
+  margin:5px;
+  padding:1px 7px 1px 7px;
+  font-size: 11px;
+}
+
+//--タグエリア--//
+
+
+//-------作品情報エリア-------//
+.post-flexarea{
+  display: flex;
+  border-bottom: 3px solid #e9e9e9;
+  padding-bottom: 20px;
+}
+
+//--サムネエリア--//
+.post-page-image-area{
+  width:230px;
+  margin:0px 10px 10px 10px;
+}
+//サムネ
+.on-post-image{
+  width:230px;
+  height:300px;
+  object-fit: cover;
+  outline: 5px solid rgba(255,255,255,.3);
+  outline-offset: -5px;
+}
+//--サムネエリア--//
+
+
+
+//--（右）詳細--//
+.post-page-right{
+  margin: 0px 20px 0px 10px;
+}
+
+//タイトル
+.post-title-low{
+  font-size: 18px;
+  color:#444444;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+//インフォ1
+.post-info-1{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  color:#3d3d3d;
+  font-size: 14px;
+}
+.post-info-1 p{
+  margin-right: 5px;
+  font-size: 13px;
+}
+//ランクエリア
+.post-info-1-rank{
+  display: flex;
+  align-items: center;
+}
+.post-info-1-rank b{
+  color:#FD7F03;
+}
+//単位
+.post-info-1-rank h3{
+  margin-right: 5px;
+  color:#4a4a4a;
+  font-size: 13px;
+  font-weight: normal;
+}
+//総合スコアエリア
+.post-info-1-pt{
+  display: flex;
+  align-items: center;
+}
+.post-info-1-pt b{
+  color:#00A1D6;
+}
+.post-info-1-pt p{
+}
+.post-info-1-pt h3{
+  margin-right: 15px;
+  color:#4a4a4a;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+//インフォ2
+.post-info-2{
+  display: flex;
+  align-items: center;
+}
+.post-info-2 p{
+  font-size: 13px;
+  margin-right: 5px;
+}
+.post-info-2 b{
+  color:#4a4a4a;
+  font-size: 13px;
+  margin-right: 15px;
+  font-weight: normal;
+}
+.post-info-2 i{
+  margin-right: 3px;
+  color:#98A2AA;
+}
+//--（右）詳細--//
+
+
+
+//-------作品情報エリア-------//
+
+
+//----グラフエリア-----------
+
+//満足度エリア
+.post-graf-total{
+  background-color: #ECF0F1;
+  padding:5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+//見出し
+.post-graf-total p{
+  color:#494949;
+  font-size: 12px;
+  margin-right: 5px;
+}
+//スコア
+.post-graf-total b{
+  color:#FD8208;
+}
+
+//グラフエリア
+.post-graf-area{
+  margin-top: 10px;
+  display: flex;
+}
+//グラフ
+.post-graf{
+  width:35px;
+  font-size: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.post-graf p{
+  line-height: 15px;
+  margin: 0 auto 11px auto;
+  color:#484848;
+}
+
+.bar{
+  height: 15px;
+  max-width: 180px;
+  margin: 0 auto 10px auto;
+  line-height: 15px;
+  font-size: 10px;
+  color: white;
+  padding: 0 0 0 10px;
+  position: relative;
+}
+.graph-cont{
+  width: calc(100% - 40px);
+  width: 100%;
+  max-width: 180px;
+}
+.bar::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 15px;
+  top: 0;
+  z-index: -2;
+  background: #ecf0f1;
+}
+.bar::after{
+  content: '';
+  background: linear-gradient(to right, #49D9C0 0%, #39C7E8 100%);
+  height: 15px;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@-webkit-keyframes bar-before{
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.how-cont{
+  width: calc(100% - 40px);
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+}
+code {
+  padding: 5px;
+  background: #ecf0f1;
+  display: block;
+}
+pre{
+  padding: 0;
+  margin: 0;
+}
+
+
+//---声優・あらすじエリア--//
+
+
+.post-datails-text-1{
+  display: flex;
+}
+
+//見出し
+.post-datails-text-1-m{
+  font-size: 12px;
+  color:#2b2b2b;
+  font-weight: normal;
+  margin-right: 5px;
+}
+//本文
+.post-datails-text-1 p{
+  font-size: 13px;
+  color:#464646;
+  margin-right: 15px;
+}
+
+
+//テキストエリア
+.post-datails-text{
+  padding:5px 0px 10px 0px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+//見出し
+.post-datails-text b{
+  font-size: 12px;
+  padding:1px 3px;
+  color:#2b2b2b;
+  background-color: #F5F8FA;
+}
+//本文
+.post-datails-text p{
+  font-size: 13px;
+  color:#464646;
+}
+
+
+
+//---声優・あらすじエリア--//
+
+//-------------頭メニューバー------------------------------------
+
+   /*トップバー全体*/
+   .post-page-head-ver{
+     position: absolute;
+     top:0;
+     left:0;
+     padding: 0;
+     background-color: rgba(0,0,0,.4)!important;
+     width:100%;
+     z-index: 2;
+   }
+   //トップバー内容全体
+   .post-page-head-ver-in{
+     width:1100px;
+     position: relative;
+     margin-left: auto;
+     margin-right: auto;
+     display: flex;
+     justify-content: space-between;
+   }
+
+   //左メニュー
+   .post-page-head-menu-m1{
+     display: flex;
+   }
+
+   //メニュー単体
+   .fex-menu-one{
+     font-size: 13px;
+   }.fex-menu-one i{
+     font-size: 18px;
+   }
+   .fex-menu-one a{
+     text-decoration: none;
+     color:#fff;
+     display: block;
+     height:40px;
+     line-height: 40px;
+     padding:0px 10px 0px 10px;
+   }
+      .fex-menu-one a:hover{
+        background-color: rgba(255,255,255,.2)!important;
+      }
+
+  //右メニュー
+  .post-page-head-menu-m2{
+    display: flex;
+  }
+
+  //検索
+  .post-page-seach-area{
+    line-height: 39px;
+  }
+
+  //検索フォーム
+  .post-page-seach-area input{
+    -webkit-appearance: none;
+    width:260px;
+    height:22px;
+    border: none;
+    border-radius: 3px;
+    padding:3px 3px 3px 8px;
+    background-color: #F4F4F4;
+  }
+  .post-page-seach-area input:focus{
+    outline: 0;
+    border: none;
+  }
+
+  //ユーザー情報エリア
+  .head-user-info{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 70px;
+  }
+
+  .head-user-img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 5px;
+    display: block;
+    margin-right: 10px;
+  }
+
+  //投稿ボタン
+  .fex-menu-one-post{
+    position: absolute;
+    right:0px;
+    background-color: #F85B73;
+    border-radius:  0px 0px 5px 5px;
+  }
+  .fex-menu-one-post a{
+    text-decoration: none;
+    display: block;
+    height:45px;
+    width:65px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 13px;
+    color:#fff;
+  }
+
+  .fex-menu-one-post:hover{
+    background-color: #f47c8e;
+    transition: 0.3s;
+  }
+
+
+//-------------頭メニューバー終了------------------------------------
+
+
+  //アニメ記事ページボディ
+  .posts-body{
+    background-color: #F4F5F7;
+    width:100%;
+    height: 100%;
+  }
+  //作品ページ上全体
+  .top-wrapper-post{
+    width: 100%;
+    position: relative;
+  }
+
+  //filter: blur(40px);
+  //画像背景
+  .post-page-bg-image{
+    width:100%;
+    height:430px;
+    filter: brightness(70%);
+    display: block;
+  }
+
+  //内容エリア
+  .top-wrapper-post-all{
+    width:1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .top-wrapper-post-all-m1{
+    display: flex;
+  }
+
+
+  //右エリア全体
+  .top-wrapper-post-right{
+    margin-left: 20px;
+  }
+
+
+
+  //メディア
+  .post-media{
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 3px;
+    margin-left: 15px;
+    height: 20px;
+    padding: 0 8px 0px 8px;
+    line-height: 20px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+  }
+
+
+
+  //スコア表示エリア全体
+  .post-score-area-wall{
+    margin-top: 20px;
+    display: flex;
+  }
+
+  //表示単体
+  .post-score-one{
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #fff;
+    color: #fff;
+  }
+  //最後のボーダーなしに
+  .post-score-one:last-child{
+    border: none;
+  }
+  //見出し
+  .post-score-one b{
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 3px;
+  }
+
+  //スコア本体エリア
+  .score-open-area{
+    display: flex;
+  }
+  //スコア本文
+  .post-score-one p{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  //得点単位
+  .post-score-one h1{
+    font-size: 11px;
+    font-weight: normal;
+    margin-left: 5px;
+  }
+
+
+  //シーズン選択エリア
+  .post-open-season-other-area{
+    display: flex;
+    margin-top: 20px;
+  }
+  //シーズン選択単体
+  .post-open-season-one{
+    margin-right: 20px;
+    font-size: 13px;
+    color:#fff;
+  }
+  .post-open-season-one a{
+    text-decoration: none;
+    color:#fff;
+  }
+
+  //あらすじエリア
+  .post-open-story{
+    margin-top: 30px;
+    font-size: 13px;
+    color:#fff;
+  }
+
+  //マイリス＆感想ボタン
+  .post-open-mylist-review-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  //マイリス選択エリア
+  .post-open-select-btn-area{
+    position: relative;
+  }
+  //マイリス選択ボタン
+  .post-open-select-btn{
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    width:200px;
+    line-height: 40px;
+    color: #fff;
+    border: 1px solid #41C9B4;
+    background-color: #41C9B4;
+    border-radius: 3px;
+    cursor: pointer; //指
+    cursor: hand; //指
+  }
+  //ホバー
+  .post-open-select-btn:hover{
+    transition: 0.3s;
+    opacity: 0.8;
+  }
+
+  //未選択
+  .post-open-select-btn-no-select{
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    width:200px;
+    line-height: 40px;
+    color: #41C9B4;
+    border: 1px solid #41C9B4;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer; //指
+    cursor: hand; //指
+  }
+  .post-open-select-btn-no-select:hover{
+    transition: 0.3s;
+    background-color: #76ccc6;
+    border: 1px solid #76ccc6;
+    color:#fff;
+  }
+
+  //マイリス選択したら表示
+.post-open-select-menu{
+    display: none;
+    position: absolute;
+    right:0;
+    padding-top: 5px;
+    z-index: 10;
+  }
+    //マイリス選択したら表示中身
+  .post-open-select-menu-in{
+    width: 200px;
+    height: 160px;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding:5px 0px 10px 0px;
+    }
+
+    //ステータス単体
+    .post-open-select-menu-one{
+      font-size: 15px;
+      padding:5px 10px 5px 10px;
+      cursor: pointer; //指
+      cursor: hand; //指
+    }
+    //ホバー
+    .post-open-select-menu-one:hover{
+      background-color: #E5E9EF;
+      color:#00A1D6;
+    }
+
+  //感想書くボタン
+  .post-open-review-btn{
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border: 1px solid #657786;
+    background-color: #657786;
+    border-radius: 3px;
+    cursor: pointer; //指
+    cursor: hand; //指
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  //ホバー
+    .post-open-review-btn:hover{
+      transition: 0.3s;
+      background-color: #3f3f3f;
+      border: 1px solid #3f3f3f;
+    }
+    //リンク
+    .post-open-review-btn a{
+      padding: 0 50px 0px 50px;
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+
+    //平均スコアエリア
+    .post-ave-score-area{
+      display: flex;
+      align-items: center;
+    }
+    //平均スコア
+    .post-ave-score-open{
+      margin-right: 10px;
+      font-size: 30px;
+      color:#FFA726;
+      font-weight: bold;
+    }
+
+    //アイコンとレビューの人数
+    .post-ave-score-fav-and-review-count{
+
+    }
+    //スコア星アイコン
+    .post-ave-score-fav{
+      font-size: 10px;
+      color:#FFA726;
+    }
+    .post-ave-score-fav i{
+      margin-right: 2px;
+    }
+
+    //レビュー詳細
+    .post-ave-review-count{
+      color:#fff;
+      font-size: 12px;
+    }
+
+
+
+    //下
+    //メニューエリア
+    .post-menu-area{
+      width: 100%;
+      background-color: #fff;
+      margin-bottom: 30px;
+    }
+
+    //メニューエリア中
+    .post-menu-area-in{
+      width:1100px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      line-height: 50px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+
+    //メニュー単体
+    .post-menu-area-in p{
+     width: 250px;
+     text-align: center;
+     align-items: center;
+     font-size: 13px;
+    }
+
+    //リンク
+    .post-menu-area-in p a {
+        display: block;
+        color: #1c1c1c;
+        text-decoration: none;
+    }
+    .post-menu-area-in p a:hover{
+        color:#00A1D6;
+        transition: all .3s;
+    }
+
+    //リンク
+    .post-menu-area-in .now-currentmypage a {
+        display: block;
+        color: #00A1D6;
+        text-decoration: none;
+    }
+
+    .post-menu-area-bar {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 260px;
+        height: 2px;
+        background: #00A1D6;
+        -webkit-transition: all .5s;
+        transition: all .3s;
+    }
+
+    .post-menu-area p:nth-child(1).now-currentmypage ~ .post-menu-area-bar {
+        left: 0px;
+    }
+    .post-menu-area p:nth-child(2).now-currentmypage ~ .post-menu-area-bar {
+        left: 250px;
+    }
+    .post-menu-area p:nth-child(3).now-currentmypage ~ .post-menu-area-bar {
+        left: 500px;
+    }
+    .post-menu-area p:nth-child(4).now-currentmypage ~ .post-menu-area-bar {
+        left: 750px;
+    }
+
+
+    .post-menu-area p:nth-child(1):hover ~ .post-menu-area-bar {
+        left: 0;
+    }
+    .post-menu-area p:nth-child(2):hover ~ .post-menu-area-bar {
+        left: 250px;
+    }
+    .post-menu-area p:nth-child(3):hover ~ .post-menu-area-bar {
+        left: 500px;
+    }
+    .post-menu-area p:nth-child(4):hover ~ .post-menu-area-bar {
+        left: 750px;
+    }
+
+    //-----------------メニュー終了----------------------------
+
+
+
+    //左コンテンツエリア
+    .post-page-content-doc-m1{
+      background-color: #fff;
+      border-radius: 4px;
+      padding:20px;
+    }
+
+    //見出し
+    .post-page-midasi{
+      font-size: 15px;
+      font-weight: bold;
+      color:#383838;
+      padding:10px 10px 0px 10px;
+    }
+
+    //内容エリア
+    .post-content{
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eeeeee;
+      min-height: 50px;
+      padding:0px 10px 40px 10px;
+    }
+
+    .post-content:last-child{
+      border:none;
+    }
+    //コンテンツ内のテキスト文字
+    .post-text{
+      margin-top: 5px;
+      font-size: 13px;
+      color:#595959;
+    }
+
+
+    //スタッフ・キャストエリア
+    .post-page-staff-cast-area{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    //スタッフエリア
+    .post-page-staff-area{
+      width:310px;
+    }
+
+    //キャストエリア
+    .post-page-cast-area{
+      width:310px;
+    }
+    //コンテンツ内のテキスト文字(スタッフ)
+    .post-text-staff{
+      margin-top: 20px;
+      font-size: 15px;
+      color:	#2f2f2f;
+    }
+
+    //右コンテンツエリア
+    .post-page-content-doc-m2{
+      background-color: #fff;
+      border-radius: 4px;
+      padding:20px;
+      margin-bottom: 20px;
+      min-height: 100px;
+    }
+
+    //内容エリア（関連アニメ用）
+    .post-content-other-anime{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      min-height: 100px;
+      display: flex;
+      justify-content: space-around;
+    }
+    //アニメ単体
+    .post-content-other-anime-one{
+      width: 160px;
+    }
+    //画像
+    .post-other-anime-img{
+      width:160px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 3px;
+      vertical-align: bottom;
+    }
+    //タイトル
+    .post-other-anime-title{
+      font-size: 13px;
+      color:#343434;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    //エピソードと見出し横並び
+    .review-midasi-select-flex{
+      display: flex;
+      align-items: center;
+      margin:30px 0px 0px 10px;
+    }
+
+    //見出し(感想ページ)
+    .post-page-midasi-review{
+      font-size: 14px;
+      font-weight: bold;
+      color:#383838;
+    }
+
+    //現在表示しているエピソード
+    .review-select-opne-now{
+      cursor: pointer; //指
+      cursor: hand; //指
+      display: inline-block;
+    }
+    //現在表示しているエピソード内容
+    .review-select-opne-now-in{
+      display: flex;
+      align-items: center;
+    }
+    //文字
+    .review-select-opne-now-in p{
+
+    }
+    //awe
+    .review-select-opne-now-in i{
+      font-size: 13px;
+      color:#c5c5c5;
+      margin-left: 10px;
+    }
+
+    //エピソード選択するエリア
+    .review-select-area{
+      position: relative;
+      margin-left: 20px;
+    }
+
+
+
+
+    //エピソード選択したら表示
+  .hover-select-menu{
+      display: none;
+      position: absolute;
+      left:0;
+      padding-top: 5px;
+      z-index: 10;
+    }
+      //エピソード選択したら表示中身
+    .hover-select-menu-in{
+      width: 200px;
+      min-height: 160px;
+      max-height: 250px;
+      overflow-y: scroll;
+      font-size: 14px;
+      background-color: #fff;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1) !important;
+      border: 1px solid #e1e1e1;
+      border-radius: 4px;
+      padding:5px 0px 10px 0px;
+      }
+
+      //エピソード単体
+      .hover-select-menu-one{
+        font-size: 15px;
+        cursor: pointer; //指
+        cursor: hand; //指
+      }
+      //ホバー
+      .hover-select-menu-one:hover{
+        background-color: #E5E9EF;
+
+      }
+
+      .hover-select-menu-one a{
+        display: block;
+        padding:5px 10px 5px 10px;
+        text-decoration: none;
+        color:#262626;
+      }
+      .hover-select-menu-one a:hover{
+        color:#00A1D6;
+      }
+
+
+  //-----------------追加終了--------------------------------
+
+
+
+
+  //パンクズリスト
+  .pankuzu-anime{
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  //リンク文字
+  .pankuzu-anime a{
+    font-size: 13px;
+    text-decoration: none;
+    color:#464646;
+  }
+  .pankuzu-anime a:hover{
+    transition: 0.3s;
+    color:#0366DB;
+  }
+  //ぱんくず　タイトル
+  .pankuzu-anime-title{
+    font-size: 13px;
+    color:#464646;
+  }
+
+  //ぱんくず矢印
+  .pankuzu-anime-allow{
+    font-size: 15px;
+    color:#a6a6a6;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+//メイン情報エリア
+.post-main-datails-area{
+  display: flex;
+  margin-bottom: 30px;
+}
+
+//画像エリア(画像とステータス)
+.post-main-datails-img-area{
+  width:200px;
+}
+//左画像
+.post-image{
+  width:200px;
+  height:auto;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #f4f4f4;
+  vertical-align: bottom;
+}
+//クレジット
+.credit-post-area{
+  font-size: 10px;
+  color:#8c8c8c;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+//右
+.post-main-right{
+  margin-left: 10px;
+  width:400px;
+  position: relative;
+}
+//タイトル・メディア
+.post-main-datails{
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+
+
+
+//情報2こめ（放送開始など)
+.post-main-datails-two{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+//見出し
+.post-main-datails-two-midasi{
+  font-size: 14px;
+  font-weight: bold;
+}
+//各項目
+.post-main-datails-two-in-area{
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  margin-bottom: 5px;
+}
+//各項目見出し
+.post-main-datails-two-in-area b{
+  font-size: 13px;
+  margin-right: 10px;
+  color:#494949;
+}
+//各項目　内容
+.post-main-datails-two-in-area p{
+  font-size: 14px;
+  font-weight: normal;
+  color:#0366D6;
+}
+.post-main-datails-two-in-area p a{
+  text-decoration: none;
+  color:#0366D6;
+}
+.post-main-datails-two-in-area p a:hover{
+  text-decoration: none;
+  color:#2985BE;
+}
+
+
+//スコアエリア全体
+.post-anime-score-all{
+  display: flex;
+  margin-top: 30px;
+}
+
+//スコアエリア単体
+.post-anime-score-area{
+  text-align: center;
+  margin-right:5px;
+  padding-right: 5px;
+  padding-left:5px;
+  width:140px;
+}
+
+//スコア見出し
+.post-anime-score-midasi{
+  display: inline-block;
+  font-size:13px;
+  color:#00A1D6;
+  margin-right: 5px;
+  font-weight: bold;
+}
+//マイリスト見出し
+.post-anime-score-midasi-mylist{
+  display: inline-block;
+  font-size:12px;
+  color:#00A1D6;
+  margin-right: 5px;
+  font-weight: bold;
+}
+//評価見出し
+.post-anime-score-midasi-review{
+  display: inline-block;
+  font-size:12px;
+  color:#00A1D6;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+//スコア得点
+.post-anime-score-score{
+  color:#717171;
+  font-size: 12px;
+}
+//マイリスト数
+.post-anime-mylist-score{
+  color:#717171;
+  font-size: 12px;
+}
+
+//スコア得点
+.post-anime-score-score b{
+  color:#FF6C00;
+  font-size: 19px;
+}
+//マイリスト数
+.post-anime-mylist-score b{
+  color:#515151;
+  font-size: 19px;
+}
+
+
+//詳細エリア全体
+.post-anime-score-datails-area{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color:#626262;
+}
+
+//単体
+.post-anime-score-datails{
+  display: flex;
+  margin-right: 15px;
+  color:#626262;
+}
+
+//単体　最後
+.post-anime-score-datails-last{
+  display: flex;
+}
+
+//見出し
+.post-anime-score-datails-midasi{
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+//点数
+.post-anime-score-datails b{
+  font-weight:bold;
+  font-size: 13px;
+}
+//点数　最後
+.post-anime-score-datails-last b{
+  font-weight:bold;
+  font-size: 13px;
+}
+
+
+
+//ギャラリーエリア
+.gallery-area{
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  left:5px;
+}
+
+//画像本体
+.gallery-area-img{
+  width:120px;
+  height:85px;
+  object-fit: cover;
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+
+
+//全体
+.genre-select-area-anime-page{
+  border-top: 2px solid;
+  border-image: linear-gradient(to right, #00dbde 0%, #23A9BB 100%);
+  border-image-slice: 1;
+  padding-top: 10px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.genre-select-area-anime-page a{
+  text-decoration: none;
+}
+
+//単体
+.genre-select-area-anime-page-one{
+  max-width: 139px;
+  min-width: 139px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  font-size: 15px;
+  color:#2e2e2e;
+  background-color: #E5E9EF;
+  padding: 2px 6px 2px 6px;
+  margin-right: 15px;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+   z-index: 1;
+}
+
+.genre-select-area-anime-page-one a{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent:-999px;
+    z-index: 2;
+    text-decoration: none;
+    color:#2e2e2e;
+}
+.genre-select-area-anime-page-one:hover{
+  color:#fff;
+  background-color: #00A1D6;
+  box-shadow: 0 0 3px #00A1D6;
+  transition: 0.3s;
+}
+.genre-select-area-anime-page-one a:hover{
+  color:#fff;
+  transition: 0.3s;
+}
+
+
+.is-active-anime-page {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 2px 6px 2px 6px;
+  max-width: 139px;
+  min-width: 139px;
+  color:#fff;
+  font-size: 15px;
+  background-color: #00A1D6;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.is-active-anime-page:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-top: 8px solid #00A1D6;
+}
+
+.is-active-anime-page p {
+  margin: 0;
+  padding: 0;
+}
+
+.is-active-anime-page a{
+  text-decoration: none;
+  color:#fff;
+}
+
+
+
+  //シェアボタンエリア上
+  .anime-share-area-top{
+    display: flex;
+    justify-content:flex-end;
+    margin-bottom: 30px;
+  }
+  //フェイスブック
+  .anime-share-area-top iframe{
+    margin-left: 20px;
+  }
+
+
+    //シェアボタンエリア下
+    .anime-share-area-bottom{
+      display: flex;
+      justify-content:flex-end;
+      margin-bottom: 30px;
+      margin-top: 80px;
+    }
+    //フェイスブック
+    .anime-share-area-bottom iframe{
+      margin-left: 20px;
+    }
+
+
+
+
+
+
+
+//PV表示処理------------------------------------
+
+//ビデオエリア全体
+.post-content-video-area{
+  display: flex;
+}
+//動画(youtube)はみ出ないように
+.video-all iframe {
+  max-width: 100%;
+}
+
+//ビデオ全体
+.video-all{
+  cursor: pointer; //指
+  cursor: hand; //指
+  width:250px; //video-imgのwidthと同じに
+  height:150px;
+  position: relative;/*相対配置*/
+  background-color: #000;  /* カラーフィルタ効果の色を指定 */
+  border-radius:3px;
+  margin-top: 10px;
+  margin-right: 20px;
+  transition: 0.5s;
+}
+.post-video{
+  opacity: 0.7;
+  text-decoration: none;
+}
+.post-video :hover{
+  opacity: inherit;
+  text-decoration: none;
+}
+
+//動画サムネ
+.video-img{
+  width:250px;
+  height:150px;
+  object-fit: cover;
+  border-radius:3px;
+}
+.video-all p{
+  position: absolute;/*絶対配置*/
+  font-size: 50px;
+  color: #ffffff;
+  top: 30%;
+  left: 40%;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+.video-all p:hover{
+  color:#F85B73;
+}
+
+.pv-modal{
+display: none;
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 100;
+text-align: center;
+}
+
+.pv-modal-datails{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  background-color: white;
+  border-radius: 4px;
+  width: 700px;
+  padding:10px;
+}
+
+.pv-modal-datails iframe {
+  max-width: 100%;
+  width:580px;
+  height:338px;
+}
+
+//PV表示処理終了------------------------------------
+
+
+//コンテンツ内のテキスト文字
+.post-text{
+  font-size: 14px;
+  color:#282828;
+}
+
+
+//間隔
+.br-post-page{
+  margin-bottom: 250px;
+}
+
+//情報がない時の全体
+.not-info{
+  margin-top: 30px;
+  height:100px;
+  padding:10px;
+}
+
+//情報がありませんテキスト
+.not-info-text{
+  font-size: 16px;
+  color:#494949;
+}
+
+
+//--------------------エピソード-----------------------------------------
+
+//感想を書くボタン
+.post-page-review-let-write-area{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+//文字
+.post-page-review-let-write-area-wall p{
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+//アイコン
+.post-page-review-let-write-area-wall i{
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+//リンク色
+.post-page-review-let-write-area-wall a{
+  text-decoration: none;
+  color: #00A1D6;
+}
+.post-page-review-let-write-area-wall a:hover{
+  color: #4267B2;
+  transition: 0.3s;
+}
+
+
+//あらすじ文字
+.post-text-episode{
+  font-size: 14px;
+  color:#282828;
+  overflow: hidden;
+  max-height:110px;
+}
+//すべて読むボタン
+.post-text-episode-more{
+  font-size: 14px;
+  color:#434343;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-decoration: underline;
+  cursor: pointer; //指
+  cursor: hand; //指
+}
+
+
+//エピソードエリア全体
+.episode-list-area{
+  margin-top: 30px;
+}
+//リンク
+.episode-list-area a{
+  text-decoration: none;
+}
+
+//見出しエリア
+.episode-list-midasi-area{
+  display: flex;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+//話数 見出し
+.episode-list-midasi-area h1{
+  font-size: 13px;
+  width:150px;
+}
+//タイトル 見出し
+.episode-list-midasi-area h2{
+  font-size: 13px;
+  width:450px;
+}
+//感想数 見出し
+.episode-list-midasi-area h3{
+  font-size: 13px;
+  width:100px;
+}
+
+//単体
+.episode-list-one{
+  display: flex;
+  padding:10px 0px 10px 10px;
+  color:#0366D6;
+}
+.episode-list-one:hover{
+  color: #02428B;
+  transition: 0.3s;
+  background-color: #F7F7F7;
+}
+
+//話数
+.episode-list-one h1{
+  font-weight: normal;
+  font-size: 15px;
+  width:150px;
+}
+//タイトル
+.episode-list-one h2{
+  font-weight: normal;
+  font-size: 15px;
+  width:450px;
+  padding-right: 30px;
+}
+//感想数
+.episode-list-one h3{
+  font-weight: normal;
+  font-size: 15px;
+  width:100px;
+}
+
+
+
+
+//--------------感想リスト--------------------
+
+
+//みたい感想を選択するエリア
+.review-everyone-wacth-select-area{
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+//文章
+.review-everyone-wacth-select-text{
+  font-size: 14px;
+  color:#292929;
+  margin-right: 20px;
+}
+
+//セレクトボックス
+.review-view-select{
+  width:200px;
+}
+
+
+//感想タイトルエリア
+.review-everyone-title-area{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  background-color: #FFF1D3;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+//感想タイトルエ
+.review-everyone-title{
+  padding-left: 3px;
+  color:#E78B1F;
+  font-size: 16px;
+}
+//感想タイトルicon
+.review-everyone-title-icon{
+  color:#E78B1F;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+
+//感想内容エリア
+.kansou-content{
+  margin:80px 0px 80px 0px;
+  border-radius: 3px;
+}
+
+
+
+//感想エリア全体
+.review-everyone-all{
+  margin-top: 20px;
+  padding:10px;
+}
+
+//単体
+.review-everyone-one{
+  display: flex;
+  align-items: flex-start;
+  padding-bottom:10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+.review-everyone-one:last-child{
+  border: none;
+}
+
+//画像エリア
+.review-everyone-one-img{
+}
+
+//投稿したユーザーアイコン
+.kansou-user-icon{
+  width:45px;
+  height:45px;
+  object-fit:cover;
+  border-radius: 50%;
+}
+
+//基本情報横（ユーザー名、星、日付)
+.kansou-user-and-score-and-date-flex{
+}
+
+
+//投稿したユーザー名
+.kansou-user-name{
+  font-size: 13px;
+  font-weight: bold;
+  color:#444444;
+}
+
+.kansou-user-name a{
+  text-decoration: none;
+  color:#444444;
+}
+
+
+
+//日付
+.review-date{
+  font-size: 12px;
+  color:#868686;
+}
+
+//感想本文とレビューステータス全体エリア
+.review-everyone-one-right{
+  margin-left: 15px;
+}
+//感想全体
+.review-everyone-one-bun{
+  padding-right:20px;
+}
+
+//いいね編集削除
+.review-review-edit-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+//score表示エリア
+.review-everyone-one-score{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+
+//編集削除終了
+.review-edit-area{
+  display: flex;
+}
+
+
+//削除
+.review-delete-link{
+  margin-left: 10px;
+  font-size: 13px;
+}
+.review-delete-link a{
+  text-decoration: none;
+  color:#a0a0a0;
+}
+
+.review-delete-link a:hover{
+  transition: 0.3s;
+  color:#ff6347;
+}
+
+
+//単体　最後
+.review-everyone-score-datails-last{
+  display: flex;
+}
+
+//見出し
+.review-everyone-score-datails-midasi{
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+//点数
+.review-everyone-score-datails b{
+  font-weight:bold;
+  font-size: 12px;
+}
+//点数　最後
+.review-everyone-score-datails-last b{
+  font-weight:bold;
+  font-size: 12px;
+}
+
+
+//本文とスコア
+.review-honbun-score{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+//スコアエリア
+.review-score-area{
+  display: inline-flex;
+  background-color: #f6f6f6;
+  padding:2px 5px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  b{
+    font-size: 13px;
+    color:#FD8208;
+  }
+  p{
+    color:#404040;
+    margin-right: 4px;
+    font-size: 13px;
+  }
+}
+//感想本文
+.review-everyone-one-text{
+  font-size:14px;
+  color:#444444;
+}
+
+//いいねボタンエリア
+.review-review-area{
+  display: flex;
+}
+
+//いいね
+.review-review-good{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 30px;
+}
+
+.review-review-good i{
+  font-size: 16px;
+  color:#99A2AA;
+}
+//いいね
+.review-review-good:hover{
+  i{
+    color:#00A1D6;
+  }
+  p{
+    color:#00A1D6;
+  }
+}
+//カウント
+.review-review-good p{
+  margin-left: 5px;
+  font-size: 12px;
+  color:#99A2AA;
+}
+
+//バット
+.review-review-bad{
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 30px;
+}
+.review-review-bad i{
+  font-size: 16px;
+  color:#99A2AA;
+}
+//いいね
+.review-review-bad:hover{
+  i{
+    color:#00A1D6;
+  }
+  p{
+    color:#00A1D6;
+  }
+}
+//カウント
+.review-review-bad p{
+  margin-left: 5px;
+  font-size: 12px;
+  color:#99A2AA;
+}
+
+//選択済みいいねボタン
+.is-active-like{
+  i{
+    color:#00A1D6;
+  }
+}
+
+
+//投稿フォーム--------------------------------------------------
+
+.text-input-area textarea {
+  -webkit-appearance:none;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  min-height: 140px;
+  width:600px;
+  border: 1px solid #dddddd;
+  resize: none;
+}
+
+.text-input-area textarea::-webkit-input-placeholder {
+  -webkit-appearance:none;
+  font-size: 17px;
+  opacity: 0.5;
+}
+
+.text-input-area textarea:focus{
+  background-color: #fffafa;
+}
+
+.form{
+  margin-bottom: 40px;
+}
+
+//見出し
+.form-midasi{
+  font-size: 17px;
+  font-weight: bold;
+  color:#444444;
+  margin-bottom: 5px;
+}
+
+.submit-area{
+  text-align: center;
+}
+
+
+.form input[type="submit"] {
+  -webkit-appearance: none;
+  border:none;
+  background-color: #F45A8D;
+  color: #fff;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 10px;
+  padding: 8px 10px 8px 10px;
+}
+
+.form input:hover[type="submit"]{
+  background-color: #FB7299;
+  color: #fff;
+}
+
+//感想ステータス//全体
+.review-state-area{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+//見出し
+.review-state-area b{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: normal;
+  color:#fff;
+  background-color: #00A1D6;
+  padding:2px 8px 2px 8px;
+  margin-right: 30px;
+}
+//点
+.review-state-area p{
+  font-size: 12px;
+  color:	#838383	;
+}
+
+//感想ステータス
+.review-state-area select{
+  font-size: 16px;
+  margin-right: 50px;
+}
+
+.review-state-area option{
+}
+
+
+
+//--ページネーション--------------
+.pagination-area{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+//省略
+.page-links-truncate{
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.page-links{
+    display:inline-block;
+    color: #222222;
+    background-color: #fff;
+    margin-right: 20px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    border-radius: 4px;
+  }
+
+  .page-links.active-page-links{
+    z-index: 1;
+    color: #fff;
+    background-color: #00A1D6;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    border-radius: 4px;
+}
+
+.page-links a{
+  display:block;
+  width:40%;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: #1969A9;
+}
+
+.page-links:hover{
+  transition: 0.3s;
+  background-color: #00A1D6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  color:#fff;
+}
+
+.page-links a:hover{
+  transition: 0.3s;
+  color:#fff;
+}
+
+.active-page-links a{
+  display:block;
+  width:40%;
+  padding: 0.5rem 0.75rem;
+  color:#fff;
+}
+
+}//--------------------------PC END ------------------------
+
+
+//メニュー関連　スマホ-----------------------------------------------------------------------------------
+ @media screen and (max-width: 640px){
+
+
+   //--マイリス評価エリア--//
+   .select-mylist-kansou-sp-post{
+     display: flex;
+     margin-top:5px;
+     width:96%;
+     margin-bottom: 10px;
+     border-top: 2px solid #f7f7f7;
+     padding: 10px 2% 10px 2%;
+   }
+   //---パンくずリスト--//
+
+   //パンくずリスト
+   .post-title{
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     padding:0px 10px;
+   }
+   .post-title a{
+     text-decoration: none;
+   }
+   .post-title h2{
+     font-size: 12px;
+     color:#2b2b2b;
+     font-weight: normal;
+   }
+   //矢印
+   .post-title p{
+     font-size: 10px;
+     color:#9e9e9e;
+     margin:0px 5px 0px 5px;
+   }
+   //---パンくずリスト--//
+
+
+
+   //--タグエリア--//
+   .post-tag{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     padding:10px 10px 0px 10px;
+   }
+
+   //タグアイコン
+   .post-tag i{
+     color:#656D78;
+     font-size: 16px;
+   }
+
+   .post-tag-one{
+     text-decoration: none;
+     background-color: #fff;
+     border:1px solid #8C8C8C;
+     color:#656D78;
+     display: inline-block;
+     margin:5px;
+     padding:1px 7px 1px 7px;
+     font-size: 11px;
+   }
+
+   .post-tag-one-media{
+     text-decoration: none;
+     background-color: #fff;
+     border:1px solid #8C8C8C;
+     color:#656D78;
+     display: inline-block;
+     margin:5px;
+     padding:1px 7px 1px 7px;
+     font-size: 11px;
+   }
+   //--タグエリア--//
+
+
+
+   //--評価表示エリア--//
+   .sp-hyoka-area{
+     display: flex;
+     width:100%;
+     margin:0px 0px 15px 0px;
+     padding:5px 0px;
+     background-color: #F5F8FA;
+   }
+
+   //単体
+   .sp-hyoka-area-one{
+     width:25%;
+     text-align: center;
+     .sp-hyoka-area-midasi{
+       font-size: 10px;
+       color:#8A93A1;
+       font-weight: bold;
+     }
+   }
+
+   //単体(スコアエリア)
+   .sp-hyoka-area-one-score{
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+     p{
+       font-size: 13px;
+       color:#444444;
+     }
+     b{
+       font-size: 13px;
+     }
+   }
+
+   //マイリスト
+   .sp-mylist-area{
+     font-size: 12px;
+     line-height: 12px;
+     margin-bottom: 3px;
+     display: flex;
+     align-items: center;
+     color:#444444;
+     b{
+       margin-right: 6px;
+       font-weight: normal;
+     }
+     i{
+       font-size: 13px;
+       margin-right: 3px;
+       color:#98A2AA;
+     }
+   }
+   //評価数
+   .sp-comment-area{
+     display: flex;
+     align-items: center;
+     font-size: 12px;
+     margin-bottom: 10px;
+     color:#444444;
+     b{
+       margin-right: 6px;
+       font-weight: normal;
+     }
+     i{
+       font-size: 13px;
+       margin-right: 3px;
+       color:#98A2AA;
+     }
+   }
+
+   //--評価表示エリア終了--//
+
+   //-------作品情報エリア-------//
+   .post-sp-title{
+     width:96%;
+     padding:0px 2% 5px 2%;
+     font-size: 16px;
+     font-weight: bold;
+     color:#444444;
+   }
+
+   .post-flexarea{
+     display: flex;
+     padding-bottom: 20px;
+     width:96%;
+     padding:0% 2%;
+   }
+
+   //--サムネエリア--//
+   .post-page-image-area{
+     width:45%;
+   }
+   //サムネ
+   .on-post-image{
+     width:100%;
+     height:auto;
+     object-fit: cover;
+     outline: 5px solid rgba(255,255,255,.3);
+     outline-offset: -5px;
+   }
+   //--サムネエリア--//
+
+   //--（右）詳細--//
+   .post-page-right{
+     padding-left: 3%;
+     width:52%;
+     margin-right: 2%;
+   }
+
+   //タイトル
+   .post-title-low{
+     display: none;
+   }
+
+   //インフォ1
+   .post-info-1{
+     display: none;
+   }
+
+   //--（右）詳細--//
+
+   //---声優・あらすじエリア--//
+
+
+   //非表示
+   .post-datails-text{
+     display: none;
+   }
+
+   //テキストエリア
+   .post-datails-text-sp{
+     padding:0px 0px 10px 0px;
+     border-bottom: 1px solid #f7f7f7;
+     margin-bottom: 10px;
+   }
+
+   //見出し
+   .post-datails-text-sp b{
+     font-size: 12px;
+     color:#2b2b2b;
+   }
+   //本文
+   .post-datails-text-sp p{
+     font-size: 12px;
+     color:#464646;
+   }
+
+   //ランクエリア
+   .post-info-1-rank{
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+   }
+   .post-info-1-rank p{
+     font-size: 12px;
+     color:#444444;
+   }
+   .post-info-1-rank b{
+     color:#444444;
+     font-size: 12px;
+   }
+   //単位
+   .post-info-1-rank h3{
+     margin-right: 3px;
+     color:#4a4a4a;
+     font-size: 12px;
+     font-weight: normal;
+   }
+
+
+
+
+
+
+   //-------作品情報エリア-------//
+
+
+   //----グラフエリア-----------
+
+   //PC版非表示
+   .post-graf-total{
+     display: none;
+   }
+   .post-graf-area{
+     display: none;
+   }
+
+   //満足度エリア
+   .post-graf-total-sp{
+     padding: 0px 5px 0px 0px;
+     display: flex;
+     align-items: center;
+     font-size: 15px;
+     margin-bottom: 10px;
+   }
+   //見出し
+   .post-graf-total-sp p{
+     color:#494949;
+     font-size: 12px;
+     margin-right: 5px;
+   }
+   //スコア
+   .post-graf-total-sp b{
+     color:#FD8208;
+   }
+
+   //グラフエリア
+   .post-graf-area-sp{
+     margin-top: 2px;
+     display: flex;
+   }
+   //グラフ
+   .post-graf-sp{
+     width:40px;
+     font-size: 10px;
+   }
+   .post-graf-sp p{
+     line-height: 15px;
+     margin: 0 auto 10px auto;
+     color:#484848;
+   }
+
+   .bar-sp{
+     height: 15px;
+     max-width: 100%;
+     margin: 0 auto 10px auto;
+     line-height: 15px;
+     font-size: 10px;
+     color: white;
+     padding: 0 0 0 10px;
+     position: relative;
+   }
+   .graph-cont-sp{
+     width: calc(100% - 40px);
+     width: 100%;
+     max-width: 100%;
+   }
+   .bar-sp::before{
+     content: '';
+     width: 100%;
+     position: absolute;
+     left: 0;
+     height: 15px;
+     top: 0;
+     z-index: -2;
+     background: #ecf0f1;
+   }
+   .bar-sp::after{
+     content: '';
+     background: linear-gradient(to right, #49D9C0 0%, #39C7E8 100%);
+     height: 15px;
+     display: block;
+     width: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -1;
+   }
+
+   @-webkit-keyframes bar-before{
+     0%{
+       width: 0px;
+     }
+     100%{
+       width: 100%;
+     }
+   }
+
+   .how-cont-sp{
+     width: calc(100% - 40px);
+     width: 100%;
+     max-width: 180px;
+     margin: 0 auto;
+   }
+   code-sp {
+     padding: 5px;
+     background: #ecf0f1;
+     display: block;
+   }
+   pre-sp{
+     padding: 0;
+     margin: 0;
+   }
+
+
+
+
+   //アニメ記事ページボディ
+   .posts-body{
+     background-color: #F4F5F7;
+     width:100%;
+     height:100%;
+   }
+   //全体
+   .wrapper{
+     max-width: 100%;
+     max-width: 100%;
+     height:100%;
+   }
+
+
+   //全体左
+   .wrapper-left{
+     width: 100%;
+     height:100%;
+   }
+
+   .wrapper-right-no-midasi{
+     width: 100%;
+     height:100%;
+   }
+
+
+
+   //作品ページ上全体
+   .top-wrapper-post{
+     font-family: 'Noto Sans JP', sans-serif;
+     width:100%;
+     background-size: 100% 100%;
+    position: relative;
+    z-index: 10;
+   }
+
+    .top-wrapper-post::before {
+  content: '';
+  position: absolute;
+  /* 輪郭がぼやけてしまうのでブラー範囲を広げる */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: inherit;
+  filter: brightness(70%);
+  z-index: -1;
+}
+
+   //filter: blur(40px);
+   //画像背景
+   .post-page-bg-image{
+     display: none;
+   }
+
+
+      /*トップバー全体*/
+      .post-page-head-ver{
+        padding: 0;
+        background-color: #fff;
+        width:100%;
+        z-index: 2;
+      }
+      //トップバー内容全体
+      .post-page-head-ver-in{
+        padding:3% 0% 3% 0%;
+        width:100%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      //ランキング、ニュースなど
+      .post-page-head-menu-m1{
+        display: none;
+      }
+      //右メニュー
+      .post-page-head-menu-m2{
+        display: none;
+      }
+
+
+      .nav-three-right{
+      }
+      #nav-drawer {
+        position: relative;
+    }
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    vertical-align: middle;
+    padding-left: 3vw;
+}
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 30px;/*長さ*/
+    border-radius: 3px;
+    background: #353535;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+#nav-open span:before {
+    bottom: -10px;
+}
+#nav-open span:after {
+    bottom: -20px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 70%;
+    max-width: 70%;
+    height: 100%;
+    background: #fff;
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(105%);
+    transform: translateX(105%);
+    padding:10px;
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+//ユーザー情報エリア
+.nav-user-area{
+  width:100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+#nav-content a{
+  text-decoration: none;
+}
+//アイコン
+.nav-user-area-img-area{
+  width:40px;
+}
+//アイコン本体
+.nav-user-area-img{
+  width:40px;
+  height:40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+//名前エリア
+.nav-user-area-name-area{
+  width:75%;
+  margin-left: 5%;
+}
+//名前
+.nav-user-name{
+  font-size: 13px;
+  font-weight: bold;
+  color:#444444;
+}
+//ID
+.nav-user-name-id{
+  font-size: 12px;
+  color:#aeaeae;
+}
+
+
+//マイリスト
+.nav-user-mylist{
+  font-size: 3vw;
+  background-color: #F85B73;
+  border-radius: 3px;
+  color:#fff;
+  text-align: center;
+  line-height: 4vw;
+  height:4vw;
+  width:40%;
+  padding: 5px;
+}
+.nav-user-mylist a{
+  text-decoration: none;
+  display: block;
+  width:100%;
+  height:100%;
+  color:#fff;
+}
+
+//投稿
+.nav-user-review{
+  font-size: 3vw;
+  background-color: #00A1D6;
+  border-radius: 3px;
+  color:#fff;
+  text-align: center;
+  line-height: 4vw;
+  height:4vw;
+  width:40%;
+  padding: 5px;
+}
+
+.nav-user-review a{
+  text-decoration: none;
+  display: block;
+  width:100%;
+  height:100%;
+  color:#fff;
+}
+
+  //検索
+  .post-page-seach-area{
+    font-size: 3vw;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 39px;
+  }
+
+  //検索フォーム
+  .post-page-seach-area input{
+    -webkit-appearance: none;
+    font-size: 16px;
+    width:90%;
+    height:22px;
+    border: none;
+    border-radius: 3px;
+    padding:3px 3px 3px 8px;
+    background-color: #F4F4F4;
+  }
+  .post-page-seach-area input:focus{
+    outline: 0;
+    border: none;
+  }
+
+//見出し
+.nav-datails-midasi{
+  margin:10px 0px 10px 10px;
+  font-size: 3.5vw;
+  color:#5a5a5a;
+}
+//ニュースエリア
+.nav-news-area{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//単体(総合)
+.nav-news-area-one{
+  text-align: center;
+  width:33%;
+  margin-bottom: 10px;
+}
+
+//アイコン
+.nav-news-area-one-icon{
+  font-size: 7vw;
+}
+//タイトル
+.nav-news-area-one-title{
+  font-size: 3vw;
+  color:#3a3a3a;
+}
+
+
+//ランキングエリア
+.nav-ranking-area{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+//ランキング単体
+.nav-ranking-area-one{
+  text-align: center;
+  width:33%;
+  margin-bottom: 20px;
+  color:#00A4DC;
+}
+
+//アイコン
+.nav-ranking-area-icon{
+  font-size: 7vw;
+}
+//タイトル
+.nav-ranking-area-title{
+  font-size: 3vw;
+  color:#3a3a3a;
+}
+
+//内容エリア
+.top-wrapper-post-all{
+  width:100%;
+  margin-top: 7vw;
+}
+
+.top-wrapper-post-all-m1{
+  display: flex;
+}
+
+
+
+//右エリア全体
+.top-wrapper-post-right{
+  padding-left: 4%;
+  padding-right: 1%;
+  width:70%;
+}
+
+
+//メディア
+.post-media{
+  display: none;
+}
+
+
+//PC版あらすじ
+.post-open-story{
+  display: none;
+}
+
+//スコア表示エリア全体
+.post-score-area-wall{
+  margin-top: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//表示単体
+.post-score-one{
+  text-align: center;
+  max-width:28%;
+  min-width:28%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-left: 1px solid #fff;
+  line-height: 1em;
+  color: #fff;
+}
+//最後のボーダーなしに
+.post-score-one:first-child{
+  border: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+//見出し
+.post-score-one b{
+  font-size: 2.6vw;
+  font-weight: normal;
+}
+
+//スコア本体エリア
+.score-open-area{
+  margin-top: 0.5vw;
+  display: flex;
+  justify-content: center;
+}
+//スコア本文
+.post-score-one p{
+  font-size: 3vw;
+  font-weight: bold;
+}
+//得点単位
+.post-score-one h1{
+  font-size: 3vw;
+  font-weight: normal;
+  margin-left: 1vw;
+}
+
+
+  //シーズン選択エリア
+  .post-open-season-other-area{
+    display: none;
+  }
+  //PCマイリス・評価ボタン非表示
+  .post-open-mylist-review-area{
+    display: none;
+  }
+
+//感想マイリスボタンエリア
+.post-open-mylist-review-area-mobile{
+  display: flex;
+  justify-content: center;
+  padding:2vw 2vw 6vw 2vw;
+}
+
+//マイリス選択エリア
+.post-open-select-btn-area{
+  margin-right: 5vw;
+}
+//マイリス選択ボタン
+.post-open-select-btn{
+  position: relative;
+  font-size: 3vw;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  height: 10vw;
+  width:45vw;
+  line-height: 10vw;
+  color: #fff;
+  border: 1px solid #F85B73;
+  background-color: #F85B73;
+  border-radius: 3px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+//モバイル用ラベル
+.label-mobile {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+//モバイル用セレクト
+.mylist-select-mobile{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height:100%;
+  border: none;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  font-size:16px; /*safari フォーカス防止 */
+}
+.post-open-select-btn option{
+  background-color: #fff;
+  color:#292929;
+}
+
+
+
+  //感想書くボタン
+  .post-open-review-btn-mobile{
+    font-size: 3vw;
+    display: inline-block;
+    vertical-align: middle;
+    height: 10vw;
+    line-height: 10vw;
+    color: #fff;
+    border: 1px solid #00A1D6;
+    background-color: #00A1D6;
+    border-radius: 3px;
+    cursor: pointer; //指
+    cursor: hand; //指
+  }
+    //リンク
+    .post-open-review-btn-mobile a{
+      width:45vw;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+
+    //平均スコアとランクなどエリア
+    .post-rank-and-company-area{
+      display: flex;
+    }
+
+    //文字
+    .post-rank-and-company-datails-area{
+      margin-top: 3vw;
+      margin-left: 3vw;
+      margin-bottom: 1vw;
+    }
+
+    //ランキング
+    .post-rank-datails{
+      font-size: 3vw;
+      color:#fff;
+    }
+    .post-rank-datails a{
+      text-decoration: none;
+      color:#fff;
+    }
+
+  //平均スコアエリア
+  .post-ave-score-area{
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+    margin-left: 2vw;
+  }
+  //平均スコア
+  .post-ave-score-open{
+    display: block;
+    font-size: 8vw;
+    line-height: 8vw;
+    color:#ffb042;
+    font-weight: bold;
+  }
+
+  //アイコンとレビューの人数
+  .post-ave-score-fav-and-review-count{
+    margin-top: 0.2vw;
+  }
+  //スコア星アイコン
+  .post-ave-score-fav{
+    display: block;
+    font-size: 2vw;
+    color:#ffb042;
+  }
+  .post-ave-score-fav i{
+    margin-right: 1px;
+  }
+
+  //レビュー詳細
+  .post-ave-review-count{
+    display: none;
+  }
+  //レビュー詳細
+  .post-ave-review-count-mobile{
+    color:#fff;
+    font-size: 3vw;
+  }
+
+
+      //下
+      //メニューエリア
+      .post-menu-area{
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 30px;
+      }
+
+      //メニューエリア中
+      .post-menu-area-in{
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        line-height: 50px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+
+      //メニュー単体
+      .post-menu-area-in p{
+       width: 25%;
+       text-align: center;
+       align-items: center;
+       font-size: 0.8em;
+      }
+
+      //リンク
+      .post-menu-area-in p a {
+          display: block;
+          color: #1c1c1c;
+          text-decoration: none;
+      }
+      .post-menu-area-in p a:hover{
+          color:#00A1D6;
+          transition: all .3s;
+      }
+
+      //リンク
+      .post-menu-area-in .now-currentmypage a {
+          display: block;
+          color: #00A1D6;
+          text-decoration: none;
+          border-bottom: 2px solid #00A1D6;
+      }
+
+
+      //-----------------メニュー終了----------------------------
+
+
+
+          //左コンテンツエリア
+          .post-page-content-doc-m1{
+            background-color: #fff;
+            padding:10px;
+          }
+
+          //右コンテンツエリア
+          .post-page-content-doc-m2{
+            background-color: #fff;
+            padding:10px;
+            min-height: 100px;
+            border-top: 1px solid #eeeeee;
+          }
+          .post-page-content-doc-m2:last-child{
+            padding:10px 10px 50px 10px;
+          }
+
+          //見出し
+          .post-page-midasi{
+            font-size: 4vw;
+            font-weight: bold;
+            color:#383838;
+            margin-bottom: 10px;
+            margin-left: 2%;
+          }
+
+          //内容エリア
+          .post-content{
+            width:96%;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eeeeee;
+            min-height: 100px;
+          }
+
+          .post-content:last-child{
+            border:none;
+            margin-bottom: 50px;
+          }
+          //コンテンツ内のテキスト文字
+          .post-text{
+            margin-top: 5px;
+            font-size: 3.5vw;
+            color:#595959;
+          }
+
+          //コンテンツ内のテキスト文字(スタッフ)
+          .post-text-staff{
+            font-size: 13px;
+            color:#595959;
+          }
+
+
+
+          //PV表示処理------------------------------------
+
+          //ビデオエリア全体
+          .post-content-video-area{
+            display: flex;
+            flex-wrap: wrap;
+          }
+          //動画(youtube)はみ出ないように
+          .video-all iframe {
+            max-width: 100%;
+          }
+
+          //ビデオ全体
+          .video-all{
+            cursor: pointer; //指
+            cursor: hand; //指
+            width:150px; //video-imgのwidthと同じに
+            height:100px;
+            position: relative;/*相対配置*/
+            background-color: #000;  /* カラーフィルタ効果の色を指定 */
+            border-radius:3px;
+            margin-top: 10px;
+            margin-right: 20px;
+            transition: 0.5s;
+          }
+          .post-video{
+            opacity: 0.7;
+            text-decoration: none;
+          }
+          .post-video :hover{
+            opacity: inherit;
+            text-decoration: none;
+          }
+
+          //動画サムネ
+          .video-img{
+            width:150px; //video-imgのwidthと同じに
+            height:100px;
+            object-fit: cover;
+            border-radius:3px;
+          }
+          .video-all p{
+            position: absolute;/*絶対配置*/
+            font-size: 40px;
+            color: #ffffff;
+            top: 20%;
+            left: 37%;
+            opacity: 0.8;
+            transition: 0.5s;
+          }
+          .video-all p:hover{
+            color:#F85B73;
+          }
+
+          .pv-modal{
+          display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 100;
+          text-align: center;
+          width: 100%;
+          }
+
+          .pv-modal-datails{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            -ms-transform: translate(-50%,-50%);
+            -webkit-transform : translate(-50%,-50%);
+            transform : translate(-50%,-50%);
+            background-color: white;
+            border-radius: 4px;
+            width: 100%;
+            padding:10px;
+          }
+
+          .pv-modal-datails iframe {
+            max-width: 100%;
+            width:90%;
+            height:50vw;
+          }
+
+          //PV表示処理終了------------------------------------
+
+
+
+//-------エピソードページ-----------------
+
+//エピソードエリア全体
+.episode-list-area{
+  margin-top: 30px;
+}
+//リンク
+.episode-list-area a{
+  text-decoration: none;
+}
+
+//見出しエリア
+.episode-list-midasi-area{
+  display: flex;
+  margin-bottom: 20px;
+  padding-left: 2%;
+  width:98%;
+}
+//話数 見出し
+.episode-list-midasi-area h1{
+  font-size: 3.3vw;
+  width:20%;
+}
+//タイトル 見出し
+.episode-list-midasi-area h2{
+  font-size: 3.3vw;
+  width:60%;
+}
+//感想数 見出し
+.episode-list-midasi-area h3{
+  font-size: 2.5vw;
+  width:20%;
+}
+
+//単体
+.episode-list-one{
+  display: flex;
+  width:96%;
+  padding:2% 0px 10px 2%;
+  color:#0366D6;
+}
+.episode-list-one:hover{
+  color: #02428B;
+  transition: 0.3s;
+  background-color: #F7F7F7;
+}
+
+//話数
+.episode-list-one h1{
+  font-weight: normal;
+  font-size: 3.3vw;
+  width:20%;
+}
+//タイトル
+.episode-list-one h2{
+  font-weight: normal;
+  font-size: 3.3vw;
+  width:60%;
+  padding-right: 30px;
+}
+//感想数
+.episode-list-one h3{
+  font-weight: normal;
+  font-size: 3.3vw;
+  width:20%;
+}
+
+//-------エピソードページ終了-----------------
+
+
+//----サイドバー----
+
+//サイド　コンテンツエリア
+.content-side{
+  width:100%;
+  padding-top: 2%;
+  margin-bottom: 20px;
+  word-break: break-all;
+  background-color: #fff;
+  padding:0px 0px 10px 0px;
+}
+//リンク
+.content-side a{
+  text-decoration: none;
+}
+
+//サイド　固定コンテンツエリア
+.content-side-fixed{
+  width:100%;
+  padding-top: 2%;
+  margin-bottom: 20px;
+  word-break: break-all;
+  background-color: #fff;
+  padding:0px 0px 10px 0px;
+}
+//リンク固定
+.content-side-fixed a{
+  text-decoration: none;
+}
+
+//サイドタイトルエリア（下）
+.content-side-title-area-2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding:5px 10px 5px 10px;
+  border-bottom: 2px solid #c7c7c7;
+  margin:0px 5px 0px 5px;
+}
+//サイドタイトル（下）
+.content-side-title-2{
+  color:#343434;
+  font-size: 4.5vw;
+  font-weight: bold;
+}
+
+
+//----新作アニメを探す
+.sideani-area{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin:10px 2% 0px 2%;
+  width:96%;
+}
+//単体
+.sideani-area-one{
+  overflow: hidden;
+  position: relative;
+  width:48%;
+  margin-bottom: 10px;
+}
+.sideani-area-one-img{
+  width:100%;
+  height:100px;
+  object-fit: cover;
+ vertical-align: bottom;
+ display: block;
+	transition-duration: 0.2s;	/*変化に掛かる時間*/
+}
+.sideani-area-one-img:hover{
+  transform: scale(1.1);	/*画像の拡大率*/
+	transition-duration: 0.2s;	/*変化に掛かる時間*/
+}
+//画像上
+.sideani-onimage{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background-image: linear-gradient(-180deg, transparent, rgba(0,0,0,.7));
+  width:100%;
+  height:30px;
+}
+//見出し
+.sideani-area-one h3{
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 13px;
+  color:#fff;
+  font-weight: normal;
+}
+
+//他のシーズンセレクトurl
+.side-other-season-more{
+  text-decoration: none;
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+.side-other-season-more a{
+  text-decoration: none;
+  color:#5F6368;
+}
+.side-other-season-more a:hover{
+  color:#0366DB;
+}
+
+
+
+
+
+//---------最新レビューエリア-------------------
+
+//情報がない時の全体
+.not-info{
+  margin-top: 30px;
+  height:100px;
+  padding:10px;
+}
+
+//情報がありませんテキスト
+.not-info-text{
+  font-size: 16px;
+  color:#494949;
+}
+
+//リンク囲い
+.review-new-area-wall{
+  width:100%;
+  border-bottom:  1px solid #f1f1f1;
+}
+
+.review-new-area-wall:last-child{
+  border: none;
+}
+.review-new-area{
+  width:100%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.review-new-area p{
+ color:#262626;
+ font-size: 3.3vw;
+}
+
+.review-new-area b{
+  color:#FB7299;
+  font-size: 2.8vw;
+}
+//右
+.review-new-are-right{
+  margin-left: 2%;
+  margin-right: 3%;
+  width:80%;
+}
+.review-new-area h2{
+  font-size: 13px;
+  font-weight: bold;
+  color:#EDA715;
+}
+//画像
+.review-new-area-img{
+  margin-right: 2%;
+  width:25%;
+  height:80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+//もっとみる（レビュー）
+.review-more-area{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+//文字
+.review-more-area p{
+  font-size: 13px;
+  font-weight: bold;
+  color: #00A1D6;
+}
+//アイコン
+.review-more-area i{
+  font-size: 15px;
+  margin-right: 5px;
+  color: #00A1D6;
+}
+
+
+//------------レビューエリア終了-----------------
+
+
+
+//---サイドアクセスランキング--------------------
+
+//単体
+.newnews-side-area{
+  width:96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom:  1px solid #f2f2f2;
+}
+.newnews-side-area a{
+  text-decoration: none;
+}
+
+//タイトル
+.newnews-side-title{
+  font-size: 12px;
+  color:#474747;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//リンク全体
+.newnews-side-area-wall a{
+  text-decoration: none;
+  color:#333333;
+}
+.newnews-side-area-wall a:hover{
+  .newnews-side-title{
+    color:#0366DB;
+    transition: 0.3s;
+  }
+}
+
+
+//人気記事タイトル
+.favnews-side-title{
+  z-index: 1;
+  font-size: 13px;
+  font-weight: bold;
+  color:#474747;
+}
+
+//画像えりあ
+.favnews-img-area{
+  width:100px;
+  height:70px;
+}
+//画像
+.newnews-side-img{
+  position: relative;
+  width:100px;
+  height:70px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//PVカウント
+.count-pv-side{
+  position: absolute;
+  display: inline-block;
+  background-color: #AFC1D1;
+  font-size: 12px;
+  padding:2px 5px 2px 5px;
+  text-decoration: none;
+  color:#333333;
+}
+
+
+
+//タイトルエリア
+.favnews-side-side{
+  margin-left: 10px;
+}
+
+
+//---サイドアクセスランキング終了----------------
+
+//----サイドバー終了---
+
+
+
+
+//----感想ページ----
+
+//エピソードと見出し横並び
+.review-midasi-select-flex{
+  width:96%;
+  padding:0px 2%;
+  display: flex;
+  align-items: center;
+}
+
+//見出し(感想ページ)
+.post-page-midasi-review{
+  font-size: 14px;
+  font-weight: bold;
+  color:#444444;
+}
+
+
+//エピソード選択するエリア
+.review-select-area{
+  display: none;
+}
+
+//セレクトボックス
+.review-select-area-mobile{
+  margin-left: 5vw;
+  position: relative;
+  transform: scale(0.9);
+}
+.review-select-area-mobile select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #f0f0f0;
+  padding: 3px;
+}
+.review-select-area-mobile::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0px;
+  border-bottom: solid 2px #b4b3b3;
+  border-right: solid 2px #b4b3b3;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -4px;
+}
+
+  //エピソード選択したら表示中身
+.hover-select-menu-in{
+  width: 200px;
+  min-height: 160px;
+  max-height: 250px;
+  overflow-y: scroll;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding:5px 0px 10px 0px;
+  }
+
+  //エピソード単体
+  .hover-select-menu-one{
+    font-size: 15px;
+    cursor: pointer; //指
+    cursor: hand; //指
+  }
+  //ホバー
+  .hover-select-menu-one:hover{
+    background-color: #E5E9EF;
+
+  }
+
+  .hover-select-menu-one a{
+    display: block;
+    padding:5px 10px 5px 10px;
+    text-decoration: none;
+    color:#262626;
+  }
+  .hover-select-menu-one a:hover{
+    color:#00A1D6;
+  }
+
+
+
+
+  //感想エリア全体
+  .review-everyone-all{
+    width:96%;
+    padding:0 2%;
+    margin-top: 50px;
+  }
+
+  //単体
+  .review-everyone-one{
+    display: flex;
+    align-items: flex-start;
+    padding-bottom:10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+  }
+  .review-everyone-one:last-child{
+    border: none;
+  }
+
+  //画像エリア
+  .review-everyone-one-img{
+    width:8%;
+    margin-right: 2%;
+  }
+
+  //投稿したユーザーアイコン
+  .kansou-user-icon{
+    width:10vw;
+    height:10vw;
+    object-fit:cover;
+    border-radius: 50%;
+  }
+
+  //基本情報横（ユーザー名、星、日付)
+  .kansou-user-and-score-and-date-flex{
+    width: 90%;
+  }
+  //ユーザー名と総合評価星マーク横並び
+  .kansou-user-and-score-flex{
+    display: flex;
+    align-items: center;
+  }
+
+  //投稿したユーザー名
+  .kansou-user-name{
+    font-size: 14px;
+    color:#444444;
+    font-weight: bold;
+  }
+
+  .kansou-user-name a{
+    text-decoration: none;
+    color:#444444;
+  }
+
+  //星マーク
+  .kansou-user-star-area{
+    font-size: 3vw;
+    color:#FFB042;
+    margin-left: 20px;
+  }
+
+  //星マーク間隔
+  .kansou-user-star-area i{
+    margin-right: 2px;
+  }
+
+  //日付
+  .review-date{
+    font-size: 3vw;
+    color:#868686;
+  }
+
+  //感想本文とレビューステータス全体エリア
+  .review-everyone-one-right{
+    margin-left: 15px;
+  }
+
+  //スコアエリア
+  .review-score-area{
+    display: inline-flex;
+    background-color: #f6f6f6;
+    padding:2px 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    b{
+      font-size: 13px;
+      color:#FD8208;
+    }
+    p{
+      color:#404040;
+      margin-right: 4px;
+      font-size: 13px;
+    }
+  }
+
+  //感想全体
+  .review-everyone-one-bun{
+    padding-right:20px;
+  }
+  //score表示エリア
+  .review-everyone-one-score{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3vw;
+    margin-top: 5px;
+  }
+
+  //score見出し
+  .review-everyone-one-midasi-h1{
+    color:#262626;
+    margin-right: 5px;
+  }
+
+
+  //詳細エリア全体
+  .review-everyone-score-datails-area{
+    display: flex;
+    color:#626262;
+  }
+
+  //単体
+  .review-everyone-score-datails{
+    margin-right: 15px;
+    color:#626262;
+    text-align: center;
+  }
+
+  //単体　最後
+  .review-everyone-score-datails-last{
+    text-align: center;
+  }
+
+  //見出し
+  .review-everyone-score-datails-midasi{
+    font-size: 3vw;
+    display: block;
+  }
+
+  //点数
+  .review-everyone-score-datails b{
+    font-weight:bold;
+    font-size: 3vw;
+    display: block;
+  }
+  //点数　最後
+  .review-everyone-score-datails-last b{
+    font-weight:bold;
+    font-size: 3vw;
+    display: block;
+  }
+
+
+  //感想本文
+  .review-everyone-one-text{
+    font-size:3.5vw;
+    color:#292929;
+    margin-bottom: 20px;
+  }
+
+  //いいねボタンエリア
+  .review-review-area{
+    display: flex;
+    padding-bottom: 2vw;
+  }
+
+  //いいね
+  .review-review-good{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer; //指
+    cursor: hand; //指
+    margin-right: 30px;
+  }
+
+  .review-review-good i{
+    font-size: 4vw;
+    color:#99A2AA;
+  }
+  //いいね
+  .review-review-good:hover{
+    i{
+      color:#00A1D6;
+    }
+    p{
+      color:#00A1D6;
+    }
+  }
+  //カウント
+  .review-review-good p{
+    margin-left: 5px;
+    font-size: 3vw;
+    color:#99A2AA;
+  }
+
+  //バット
+  .review-review-bad{
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    cursor: pointer; //指
+    cursor: hand; //指
+    margin-right: 30px;
+  }
+  .review-review-bad i{
+    font-size: 4vw;
+    color:#99A2AA;
+  }
+  //いいね
+  .review-review-bad:hover{
+    i{
+      color:#00A1D6;
+    }
+    p{
+      color:#00A1D6;
+    }
+  }
+  //カウント
+  .review-review-bad p{
+    margin-left: 5px;
+    font-size: 3vw;
+    color:#99A2AA;
+  }
+
+  //選択済みいいねボタン
+  .is-active-like{
+    i{
+      color:#00A1D6;
+    }
+  }
+
+
+//----感想ページ終了----
+
+
+ }//--------------------sumaho end -----------------------

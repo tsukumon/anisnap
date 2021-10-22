@@ -1,0 +1,88 @@
+<!--タイトル-->
+<% content_for :title do %>
+お問い合わせ - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+
+  <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+    <div class="home-ranking-midasi"><!--スマホ見出し-->
+      <h3>お問い合わせ</h3>
+    </div>
+
+    <div class="contacts-info-area"><!--インフォ-->
+      <h2>お問い合わせ前にご確認下さい</h2>
+      <p>
+        ご意見・ご要望、不具合に関しては原則、個別のご意見への返信を行っておりませんので予めご了承ください。
+        <br>
+        報告頂いた不具合に関しては随時調査を行いマイページの「お知らせ」欄等でご案内いたします。
+        <br>
+        </p>
+        <h2>アニメ作品情報の登録リクエストに関して</h2>
+        <p>
+          未追加の作品については順次追加しておりますのが、リクエスト頂いた作品に関してはなるべく早期対応出来るよう努力致します。
+          リクエストの際に作品情報（放送時期、キャスト・スタッフ情報、各話タイトルなど）を書いて頂くと早期対応が可能となります。情報提供を心よりお待ちしております。
+          </p>
+
+        <h2>広告掲載に関して</h2>
+        <p>
+          広告出稿やその他ビジネスに関してのご連絡は下記フォームから全ての項目をご入力の上、ご連絡をお願いいたします。折り返しご連絡させていただきます。
+          </p>
+      </div><!--インフォ-->
+
+
+<div class="contacts-form-area"><!--全体-->
+
+  <h2>お問い合わせフォーム</h2>
+
+
+
+
+  <%= form_tag("/contacts" , {multipart: true}) do %>
+
+  <% @contact.errors.full_messages.each do |message| %>
+  <div class="form-error">
+    <i class="fas fa-exclamation-triangle"></i> <%= message %>
+  </div>
+  <% end %>
+<div class="contacts-form-one">
+    <div class="contacts-label"><b>お名前</b><p>必須</p></div>
+    <input name="name">
+  </div>
+<div class="contacts-form-one">
+  <div class="contacts-label"><b>メールアドレス</b><p>必須</p></div>
+    <input name="email" type="email">
+  </div>
+
+<div class="contacts-form-one">
+  <div class="contacts-label"><b>件名</b><p>必須</p></div>
+      <input name="subject">
+    </div>
+
+<div class="contacts-form-one">
+    <div class="contacts-label"><b>本文</b><p>必須</p></div>
+    <textarea name="message"></textarea>
+  </div>
+
+<div class="submit-area"><input type="submit" value="送信する"></div>
+
+<% end %>
+
+</div><!--全体-->
+
+</div><!--中央絡む終了-->
+
+
+  <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+    <%= render partial:'/sidebar/sidebar_post' %>
+    </div><!--サイドバーカラム終了-->
+
+
+</div><!--wrapper-->

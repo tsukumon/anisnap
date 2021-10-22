@@ -1,0 +1,710 @@
+// Place all the styles related to the news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//--------------pC-----------
+@media screen and (min-width: 640px) {
+
+  .news-mobile-menu-m2{
+    display: none;
+  }
+  //メニューカラム
+  .wrapper-new-doc-m1{
+    max-width:150px;
+    min-width: 150px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    height:500px;
+    margin-right: 10px;
+  }
+  //内容カラム
+  .wrapper-new-doc-m2{
+    max-width:730px;
+    min-width: 730px;
+    height: auto;
+    margin-right: 20px;
+    border:1px solid #E6ECF0;
+    padding-bottom: 30px;
+  }
+
+  //サイドバーカラム
+  .wrapper-new-doc-m3{
+    max-width:350px;
+    min-width: 350px;
+  }
+
+
+  //ランキング用カラム
+  .wrapper-new-doc-m4{
+    max-width: 950px;
+    min-width: 950px;
+  }
+
+//--検索フォーム
+//検索
+.news-page-seach-area{
+  line-height: 39px;
+  margin-bottom: 15px;
+}
+
+//検索フォーム
+.news-page-seach-area input{
+  -webkit-appearance: none;
+  width:340px;
+  height:28px;
+  border: none;
+  border-radius: 3px;
+  padding:3px 3px 3px 8px;
+  background-color: #F4F4F4;
+}
+.news-page-seach-area input:focus{
+  outline: 0;
+  border: none;
+}
+
+
+//--------メニューcss---------------------
+
+
+//メニュー一覧
+.news-doc-m1-menu-area{
+  list-style: none;
+  text-decoration: none;
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+//トップのエリア
+.news-doc-m1-menu-area-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px;
+  font-size: 14px;
+  font-weight: bold;
+  color:#495057;
+  border-top: 1px solid #E6ECF0;
+}
+.news-doc-m1-menu-area-top a{
+  text-decoration: none;
+  color:#495057;
+}
+.news-doc-m1-menu-area-top:first-child{
+  border: none;
+}
+
+//アイコン
+.news-doc-m1-menu-area-top i{
+  font-size: 16px;
+  margin-left: 10px;
+  color:#808F9C;
+}
+
+
+//単体
+.news-doc-m1-menu-area-one{
+  margin-bottom: 10px;
+}
+.news-doc-m1-menu-area-one i{
+
+}
+.news-doc-m1-menu-area-one a{
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color:#262626;
+}
+.news-doc-m1-menu-area-one a:hover{
+  color:#00A1D6;
+}
+//ラスト
+.news-doc-m1-last-child{
+  margin-bottom: 30px;
+}
+
+.news-doc-m1-menu-area-one-is-active a{
+    color:#00A1D6;
+}
+
+//--------メニューcss終了---------------------
+
+
+
+
+//----------------一覧css------------------------
+
+//見出し
+.news-doc-m2-midasi{
+  background-color: #EDF2F9;
+  padding:10px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+.news-doc-m2-midasi i{
+  font-size: 13px;
+  color:#ACACAC;
+  margin-right: 3px;
+}
+.news-doc-m2-midasi p{
+  font-size: 13px;
+  color:#4C4C4C;
+}
+
+
+
+//記事単体
+.news-article-one-doc1{
+  border-bottom: 1px solid #E6ECF0;
+  display: flex;
+  text-decoration: none;
+  padding:10px;
+}
+.news-article-one-doc1:last-child{
+  border: none;
+}
+
+
+//タイトルエリア
+.news-article-one-doc1-title-area{
+  padding-left: 10px;
+}
+//タイトル
+.news-article-one-doc1-title{
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-top: 3px;
+  font-size: 15px;
+  color:#353535;
+}
+//画像エリア
+.news-article-one-doc1-img-area{
+  width:160px;
+}
+//画像本体
+.news-article-one-doc1-img{
+  width:160px;
+  height:100px;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 5px;
+  display: block;
+}
+
+
+//日付・カテゴリエリア
+.news-article-one-doc1-dtails{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+//カテゴリエリア
+.news-article-one-doc1-relation-area{
+  width:80px;
+}
+//カテゴリ(アニメ)
+.news-article-one-doc1-relation-m1{
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 10px;
+  background-color: #F97E76;
+  border-radius: 4px;
+  color:#fff;
+  width:70px;
+  line-height: 15px;
+  vertical-align: middle;
+}
+
+//日付
+.news-article-one-doc1-date{
+  font-size: 13px;
+  color:#6b6b6b;
+}
+
+//----------------一覧css終了------------------------
+  //パンクズリスト
+  .pankuzu-news{
+    display: flex;
+    flex-wrap: wrap;
+    padding:10px;
+    margin-top: 30px;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FF532E 0%, #EDDB5A 100%);
+    border-image-slice: 1;
+  }
+  //リンク文字
+  .pankuzu-news a{
+    font-size: 13px;
+    text-decoration: none;
+    color:#464646;
+  }
+  .pankuzu-news a:hover{
+    transition: 0.3s;
+    color:#0366DB;
+  }
+  //ぱんくず　記事タイトル
+  .pankuzu-news-title{
+    font-size: 13px;
+    color:#464646;
+  }
+
+  //ぱんくず矢印
+  .pankuzu-news-allow{
+    font-size: 15px;
+    color:#a6a6a6;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+
+  //記事カテゴリ・日付エリア上
+  .article-datails-area{
+    padding:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  //カテゴリ(アニメ)
+  .article-relation-m1{
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    background-color: #F97E76;
+    border-radius: 25px;
+    color:#fff;
+    width:70px;
+    line-height: 15px;
+    vertical-align: middle;
+    padding:3px 0px 3px 0px;
+  }
+
+
+  //日付
+  .article-date{
+    margin-left: 20px;
+    font-size: 13px;
+    color:#464646;
+  }
+  //タイトル
+  .article-title{
+    font-size: 19px;
+    color:#282828;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  //サムネエリア
+  .article-samune-area{
+    margin-top: 30px;
+    text-align: center;
+  }
+  //サムネ本体
+  .article-samune-img{
+    width:420px;
+    height:250px;
+    object-fit: cover;
+    vertical-align: bottom;
+    margin-bottom: 60px;
+    border-radius: 4px;
+  }
+
+
+  //テキストエリア
+  .article-text-area{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 30px 30px 80px 30px;
+    background-color: #fafafa;
+  }
+  //本文
+  .article-text-area p{
+    font-size: 14px;
+    color:#282828;
+  }
+
+  //動画エリア
+
+  //動画本体
+  .article-text-area iframe{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align:center;
+    max-width: 96%;
+    height:370px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  //シェアボタンエリア上
+  .article-share-area-top{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding:15px;
+    margin:0px 0px 60px 0px;
+    background-color: #F5F8FA;
+  }
+
+  .article-share-area-top p{
+    font-size: 14px;
+    color:#333333;
+    margin-right: 50px;
+  }
+
+  //ボタンエリア単体
+  .article-shere-btn{
+    margin-right: 20px;
+  }
+  //シェアボタン画像
+  .socialbtn-img{
+    width:30px;
+    height:30px;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  //シェアボタンエリア
+  .article-share-area{
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  //フェイスブック
+  .article-share-area-top iframe{
+    margin-left: 20px;
+  }
+  .article-share-area iframe{
+    margin-left: 20px;
+  }
+
+  .other-article-midasi{
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #02AAB0 0%, #E4CC43 100%);
+    border-image-slice: 1;
+    font-size: 14px;
+    font-weight: bold;
+    color:#2d2d2d;
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+
+
+
+}//----------------pc end -----------------
+
+
+
+//--------------------------------------スマホ------------------------------
+  @media screen and (max-width: 640px){
+    //----------------一覧css------------------------
+
+    //見出し
+    .news-doc-m2-midasi{
+      background-color: #EDF2F9;
+      padding:10px;
+      display: flex;
+      align-items: center;
+    }
+    .news-doc-m2-midasi i{
+      font-size: 3vw;
+      color:#ACACAC;
+      margin-right: 3px;
+    }
+    .news-doc-m2-midasi p{
+      font-size: 3vw;
+      color:#4C4C4C;
+    }
+
+
+    //--検索フォーム
+    .news-page-seach-area{
+      display: none;
+    }
+    //スマホ版メニュー全体
+    .news-mobile-menu-m2{
+      width:100%;
+    }
+    //検索
+    .news-page-seach-area-mobile{
+      line-height: 39px;
+      margin-left: 5%;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    //検索フォーム
+    .news-page-seach-area-mobile input{
+      -webkit-appearance: none;
+      font-size: 16px;
+      width:90%;
+      height:28px;
+      border: none;
+      border-radius: 3px;
+      padding:3px 3px 3px 8px;
+      background-color: #F4F4F4;
+    }
+    .news-page-seach-area-mobile input:focus{
+      outline: 0;
+      border: none;
+    }
+
+
+    //--ページネーション--------------
+    .pagination-area{
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      font-size: 3vw;
+    }
+    .page-links{
+        display:inline-block;
+        color: #222222;
+        background-color: #fff;
+        margin-right: 5px;
+        border: 1px solid #d7d7d7;
+        border-radius: 4px;
+        list-style: none;
+        padding: 0.5rem 0.75rem;
+      }
+
+      .page-links.active-page-links{
+        z-index: 1;
+        color: #fff;
+        background-color: #00A1D6;
+        border: 1px solid #00A1D6;
+        border-radius: 4px;
+        padding: 0.5rem 0.75rem;
+      }
+
+    .page-links a{
+      display:block;
+      width:100%;
+      text-decoration: none;
+      color: #1969A9;
+    }
+
+    .page-links:hover{
+      transition: 0.3s;
+      background-color: #00A1D6;
+      border: 1px solid #00A1D6;
+      color:#fff;
+    }
+
+    .page-links a:hover{
+      transition: 0.3s;
+      color:#fff;
+    }
+
+    .active-page-links a{
+      display:block;
+      width:100%;
+      color:#fff;
+    }
+
+
+//---記事ページ---
+//パンクズリスト
+.pankuzu-news{
+  width:96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+//リンク文字
+.pankuzu-news a{
+  font-size: 3vw;
+  text-decoration: none;
+  color:#464646;
+}
+
+//ぱんくず　記事タイトル
+.pankuzu-news-title{
+  font-size: 3vw;
+  color:#464646;
+}
+
+//ぱんくず矢印
+.pankuzu-news-allow{
+  font-size: 3.5vw;
+  color:#a6a6a6;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+  //記事カテゴリ・日付エリア上
+  .article-datails-area{
+    border-top: 2px solid #EDDB5A;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  //カテゴリ(アニメ)
+  .article-relation-m1{
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    background-color: #F97E76;
+    border-radius: 25px;
+    color:#fff;
+    width:70px;
+    line-height: 15px;
+    vertical-align: middle;
+    padding:3px 0px 3px 0px;
+  }
+
+  //カテゴリ(グッズ)
+  .article-relation-m2{
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    background-color: #00A1D6;
+    border-radius: 25px;
+    color:#fff;
+    width:70px;
+    line-height: 15px;
+    vertical-align: middle;
+    padding:3px 0px 3px 0px;
+  }
+
+  //カテゴリ(イベント)
+  .article-relation-m3{
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    background-color: #F1D75A;
+    border-radius: 25px;
+    color:#fff;
+    width:70px;
+    line-height: 15px;
+    vertical-align: middle;
+    padding:3px 0px 3px 0px;
+  }
+
+  //カテゴリ(制作決定)
+  .article-relation-m4{
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    background-color: #67BFC1;
+    border-radius: 25px;
+    color:#fff;
+    width:70px;
+    line-height: 15px;
+    vertical-align: middle;
+    padding:3px 0px 3px 0px;
+  }
+
+
+  //日付
+  .article-date{
+    margin-left: 20px;
+    font-size: 13px;
+    color:#464646;
+  }
+  //タイトル
+  .article-title{
+    font-size: 19px;
+    color:#282828;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  //サムネエリア
+  .article-samune-area{
+    margin-top: 30px;
+    text-align: center;
+  }
+  //サムネ本体
+  .article-samune-img{
+    width:100%;
+    height:60vw;
+    object-fit: cover;
+    vertical-align: bottom;
+    margin-bottom: 60px;
+  }
+
+
+
+    //テキストエリア
+    .article-text-area{
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 30px 10px 80px 10px;
+      background-color: #fafafa;
+    }
+    //本文
+    .article-text-area p{
+      font-size: 14px;
+      color:#282828;
+    }
+
+    //動画エリア
+    .article-iframe-area{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      text-align:center;
+    }
+    //動画本体
+    .article-text-area iframe{
+      max-width: 90%;
+      height:50vw;
+    }
+
+    //シェアボタンエリア上
+    .article-share-area-top{
+      display: flex;
+      justify-content:flex-end;
+      align-items: center;
+      padding:15px;
+      margin:0px 0px 60px 0px;
+      background-color: #F5F8FA;
+    }
+
+    .article-share-area-top p{
+      font-size: 12px;
+      color:#333333;
+      margin-right: 20px;
+    }
+
+    //ボタンエリア単体
+    .article-shere-btn{
+      margin-right: 10px;
+    }
+    //シェアボタン画像
+    .socialbtn-img{
+      width:35px;
+      height:35px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+
+
+    .other-article-midasi{
+      border-bottom: 2px solid #02AAB0;
+      font-size: 14px;
+      font-weight: bold;
+      color:#2d2d2d;
+      padding-left: 5px;
+      margin-bottom: 10px;
+    }
+//---記事ページ終了---
+
+  }

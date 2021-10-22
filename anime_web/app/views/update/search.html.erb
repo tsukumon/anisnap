@@ -1,0 +1,13 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+  <div class="wrapper-manage"><!--サイド＆＆全体-->
+
+    <%= link_to("/mg/anime") do %>新規アニメ<% end %>
+    <br><br><br>
+    <% @search_articles.each do |anime| %>
+    <%= link_to("/mg/anime/edit/#{anime.id}") do %><%= anime.title %><% end %>
+    <br>
+    <% end %>
+
+    </div><!--wrapper-->

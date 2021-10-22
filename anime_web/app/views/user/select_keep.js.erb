@@ -1,0 +1,3 @@
+$('#select_keep-btn').remove();
+$('.post-oepn-anime-area'  + '#select_keep').append("<%= j render partial: 'user/select_keep' %>")
+$('.more-userlog-area'  + '#select_keep').append("<%= j link_to_next_page(@select_keep, 'もっと見る', id: 'select_keep-btn', class: 'more-userlog-btn', params: { type: :select_keep }, remote: true) %>")

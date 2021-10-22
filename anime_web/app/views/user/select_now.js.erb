@@ -1,0 +1,3 @@
+$('#select_now-btn').remove();
+$('.post-oepn-anime-area' + '#select_now').append("<%= j render partial: 'user/select_now' %>")
+$('.more-userlog-area' + '#select_now').append("<%= j link_to_next_page(@select_now, 'もっと見る', id: 'select_now-btn', class: 'more-userlog-btn', params: { type: :select_now }, remote: true) %>")

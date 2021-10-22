@@ -1,0 +1,135 @@
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+
+
+
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム-->
+
+    <div class="home-ranking-midasi"><!--スマホ見出し-->
+      <h3>今週のヘッドライン</h3>
+    </div>
+
+    <div class="home-favnews-area-4"><!--人気のニュースエリア-->
+    <% @favnews.each do |news| %>
+    <div class="home-favnews-one-4"><!--単体-->
+      <%= link_to("/news/#{news.id}") do %>
+      <img src="/news/<%= news.id %>/<%= news.id %>.jpg" class="home-favnews-img-4">
+      <div class="home-favnews-title-4"><%= news.article_title.truncate(25) %></div>
+      <% end %>
+      </div><!--単体-->
+    <% end %>
+      </div><!--人気のニュースエリア-->
+
+
+
+    <div class="pankuzu-news"><!--ぱんくず-->
+      <%= link_to("/news") do %>ニュース<% end %>
+
+       <div class="pankuzu-news-allow">›</div>
+       <div class="pankuzu-news-title"><%= @news.article_title %></div>
+
+      </div><!--ぱんくず終了-->
+
+
+      <div class="article-datails-area"><!--カテゴリ・日付エリア-->
+
+
+        <div class="article-relation-m1">アニメ</div>
+
+        <div class="article-date"><%= @news.updated_at.strftime("%Y/%m/%d %H:%M") %></div>
+        </div><!--カテゴリ・日付エリア終了-->
+
+        <div class="article-title"><%= @news.article_title %></div>
+
+        <div class="article-samune-area"><img src="/news/<%= @news.id %>/<%= @news.id %>.jpg" class="article-samune-img"><!--画像--></div>
+
+
+
+        <div class="article-text-area"><!--テキストエリア-->
+          <p>第8話「わらわが忘れさせてやろう！」のあらすじ、先行カット、WEB予告が公開されました</p>
+
+          <iframe width="916" height="515" src="https://www.youtube.com/embed/dCwyJvY-RhM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p>
+            <b>第8話『わらわが忘れさせてやろう！』あらすじ</b>
+            <br>
+            季節は夏！ しかし中野くんに与えられた夏季休暇はたったの１日だけ…。遠出もできないからと家で休もうとしていた中野くんと仙狐さんの元へ、いつもながらに突如現れるシロ。
+            <br>
+            「さっさと出かける準備をしなさい！」と急かされ、連れてこられた先で中野くんと仙狐さん、そして高円寺さんが目にしたのは…燦々と輝く太陽、晴れ渡る空、そして一面に広がる美しい海でした！
+            </p>
+            <br>
+            <p>
+            <b>【放送情報】</b>
+              <br>
+              AT-X：毎週水曜日22：30〜ほか
+              <br>
+              TOKYO MX：毎週水曜日23：30〜
+              <br>
+              テレビ愛知：毎週水曜日26：05〜
+              <br>
+              KBS京都：毎週水曜日25：35〜
+              <br>
+              サンテレビ：毎週水曜日26：00〜
+              <br>
+              BS11：毎週木曜日24：30〜
+              </p>
+
+          </div><!--テキストエリア-->
+
+
+          <div class="article-share-area-top"><!--シェアボタンエリア-->
+          <p>このニュースをシェアする</p>
+
+          <a href="https://twitter.com/share?url=http://192.168.0.5:3000/news/<%= @news.id %>&via=tkm_cham&text=<%= @news.article_title %>" rel="nofollow" target="_blank" class="article-shere-btn"  rel="nofollow" ><!--単体-->
+          <img src="/socialbtn/twitterbtn.png" class="socialbtn-img">
+          </a><!--単体-->
+
+          <a class="article-shere-btn" href="https://timeline.line.me/social-plugin/share?url=http://192.168.0.5:3000/news/<%= @news.id %>" target="_blank"><!--単体-->
+          <img src="/socialbtn/linebtn.png" class="socialbtn-img">
+          </a><!--単体-->
+          <a class="article-shere-btn" href="http://www.facebook.com/share.php?u=http://192.168.0.5:3000/news/<%= @news.id %>" rel="nofollow" target="_blank"><!--単体-->
+          <img src="/socialbtn/facebookbtn.png" class="socialbtn-img">
+          </a><!--単体-->
+          <a class="article-shere-btn"  href="http://b.hatena.ne.jp/add?mode=confirm&url=http://192.168.0.5:3000/news/<%= @news.id %>&title=<%= @news.article_title %>" target="_blank" rel="nofollow"><!--単体-->
+          <img src="/socialbtn/bookbtn.png" class="socialbtn-img">
+          </a><!--単体-->
+
+          </div><!--シェアボタンエリア終了-->
+
+
+<div class="other-article-midasi">他の最新記事</div>
+
+  <% @newsother.each do |news| %>
+  <%= link_to("/news/#{news.id}" ,class: "news-article-one-doc1") do %><!--単体-->
+
+    <div class="news-article-one-doc1-img-area"><!--画像エリア-->
+      <img src=<%= news.samune_img %> class="news-article-one-doc1-img">
+    </div><!--画像エリア終了-->
+
+    <div class="news-article-one-doc1-title-area"><!--タイトルエリア-->
+      <div class="news-article-one-doc1-dtails"><!--日付、カテゴリ-->
+        <div class="news-article-one-doc1-relation-area"><!--カテゴリエリア-->
+          <div class='news-article-one-doc1-relation-m1'>アニメ</div>
+      </div><!--カテゴリエリア終了-->
+      <div class='news-article-one-doc1-date'><%= news.updated_at.strftime("%Y-%m-%d %H:%M") %></div>
+      </div><!--日付・カテゴリ終了-->
+    <div class="news-article-one-doc1-title"><%= news.article_title %></div><!--タイトル-->
+    </div><!--タイトルエリア終了-->
+
+    <% end %><!--単体終了-->
+
+    <% end %>
+
+
+  </div><!--内容カラム終了-->
+
+
+  <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+    <%= render partial:'/sidebar/sidebar' %>
+    </div><!--サイドバーカラム終了-->
+
+    </div><!--wrapper-->

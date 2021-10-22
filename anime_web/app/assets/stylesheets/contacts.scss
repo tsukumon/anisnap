@@ -1,0 +1,200 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//--------------PC-----------
+@media screen and (min-width: 640px) {
+
+//インフォ
+.contacts-info-area{
+  margin-top: 30px;
+  margin-bottom: 50px;
+   padding:10px;
+ //見出し
+ h2{
+   background-color: #F5F8FA;
+   font-size: 15px;
+   color:#444444;
+   padding:5px 10px;
+ }
+ p{
+   margin: 10px 10px 30px 10px;
+   font-size: 14px;
+   color:#444444;
+ }
+ a{
+   color:#337AC0;
+ }
+ a:hover{
+   color:#7fbfff;
+ }
+
+ .privacy-selection{
+   font-size: 14px;
+   color: #444444;
+   font-weight: bold;
+   margin-top: 80px;
+   text-align: right;
+ }
+}
+
+//問い合わせフォーム全体
+.contacts-form-area{
+  padding:10px 10px 10px 10px;
+
+  //見出し
+  h2{
+    background-color: #F5F8FA;
+    font-size: 15px;
+    color:#444444;
+    padding:5px 10px;
+    margin-bottom: 20px;
+  }
+
+  .contacts-form-one{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding:0px 20px 0px 20px;
+
+    //ラベル全体
+    .contacts-label{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 30px;
+      width:130px;
+      //見出し
+      b{
+        font-size: 14px;
+        color:#444444;
+        font-weight: normal;
+        margin-right: 5px;
+      }
+      //注意
+      p{
+        font-size: 13px;
+        color:#ff8484;
+      }
+    }
+    //フォーム
+    input{
+      -webkit-appearance: none;
+      border: 1px solid #BFCBD9;
+      border-radius: 4px;
+      padding:5px;
+      width:300px;
+    }
+    //めっせ
+    textarea{
+    -webkit-appearance:none;
+    max-width:450px;
+    min-width:450px;
+    max-height: 500px;
+    min-height: 200px;
+    border: 1px solid #BFCBD9;
+    border-radius: 3px;
+    padding:10px;
+    font-family: 'Sawarabi Gothic', sans-serif;
+  }
+  }
+}
+
+}
+//--------------PC-----------
+
+//スマホ-----------------------
+ @media screen and (max-width: 640px){
+   //インフォ
+   .contacts-info-area{
+     margin-top: 30px;
+     margin-bottom: 50px;
+      padding:10px;
+    //見出し
+    h2{
+      background-color: #F5F8FA;
+      font-size: 15px;
+      color:#444444;
+      padding:5px 10px;
+    }
+    p{
+      margin: 10px 10px 30px 10px;
+      font-size: 14px;
+      color:#444444;
+    }
+    a{
+      color:#337AC0;
+    }
+    a:hover{
+      color:#7fbfff;
+    }
+
+    .privacy-selection{
+      font-size: 14px;
+      color: #444444;
+      font-weight: bold;
+      margin-top: 50px;
+      text-align: right;
+    }
+   }
+
+   //問い合わせフォーム全体
+   .contacts-form-area{
+     padding:10px 10px 10px 10px;
+     margin-bottom: 100px;
+
+     //見出し
+     h2{
+       background-color: #F5F8FA;
+       font-size: 15px;
+       color:#444444;
+       padding:5px 10px;
+       margin-bottom: 20px;
+     }
+
+     .contacts-form-one{
+       margin-bottom: 20px;
+       padding:0px 20px 0px 20px;
+
+       //ラベル全体
+       .contacts-label{
+         display: flex;
+         align-items: center;
+         margin-right: 30px;
+         //見出し
+         b{
+           font-size: 14px;
+           color:#444444;
+           font-weight: normal;
+           margin-right: 5px;
+         }
+         //注意
+         p{
+           font-size: 13px;
+           color:#ff8484;
+         }
+       }
+       //フォーム
+       input{
+         -webkit-appearance: none;
+         border: 1px solid #BFCBD9;
+         border-radius: 4px;
+         padding:5px;
+         width:90%;
+       }
+       //めっせ
+       textarea{
+      -webkit-appearance:none;
+       max-width:90%;
+       min-width:90%;
+       max-height: 500px;
+       min-height: 200px;
+       border: 1px solid #BFCBD9;
+       border-radius: 3px;
+       padding:10px;
+       font-family: 'Sawarabi Gothic', sans-serif;
+     }
+     }
+   }
+}
+//スマホ-----------------------

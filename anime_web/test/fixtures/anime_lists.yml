@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  title_kana: MyText
+  image: MyText
+  season: MyText
+  media: MyText
+  season_st: MyText
+  release: MyText
+  official_site_url: MyText
+  official_twi: MyText
+  episode_count: MyText
+  story: MyText
+  cv: MyText
+  company: MyText
+  broadcast: MyText
+  watch_count: MyText
+
+two:
+  title: MyText
+  title_kana: MyText
+  image: MyText
+  season: MyText
+  media: MyText
+  season_st: MyText
+  release: MyText
+  official_site_url: MyText
+  official_twi: MyText
+  episode_count: MyText
+  story: MyText
+  cv: MyText
+  company: MyText
+  broadcast: MyText
+  watch_count: MyText

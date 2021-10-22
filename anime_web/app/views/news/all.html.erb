@@ -1,0 +1,39 @@
+<!--タイトル-->
+<% content_for :title do %>
+ちょこっとニュース - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+
+
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム-->
+
+
+      <div class="home-ranking-midasi"><!--スマホ見出し-->
+        <h2>ちょこっとニュース一覧</h2>
+      </div>
+
+      <div id="ranking-all"><!--ajax-->
+        <%= render partial: 'news/new'%>
+      </div><!--ajax終了-->
+      <div class="more-ranking-area"><!--もっと見るボタン全体-->
+        <%= link_to_next_page @news, 'もっと見る', id: 'more-ranking', class: 'more-ranking-btn', params: { type: :new }, remote: true %>
+      </div>
+
+
+
+  </div><!--内容カラム終了-->
+
+
+  <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+    <%= render partial:'/sidebar/sidebar' %>
+    </div><!--サイドバーカラム終了-->
+
+    </div><!--wrapper-->

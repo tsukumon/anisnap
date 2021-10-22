@@ -1,0 +1,97 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+<div class="setting-wrapper-doc-m1"><!--サイド＆＆全体-->
+
+
+  <div class="wrapper-setting-left"><!--左-->
+
+  <div class="content-area-setting"><!--コンテンツエリア-->
+
+    <div class="setting-select-midasi">設定</div>
+
+    <%=link_to("/setting/profile") do %><div class="setting-one setting-select-not-active"><i class="fas fa-user-circle"></i> プロフィール</div><% end %><!--一つ終了-->
+    <div class="setting-one setting-select-is-active"><i class="fas fa-user-shield"></i> セキュリティ</div><!--一つ終了-->
+    <div class="setting-one setting-select-not-active"><i class="fab fa-twitter"></i> 連携（後日実装）</div>
+    <%= link_to  destroy_user_session_path, :method => :delete do %><div class="setting-one setting-select-not-active"><i class="fas fa-sign-out-alt"></i> ログアウト</div><% end %>
+  </div><!--コンテンツエリア-->
+
+</div><!--左終了-->
+
+
+  <div class="wrapper-setting-right"><!--左-->
+
+    <div class="setting-form-heading"><p>メールアドレスの変更</p></div>
+
+    <div class="settiing-form-area"><!--ログインフォーム全体-->
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-h2">メールアドレス:</div>
+  <div class="user-input-area-datails">
+  <div class="user-input-area-in"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+  <div class="user-input-area-text">送信ボタンを押すと新しいメールアドレスに承認メールが届きます。</div>
+  </div>
+  </div><!--ユーザーID入力欄終了-->
+
+<div class="submit-area2-area">
+    <div class="submit-area1"><%= f.submit "送信する" %></div>
+</div>
+    </div><!--ログインフォーム終了-->
+
+
+      <div class="setting-form-heading"><p>パスワード</p></div>
+
+
+    <div class="settiing-form-area"><!--ログインフォーム全体-->
+
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-h2">新しいパスワード:</div>
+    <div class="user-input-area-datails">
+  <div class="user-input-area-in"> <%= f.password_field :password, autocomplete: "new-password" %></div>
+  <div class="user-input-area-text">
+  <% if @minimum_password_length %>
+  <%= @minimum_password_length %> 文字以上で入力してください
+  <% end %>
+  </div>
+  </div>
+  </div><!--ユーザーID入力欄終了-->
+
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-h2">パスワード(確認):</div>
+  <div class="user-input-area-in"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
+  <div class="user-input-area-text"></div>
+  </div><!--ユーザーID入力欄終了-->
+
+
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-h2">現在のパスワード:</div>
+  <div class="user-input-area-in"><%= f.password_field :current_password, autocomplete: "current-password" %></div>
+  <div class="user-input-area-text"></div>
+  </div><!--ユーザーID入力欄終了-->
+
+
+<div class="submit-area2-area">
+      <div class="submit-area1"><%= f.submit "変更する" %></div>
+</div>
+      </div><!--ログインフォーム終了-->
+
+      <% end %>
+
+      <div class="setting-form-heading"><p>アカウントの削除</p></div>
+    <div class="settiing-form-area"><!--ログインフォーム全体-->
+
+
+<div class="setting-form-delete-warning">アカウントを削除すると登録情報、マイリストを含む全てのデータが削除されます。</div>
+<div class="submit-area2-area">
+      <div class="submit-area2"><%= button_to "削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete %></div>
+</div>
+      </div><!--ログインフォーム終了-->
+
+</div><!--左-->
+
+</div><!--wrapper-->

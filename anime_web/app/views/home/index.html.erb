@@ -1,0 +1,205 @@
+<div class="top-wrapper">
+
+
+  <!--未ログイン時の画像-->
+  <!--
+  <div class="regstraion-home">
+  <div class="top-abount-img"></div>
+  </div>
+  -->
+
+</div><!--topwrpaeer-->
+
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム--><!--左-->
+
+    <div class="home-ranking-midasi"><!--スマホ見出し-->
+      <h3>ちょこっとニュース</h3>
+    </div>
+
+    <div class="alert-area"><!--お知らせ-->
+      <% @alert.each do |alert| %>
+      <%= link_to("#{alert.url}" , class: "alert-one") do %><!--単体-->
+      <i class="fas fa-bell"></i> <b><%= alert.updated_at.strftime("%Y/%m/%d") %></b><p><%= alert.info %></p>
+      <% end %><!--単体終了-->
+      <% end %>
+    </div><!--お知らせ-->
+
+    <div class="home-ranking-midasi"><!--スマホ見出し-->
+      <h3>最近追加された作品</h3>
+    </div>
+
+    <div class="home-ranking-now"><!--今期アニメランキングエリア-->
+      <% @new_anime.each do |anime| %>
+      <% rank = Ranking.find_by(anime_id: anime.id) %>
+      <div class="home-ranking-now-one"><!--単体-->
+        <%= link_to("/posts/anime/#{anime.id}") do %>
+
+        <% if anime.year and anime.season != nil %>
+        <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id %>.jpg" class="home-ranking-now-one-img" >
+        <% else %>
+        <img src="/anime/unknown/<%= anime.id %>/<%= anime.id %>.jpg" class="home-ranking-now-one-img" >
+        <% end %>
+
+        <div class="home-ranking-title-area">
+        <div class="home-ranking-mylist"><b><% if rank != nil %><%= rank.mylist_count %><% else %>-<%end %></b><p>人がマイリスト</p></div>
+        <div class="home-ranking-title"><%= anime.title %></div><!--タイトル-->
+        </div>
+
+        <% end %>
+      </div><!--単体-->
+      <% end %>
+      </div><!--今期アニメランキングエリア-->
+
+    <div class="home-ranking-midasi"><!--スマホ見出し-->
+      <h2>今週話題のアニメ</h2>
+    </div>
+
+    <div class="home-ranking-now"><!--今期アニメランキングエリア-->
+      <% @favanime_now.each do |anime| %>
+      <% post = AnimeList.find_by(id: anime.anime_id) %>
+      <div class="home-ranking-now-one"><!--単体-->
+        <%= link_to("/posts/anime/#{anime.anime_id}") do %>
+
+        <% if anime.year and anime.season != nil %>
+        <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.anime_id %>/<%= anime.anime_id %>.jpg" class="home-ranking-now-one-img" >
+        <% else %>
+        <img src="/anime/unknown/<%= anime.anime_id %>/<%= anime.anime_id %>.jpg" class="home-ranking-now-one-img" >
+        <% end %>
+
+        <div class="home-ranking-title-area">
+        <div class="home-ranking-mylist"><b><%= anime.mylist_count %></b><p>人がマイリスト</p></div>
+        <div class="home-ranking-title"><%= post.title %></div><!--タイトル-->
+        </div>
+
+        <% end %>
+      </div><!--単体-->
+      <% end %>
+      </div><!--今期アニメランキングエリア-->
+
+      <div class="home-other-more"><%= link_to("/ranking/weekly=total") do %><i class="fas fa-chevron-right"></i> 続きを見る<% end %></div>
+
+
+        <div class="home-ranking-midasi"><!--スマホ見出し-->
+          <h2>今週のいいね！レビュー</h2>
+        </div>
+        <div class="home-favreview-area"><!--人気れびゅー-->
+          <% @goodreview.each do |post| %>
+          <% count = Episodelist.find_by(counter: post.state , anime_id: post.anime_id) %>
+          <% anime = AnimeList.find_by(id: post.anime_id) %>
+            <%= link_to("/posts/anime/#{anime.id}/review=#{post.state}" , class: "home-favreview-one") do %><!--単体-->
+            <% if anime.year and anime.season != nil %>
+            <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id%>.jpg" class="home-favreview-img">
+            <% else %>
+            <img src="/anime/unknown/<%= anime.id %>/<%= anime.id%>.jpg" class="home-favreview-img">
+            <% end %>
+
+            <div class="home-favreview-side"><!--詳細-->
+              <b><%= post.good_count %>いいね！</b>
+              <p><%= post.kansou.truncate(55) %></p>
+            </div><!--詳細終了-->
+
+          <% end %><!--単体終了-->
+          <% end %>
+        </div>
+
+
+        <div class="home-ranking-midasi"><!--スマホ見出し-->
+          <h2>来期アニメ トップ3</h2>
+        </div>
+
+        <div class="home-nextseason-area"><!--エリア-->
+          <% @nextseason.each do |anime| %>
+          <% anime_info = AnimeList.find_by(id: anime.anime_id) %>
+          <%= link_to("/posts/anime/#{anime.anime_id}", class: "home-nextseason-one") do %><!--単体-->
+            <div class="home-nextseason-img-area"><!--画像エリア-->
+              <img src="/anime/<%= anime_info.year %>/<%= anime_info.season %>/<%= anime_info.id %>/<%= anime_info.id %>.jpg" class="home-nextseason-img">
+              <div class="home-ranking-season-rank"><%= anime.rank_total_season %></div><!--ランク-->
+              </div><!--画像エリア-->
+
+            <div class="home-nextseason-datials"><!--詳細-->
+              <div class="home-nextseason-titile"><%= anime_info.title %></div>
+
+              <div class="home-ranking-star"><!--スコア表示エリア-->
+                <!--5点満点点数表示-->
+                <div class="home-ranking-score-area"><!--評価表示-->
+                <div class="home-ranking-score-area-named">評価:</div>
+                <div class="home-ranking-star-p"><% if anime.ave_score %><%= anime.ave_score %><% else %>0.0<% end %></div>
+                </div>
+                <!--ポイント表示-->
+                <div class="home-ranking-score-area"><!--評価表示-->
+                <div class="home-ranking-score-area-named">総合スコア:</div>
+                <div class="home-ranking-star-score"><%= anime.total_point %>pt</div>
+                </div>
+
+              </div>
+                   <% if anime_info.cv != nil %>
+                   <div class="home-ranking-cast"><%= anime_info.cv.truncate(80) %></div>
+                   <% else %>
+                   <div class="home-ranking-cast">情報がまだありません。</div>
+                   <% end %>
+
+
+            </div><!--詳細-->
+            <% end %><!--単体-->
+            <% end %>
+          </div><!--エリア終了-->
+          <div class="home-other-more"><%= link_to("/ranking/2020/winter=total") do %><i class="fas fa-chevron-right"></i> 続きを見る<% end %></div>
+
+
+          <div class="home-ranking-midasi"><!--スマホ見出し-->
+            <h2>今期アニメ トップ3</h2>
+          </div>
+
+          <div class="home-nextseason-area"><!--エリア-->
+            <% @nowseason.each do |anime| %>
+            <% anime_info = AnimeList.find_by(id: anime.anime_id) %>
+            <%= link_to("/posts/anime/#{anime.anime_id}", class: "home-nextseason-one") do %><!--単体-->
+              <div class="home-nextseason-img-area"><!--画像エリア-->
+                <img src="/anime/<%= anime_info.year %>/<%= anime_info.season %>/<%= anime_info.id %>/<%= anime_info.id %>.jpg" class="home-nextseason-img">
+                <div class="home-ranking-season-rank"><%= anime.rank_total_season %></div><!--ランク-->
+                </div><!--画像エリア-->
+
+              <div class="home-nextseason-datials"><!--詳細-->
+                <div class="home-nextseason-titile"><%= anime_info.title %></div>
+
+                <div class="home-ranking-star"><!--スコア表示エリア-->
+                  <!--5点満点点数表示-->
+                  <div class="home-ranking-score-area"><!--評価表示-->
+                  <div class="home-ranking-score-area-named">評価:</div>
+                  <div class="home-ranking-star-p"><% if anime.ave_score %><%= anime.ave_score %><% else %>0.0<% end %></div>
+                  </div>
+                  <!--ポイント表示-->
+                  <div class="home-ranking-score-area"><!--評価表示-->
+                  <div class="home-ranking-score-area-named">総合スコア:</div>
+                  <div class="home-ranking-star-score"><%= anime.total_point %>pt</div>
+                  </div>
+
+                </div>
+                     <% if anime_info.cv != nil %>
+                     <div class="home-ranking-cast"><%= anime_info.cv.truncate(80) %></div>
+                     <% else %>
+                     <div class="home-ranking-cast">情報がまだありません。</div>
+                     <% end %>
+
+
+              </div><!--詳細-->
+              <% end %><!--単体-->
+              <% end %>
+            </div><!--エリア終了-->
+            <div class="home-other-more"><%= link_to("/ranking/2020/winter=total") do %><i class="fas fa-chevron-right"></i> 続きを見る<% end %></div>
+
+
+
+
+  </div><!--左-->
+
+<div class="wrapper-new-doc-m3"><!--サイドバーカラム--><!--右-->
+  <%= render partial:'/sidebar/sidebar' %>
+
+</div><!--右-->
+
+</div><!--wrapper-->

@@ -1,0 +1,66 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+<div class="login-wrapper"><!--サイド＆＆全体-->
+
+  <div class="login-wrapper-midasi-area">
+    <div class="login-wrapper-midasi">ログイン</div>
+    </div>
+  <div class="user-input-area-m2-area"><!--中央揃え-->
+
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<%- flash.each do |name, msg| -%>
+<div class="form-error">
+  <i class="fas fa-exclamation-triangle"></i> エラーがあります。
+  <ul>
+    <li>
+<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+</ul>
+</div>
+<%- end -%>
+
+
+
+  <div class="user-input-area-m2"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-datails">
+      <div class="user-input-area-h3">ユーザーIDまたはメールアドレス</div>
+  <div class="user-login-input-area-in"><%= f.text_field :login %></div>
+  <div class="user-input-area-text"></div>
+    </div>
+  </div><!--ユーザーID入力欄終了-->
+
+
+  <div class="user-input-area-m2"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-h3">パスワード</div>
+  <div class="user-login-input-area-in"><%= f.password_field :password, autocomplete: "current-password" %></div>
+  <div class="user-input-area-text"></div>
+  </div><!--ユーザーID入力欄終了-->
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field-remenber">
+      <%= f.check_box :remember_me %>
+      <%= f.label "次回から自動的にログインする" %>
+    </div>
+  <% end %>
+  <div class="login-help-area"><!--コンテンツエリア-->
+    <div class="setting-one-help"><%=link_to("/users/confirmation/new") do %>認証メールが届かない<% end %></div><!--一つ終了-->
+    <div class="setting-one-help"><%=link_to("/users/password/new") do %>パスワードを忘れてしまった<% end %></div><!--一つ終了-->
+  </div><!--コンテンツエリア-->
+
+  <div class="actions-login-or-singup">
+    <div class="login-form-botan"><%= f.submit "ログイン" %></div>
+    <div class="sign-up-botan"><input type="button" value="新規登録" onClick="location.href='/users/sign_up'"></div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+</div><!--中央揃え終了-->
+</div><!--wrapper-->

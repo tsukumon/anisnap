@@ -1,0 +1,14 @@
+<h1>「アニスナップ」お問い合わせ通知</h1>
+
+<br>
+<p>
+  <%= @contact.name %>様よりお問い合わせがありました。
+<br>
+  --------------------------<br>
+名前: <%= @contact.name %><br>
+メール: <%= @contact.email %><br>
+件名:<%= @contact.subject %><br>
+本文:<br>
+  <%= @contact.message %><br>
+  --------------------------
+</p>

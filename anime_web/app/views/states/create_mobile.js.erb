@@ -1,0 +1,1 @@
+$('.post-open-select-btn-area' + '#select-btn-area-m2-<%= @post.id %>').html("<%= escape_javascript(render partial: '/states/state_mobile', locals: {post: @post, current_user: @current_user}) %>");

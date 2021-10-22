@@ -1,0 +1,137 @@
+<!--タイトル-->
+<% content_for :title do %>
+<%= @user.username %>(@<%= @user.userid %>)さんの見たいアニメ - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム--><!--左-->
+
+<div class="top-wrapper-mylist"><!--topwrapper-->
+
+  <img src="<%= "#{@user.bgimage}" %>" class="user-image-background"><!--背景-->
+
+  <div class="user-image-on-area"><!--画像上エリア全体-->
+      <div class="user-main-profile-area"><!--ユーザーメイン情報-->
+    <img src="<%= "#{@user.image}" %>" class="user-image-on-icon">
+    <% if current_user != nil and current_user.userid == @user.userid %>
+    <%= link_to("/setting/profile" , class: "user-profile-btn-area") do %>プロフィール編集<% end %>
+    <% else %>
+    <div class="user-follow-btn">フォロー(実装予定)</div>
+    <% end %>
+    </div><!--ユーザーメイン情報終了-->
+  </div><!--画像上エリア全体終了-->
+  </div><!--topwrapper-->
+
+  <div class="user-main-profile-area-1"><!--メイン1-->
+    <div class="user-name-mypage-area"><!--ユーザー名エリア-->
+      <div class="user-name-mypage"><%= @user.username %></div>
+      <% if @job != nil %>
+<div class="user-job-mypage" <% if @job.job == 'supporter' %>style='background-color:#00C091;'<%end%> ><%= @job.job %></div>
+<% end %>
+      <div class="user-id-mypage">@<%= @user.userid %></div>
+    </div><!--ユーザー名エリア終了-->
+
+      <div class="user-intro-area"><!--自己紹介-->
+      <% if @user.intro != nil %>
+      <div class="user-intro"><%= @user.intro %></div>
+      <% end %>
+      <div class="user-create-date"><i class="fas fa-calendar-alt"></i>  <%= @user.created_at.strftime("%Y年%m月%d日") %>から利用してます</div>
+      </div><!--自己紹介-->
+
+  </div><!--メイン1終了-->
+  <div class="user-menu-mypage"><!--メニュー全体-->
+    <p><%= link_to("/user/#{@user.userid}") do %><i class="fas fa-home" style="color:#00C091;"></i> ホーム<% end %></p>
+    <p><%= link_to("/user/#{@user.userid}/post") do %><i class="fas fa-envelope" style="color:#FB7299;"></i> 投稿<b>（<%= @reviewcount %>）</b><% end %></p>
+    <p><%= link_to("/user/#{@user.userid}/mylist/watch") do %>見てる<b>（<%= @watch_now_count %>）</b><% end %></p>
+    <p class="now-currentmypage"><%= link_to("/user/#{@user.userid}/mylist/wanna_watch") do %>見たい<b>（<%= @will_watch_count %>）</b><% end %></p>
+    <span class="user-menu-mypage-bar"></span>
+  </div>
+
+
+  <div class="mypage-left-dogs-m1"><!--コンテンツエリア-->
+
+    <% if current_user != nil %>
+    <% if current_user.userid == @user.userid %>
+    <div class="mypage-doc-m1-notice-hinto"><i class="far fa-question-circle"></i> 感想を書くときは投稿ページからアニメを選択してね。</div>
+    <% end %>
+    <% end %>
+    <div class="mypage-doc-m1-notice-area">見たい<p>（<%= @will_watch_count %>）</p></div>
+    <div class="mypage-all-doc-m1-anime-area"><!--アニメ全体-->
+
+    <% @watch.each do |anime| %>
+    <% @one = AnimeList.find_by(id: anime.anime_id) %>
+    <%= link_to("/posts/anime/#{@one.id}") do %>
+    <div class="mypage-alldoc-one"><!--単体-->
+    <div class="mypage-all-doc-m1-anime-image-area" id="mypage-all-doc-m1-anime-image-area-num-<%= @one.id %>"><!--画像エリア-->
+      <% if @one.year and @one.season != nil %>
+      <img src="/anime/<%= @one.year %>/<%= @one.season %>/<%= @one.id %>/<%= @one.id %>.jpg" class="mypage-all-doc-m1-anime-image"><!--画像-->
+      <% else %>
+      <img src="/anime/unknown/<%= @one.id %>/<%= @one.id%>.jpg" class="mypage-all-doc-m1-anime-image"><!--画像-->
+      <% end %>
+    <div class="mypage-all-doc-m1-anime-image-on" id="mypage-all-doc-m1-anime-image-on-num-<%= @one.id %>">
+      <div class="mypage-all-doc-m1-anime-image-on-text"><%= @one.title %></div>
+    </div>
+  </div><!--画像エリア-->
+    <div class="mylist-not-on-title"><%= @one.title %></div><!--画像下-->
+    </div>
+    <% end %>
+    <script type="text/javascript">
+    $(function(){
+      $('.mypage-all-doc-m1-anime-image-area' + '#mypage-all-doc-m1-anime-image-area-num-<%= @one.id %>').hover(function(){
+        sethover = setTimeout(function(){
+        $('.mypage-all-doc-m1-anime-image-on' + '#mypage-all-doc-m1-anime-image-on-num-<%= @one.id %>').fadeIn();
+      },500);
+      },
+      function() {
+    $('.mypage-all-doc-m1-anime-image-on' + '#mypage-all-doc-m1-anime-image-on-num-<%= @one.id %>').fadeOut();
+    clearTimeout(sethover);
+
+    });
+    });
+    </script>
+    <% end %>
+
+    </div><!--アニメ全体終了-->
+
+   </div><!--コンテンツエリア終了-->
+
+
+   </div><!--左-->
+
+<div class="wrapper-new-doc-m3"><!--サイドバーカラム--><!--右-->
+
+  <% if current_user != nil and current_user.userid == @user.userid %>
+       <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+         <h1>お知らせ</h1>
+         <div class="mypage-right-dogs-m2-no">まだお知らせはありません</div>
+         </div><!--コンテンツエリア終了-->
+         <% end %>
+
+         <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+           <h1>マイリスト</h1>
+           <div class="mypage-side-mylist-area"><!--マイリスエリア-->
+             <%= link_to("/user/#{@user.userid}/mylist/watch" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見てる</p><b>（<%= @watch_now_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watched" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見た</p><b>（<%= @watched_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/wanna_watch" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見たい</p><b>（<%= @will_watch_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watch_hold" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>一時中断</p><b>（<%= @stop_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watch_drop" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>視聴中止</p><b>（<%= @drop_count %>）</b><% end %>
+             </div><!--マイリスエリア-->
+           </div><!--コンテンツエリア終了-->
+
+                <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+                  <h1>ステータス</h1>
+                  <div class="mypage-state-area"><!--すてーたす終了-->
+                  <div class="mypage-state">全マイリス数: <%= @all_mylist %></div>
+                  <div class="mypage-state">投稿数: <%= @reviewcount %></div>
+                  <div class="mypage-state">獲得いいね数: <%= @good_get %></div>
+                  <% if  @job != nil %><div class="mypage-state">役職: <%= @job.job %></div><% end %>
+                  </div><!--すてーたす終了-->
+                  </div><!--コンテンツエリア終了-->
+
+     </div><!--右-->
+ </div><!--全体終了------------->

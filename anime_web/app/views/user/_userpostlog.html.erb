@@ -1,0 +1,66 @@
+
+<% @userpostlog.each do |log| %>
+<div class="mypage-left-active-area-one"><!--単体-->
+
+<%= link_to("/user/#{@user.userid}") do %><img src="<%= "#{@user.image}" %>" class="active-area-user-image"><!--左--><% end %>
+
+<div class="mypage-left-active-area-one-datails"><!--右-->
+
+
+  <div class="mypage-active-top-area"><!--名前と時間-->
+<%=link_to("/user/#{@user.userid}" , class: "mypage-active-name") do %><%= @user.username %><% end %>
+<div class="mypage-active-id">@<%= @user.userid %></div>
+<div class="mypage-active-datatime">
+  <% if log.created_at > 1.days.ago %>
+  <%= time_ago_in_words log.created_at %>前
+  <% else %>
+  <%= log.updated_at.strftime("%Y年%m月%d日") %>
+  <% end %></div>
+</div><!--名前と時間終了-->
+<div class="mypage-active-actibity"><!--本文-->
+<% @logreview = Review.find_by(id: log.review_id) %>
+
+<% if @logreview.state != 'all' || @logreview.state != 'watch_pv' %>
+<% @logepisode = Episodelist.find_by(counter: @logreview.state) %>
+<% end %>
+<% @logepi_anime = AnimeList.find_by(title: @logreview.animetitle) %>
+
+<% if @logreview.state == 'all' %>
+【<%= link_to("/posts/anime/#{@logepi_anime.id}") do %>「<%= @logreview.animetitle %>」<% end %>の総評】
+<% elsif @logreview.state == 'watch_pv' %>
+【<%= link_to("/posts/anime/#{@logepi_anime.id}") do %>「<%= @logreview.animetitle %>」<% end %>のPVを見た感想】
+<% else %>
+【<%= link_to("/posts/anime/#{@logepi_anime.id}") do %>「<%= @logreview.animetitle %>」<% end %>  <%= @logepisode.str_count %>の感想】
+<% end %>
+<br>
+<div class="mypage-active-anime-review-honbun"><%= simple_format(h(@logreview.kansou)) %></div>
+</div><!--本文終了-->
+
+<div class="mypage-active-anime-wrapper"><!--リンク-->
+<%= link_to("/posts/anime/#{@logepi_anime.id}/review=#{@logreview.state}") do %>
+<div class="mypage-active-anime-area"><!--アニメ-->
+  <% if @logepi_anime.year and @logepi_anime.season != nil %>
+  <img src="/anime/<%= @logepi_anime.year %>/<%= @logepi_anime.season %>/<%= @logepi_anime.id %>/<%= @logepi_anime.id %>.jpg" class="mypage-active-anime-image"><!--画像-->
+  <% else %>
+  <img src="/anime/unknown/<%= @logepi_anime.id %>/<%=@logepi_anime.id %>.jpg" class="mypage-active-anime-image">
+      <% end %>
+
+  <div class="mypage-active-anime-area-right"><!--右-->
+
+    <div class="mypage-active-anime-title"><%= @logepi_anime.title %></div>
+    <% if @logepi_anime.story != nil %>
+    <div class="mypage-active-anime-arasuzi"><%= @logepi_anime.story.truncate(50).html_safe %></div>
+    <% end %>
+
+  </div><!--右終了-->
+
+  </div><!--アニメ終了-->
+<% end %>
+</div><!--リンク終了-->
+
+
+
+</div><!--右終了-->
+</div><!--単体終了-->
+
+<% end %>

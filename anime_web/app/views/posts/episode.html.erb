@@ -1,0 +1,332 @@
+<!--タイトル-->
+<% content_for :title do %>
+「<%= @post.title %>」のエピソード一覧 - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+
+  <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+    <div class="post-title"><!--パンくずリスト-->
+      <%= link_to("/") do %><h2>ホーム</h2><% end %><p>></p><% if @post.season_st != nil %><%= link_to("/ranking/#{@post.year}/#{@post.season}=total") do %><h2><%=@post.season_st %></h2><% end %> <p>></p><% end %><%= link_to("/posts/anime/#{@post.id}") do %> <h2><%= @post.title %></h2><% end %>
+      </div><!--パンくずリスト-->
+
+
+      <div class="post-tag"><!--タグエリア-->
+        <i class="fas fa-tags"></i>
+        <% if  @post.season != nil %>
+        <%= link_to("/ranking/#{@post.year}/#{@post.season}=total", class: 'post-tag-one') do %>
+        <%= @post.season_st %>
+        <% end %>
+        <% else %>
+        <div class="post-tag-one"><!--シーズン-->
+        不明
+        </div><!--単体-->
+        <% end %>
+        <% if @post.media != nil %><div class="post-tag-one-media"><%= @post.media %></div><!--単体--><% end %>
+      </div><!--タグエリア-->
+
+      <div class="post-sp-title"><%= @post.title %></div><!--spタイトル-->
+
+
+      <div class="sp-hyoka-area"><!--評価エリア-->
+        <div class="sp-hyoka-area-one"><!--単体-->
+        <div class="sp-hyoka-area-midasi">総合スコア</div><div class="sp-hyoka-area-one-score"><b style='color:#00A1D6;'><% if @ranking != nil %><%= @ranking.total_point %><% else %>-<% end %></b><p>pt</p></div>
+        </div><!--単体終了-->
+        <div class="sp-hyoka-area-one"><!--単体-->
+        <div class="sp-hyoka-area-midasi">満足度</div><div class="sp-hyoka-area-one-score"><b style='color:#FD8208;'><%if @ranking != nil and @ranking.ave_score != nil %><%= @ranking.ave_score %><% else %>-<% end %></b></div>
+        </div><!--単体終了-->
+        <div class="sp-hyoka-area-one"><!--単体-->
+        <div class="sp-hyoka-area-midasi">マイリスト</div><div class="sp-hyoka-area-one-score"><b style='color:#64BC4B;'><% if @ranking != nil %><%= @ranking.mylist_count %><% else %>-<% end %></b><p>人</p></div>
+        </div><!--単体終了-->
+        <div class="sp-hyoka-area-one"><!--単体-->
+          <div class="sp-hyoka-area-midasi">感想・レビュー</div><div class="sp-hyoka-area-one-score"><b style='color:#64BC4B;'><% if @ranking != nil %><%= @ranking.review_count %><% else %>-<% end %></b><p>件</p></div>
+        </div><!--単体終了-->
+        </div><!--評価エリア-->
+
+      <div class="post-flexarea"><!--情報-->
+
+      <div class="post-page-image-area"><!--画像エリア-->
+      <% if @post.year and @post.season != nil %>
+      <img src="/anime/<%= @post.year %>/<%= @post.season %>/<%= @post.id %>/<%= @post.id %>.jpg" class="on-post-image"><!--画像-->
+      <% else %>
+      <img src="/anime/unknown/<%= @post.id %>/<%=@post.id %>.jpg" class="on-post-image">
+      <% end %>
+
+      <div class="post-graf-total"><!--満足度-->
+        <p>満足度</p> <b><%if @ranking != nil and @ranking.ave_score != nil %><%= @ranking.ave_score %><% else %>-<% end %></b>
+        </div><!--満足度-->
+        <div class="post-graf-area"><!--エリア-->
+            <div class="post-graf"><!--見出し-->
+              <p>物語</p><p>作画</p><p>音楽</p><p>声優</p><p>キャラ</p>
+                </div><!--見出し-->
+
+              <div class="graph-cont">
+              <div class="bar bar1"><% if @ranking != nil and @ranking.score_story != nil %><%= @ranking.score_story %><%else%>0.0<%end%></div>
+              <div class="bar bar2"><% if @ranking != nil and @ranking.score_write != nil %><%= @ranking.score_write %><%else%>0.0<%end%></div>
+              <div class="bar bar3"><% if @ranking != nil and @ranking.score_music != nil %><%= @ranking.score_music %><%else%>0.0<%end%></div>
+              <div class="bar bar4"><% if @ranking != nil and @ranking.score_voice != nil %><%= @ranking.score_voice %><%else%>0.0<%end%></div>
+              <div class="bar bar5"><% if @ranking != nil and @ranking.score_char != nil %><%= @ranking.score_char %><%else%>0.0<%end%></div>
+              </div>
+              </div><!--エリア終了-->
+
+              <style>
+                .bar1::after{
+                  max-width: <% if @ranking != nil and @ranking.score_story != nil  %><%= @ranking.score_story * 20 %><%else%>0<%end%>%;
+                }
+                .bar2::after{
+                  max-width: <% if @ranking != nil and @ranking.score_write != nil %><%= @ranking.score_write * 20 %><%else%>0<%end%>%;
+                }
+                .bar3::after{
+                  max-width: <% if @ranking != nil and @ranking.score_music != nil %><%= @ranking.score_music * 20 %><%else%>0<%end%>%;
+                }
+                .bar4::after{
+                  max-width: <% if @ranking != nil and @ranking.score_voice != nil %><%= @ranking.score_voice * 20 %><%else%>0<%end%>%;
+                }
+                .bar5::after{
+                  max-width: <% if @ranking != nil and @ranking.score_char != nil %><%= @ranking.score_char * 20 %><%else%>0<%end%>%;
+                }
+              </style>
+
+      </div><!--画像エリア-->
+
+      <div class="post-page-right"><!--右-->
+        <div class="post-title-low"><%= @post.title %></div><!--タイトル-->
+
+        <div class="post-datails-text-sp"><!--テキストエリア-->
+          <div class="post-datails-text-1"><p>放送時期: <% if @post.season_st != nil %><%= @post.season_st %><% else %>不明<% end %></p><p>制作会社: <% if @post.company != nil %><%= @post.company %><%else%>不明<% end %></p></div>
+        <div class="post-info-1-rank"><p>全期間:</p><b><% if @ranking != nil %><%= @ranking.rank_total %><% else %>-<% end %></b><h3>位</h3><p>(シーズン: <b><% if @ranking != nil %><%= @ranking.rank_total_season %><% else %>-<% end %></b>位)</p></div>
+      </div><!--テキストエリア-->
+
+      <div class="post-graf-total-sp"><!--満足度-->
+        <p>満足度</p> <b><%if @ranking != nil and @ranking.ave_score != nil %><%= @ranking.ave_score %><% else %>-<% end %></b>
+        </div><!--満足度-->
+
+          <div class="post-graf-area-sp"><!--エリア-->
+              <div class="post-graf-sp"><!--見出し-->
+                <p>物語</p><p>作画</p><p>音楽</p><p>声優</p><p>キャラ</p>
+                  </div><!--見出し-->
+
+                <div class="graph-cont-sp">
+                <div class="bar-sp bar1"><% if @ranking != nil   and @ranking.score_story != nil %><%= @ranking.score_story %><%else%>0.0<%end%></div>
+                <div class="bar-sp bar2"><% if @ranking != nil and @ranking.score_write != nil %><%= @ranking.score_write %><%else%>0.0<%end%></div>
+                <div class="bar-sp bar3"><% if @ranking != nil and @ranking.score_music != nil %><%= @ranking.score_music %><%else%>0.0<%end%></div>
+                <div class="bar-sp bar4"><% if @ranking != nil and @ranking.score_voice != nil %><%= @ranking.score_voice %><%else%>0.0<%end%></div>
+                <div class="bar-sp bar5"><% if @ranking != nil and @ranking.score_char != nil %><%= @ranking.score_char %><%else%>0.0<%end%></div>
+                </div>
+                </div><!--エリア終了-->
+
+
+                <style>
+                  .bar1::after{
+                    max-width: <% if @ranking != nil and @ranking.score_story != nil %><%= @ranking.score_story * 20 %><%else%>0.0<%end%>%;
+                  }
+                  .bar2::after{
+                    max-width: <% if @ranking != nil  and @ranking.score_write != nil %><%= @ranking.score_write * 20 %><%else%>0.0<%end%>%;
+                  }
+                  .bar3::after{
+                    max-width: <% if @ranking != nil and @ranking.score_music != nil %><%= @ranking.score_music * 20 %><%else%>0.0<%end%>%;
+                  }
+                  .bar4::after{
+                    max-width: <% if @ranking != nil and @ranking.score_voice != nil %><%= @ranking.score_voice * 20 %><%else%>0.0<%end%>%;
+                  }
+                  .bar5::after{
+                    max-width: <% if @ranking != nil and @ranking.score_char != nil %><%= @ranking.score_char * 20 %><%else%>0.0<%end%>%;
+                  }
+                </style>
+
+        <div class="post-info-1"><!--ランキング-->
+          <div class="post-info-1-pt"><p>総合スコア:</p><b><% if @ranking != nil %><%= @ranking.total_point %><% else %>-<%end%></b><h3>pt</h3></div>
+            <div class="post-info-1-rank"><p>全期間ランキング:</p><b><% if @ranking != nil %><%= @ranking.rank_total %><% else %>-<%end%></b><h3>位</h3><p>(シーズン: <% if @ranking != nil %><%= @ranking.rank_total_season %><% else %>-<% end %>位)</p></div>
+            <div class="post-info-2"><p><i class="fas fa-heart"></i>マイリスト:</p><b><% if @ranking != nil %><%= @ranking.mylist_count %><% else %>-<%end%>人</b></div>
+            <div class="post-info-2"><p><i class="fas fa-comments"></i>評価・レビュー:</p><b><% if @ranking != nil %><%= @ranking.review_count %><% else %>-<%end%>件</b></div>
+          </div><!--ランキング-->
+
+          <div class="post-datails-text"><!--テキストエリア-->
+            <b>放送情報</b>
+            <div class="post-datails-text-1"><div class="post-datails-text-1-m">放送時期:</div><p><%= @post.season_st %></p><div class="post-datails-text-1-m">制作会社:</div><p><% if @post.company != nil %><%= @post.company %><%else%>不明<% end %></p></div>
+          </div><!--テキストエリア-->
+          <div class="post-datails-text"><!--テキストエリア-->
+            <b>キャスト</b>
+            <p><% if @post.cv != nil %><%= @post.cv %><% else %>まだ情報が追加されていません<% end %></p>
+            </div><!--テキストエリア-->
+            <div class="post-datails-text"><!--テキストエリア-->
+            <b>スタッフ</b>
+            <p><% if @post.staff != nil %><%= @post.staff %><% else %>まだ情報が追加されていません<% end %></p>
+            </div><!--テキストエリア-->
+
+
+
+      <div class="post-open-mylist-review-area"><!--感想・マイリス選択エリア-->
+        <% if current_user != nil %>
+        <div id="mylist-area" class="mylist-area-<%= @post.id %>">
+          <%= render partial:'/states/state', locals:{ post: @post, current_user: current_user} %>
+        </div>
+        <% else %>
+        <div class="post-open-select-btn-area" id='select-btn-area-<%= @post.id %>'>
+        <div class="post-open-select-btn"><i class="fas fa-heart"></i> マイリスト</div>
+        <div class="post-open-select-menu" id='select-btn-menu-<%= @post.id %>'>
+          <div class="post-open-select-menu-in">
+          <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見た</option>
+          <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見てる</option>
+          <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見たい</option>
+          <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">一時中断</option>
+          <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">視聴中止</option>
+          </div>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+          $(function(){
+            $('.post-open-select-btn-area' + '#select-btn-area-<%= @post.id %>').on('click',function(){
+              if($('.post-open-select-menu' + '#select-btn-menu-<%= @post.id %>').css("display")=="none"){
+            $('.post-open-select-menu' + '#select-btn-menu-<%= @post.id %>').slideDown("fast");
+            }else{
+            $('.post-open-select-menu' + '#select-btn-menu-<%= @post.id %>').slideUp("fast");
+            }
+            });
+            //ホバー解除でアップ
+            $('.post-open-select-btn-area' + '#select-btn-area-<%= @post.id %>').hover(function () {
+             },
+              function () {
+                $('.post-open-select-menu' + '#select-btn-menu-<%= @post.id %>').slideUp("fast");
+          });
+
+        //送信処理
+        $('.post-open-select-menu-one' + '#select-val-<%= @post.id %>').on('click',function(){
+
+          if ($(this).val() != '') {
+            window.location.href = $(this).val();
+          }
+        });
+        });
+        </script>
+        <% end %>
+
+        <% if current_user !=nil %>
+        <div class="post-open-review-btn"><%= link_to("/user/#{current_user.userid}/post/review=#{@post.id}") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+        <% else %>
+        <div class="post-open-review-btn"><%= link_to("/users/sign_in") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+        <% end %>
+        </div><!--感想マイリスエリア-->
+
+
+
+        </div><!--右終了-->
+
+      </div><!--情報終了-->
+
+
+
+          <div class="select-mylist-kansou-sp-post"><!--感想マイリス-->
+            <!--マイリスト-->
+          <% if current_user != nil %>
+          <div class="mylist-select-rank-sp">
+            <div class="mylist-area-<%= @post.id %>" id='mylist-area'>
+              <%= render partial:'/states/state_mobile_act', locals:{ post: @post, current_user: current_user} %>
+            </div>
+          </div>
+          <% else %>
+          <div class="mylist-select-rank-sp">
+            <div class="mylist-area-<%= @post.id %>" id='mylist-area'>
+
+              <div class="post-open-select-btn-act" style='border: 1px solid #f4f4f4;'>
+              <p class="label-mobile-rank"><i class="fas fa-heart"></i> マイリスト</p>
+              <select class="mylist-select-mobile" id='select-val-<%= @post.id %>'>
+                <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">マイリスト</option>
+              <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見た</option>
+              <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見てる</option>
+              <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">見たい</option>
+              <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">一時中断</option>
+              <option class="post-open-select-menu-one" id='select-val-<%= @post.id %>' value="/users/sign_in">視聴中止</option>
+              </select>
+              </div>
+
+
+              <script type="text/javascript">
+              $(function(){
+
+              //送信処理
+              $('.mylist-select-mobile' + '#select-val-<%= @post.id %>').on('change',function(){
+
+                if ($(this).val() != '') {
+                  window.location.href = $(this).val();
+                }
+              });
+
+              });
+              </script>
+            </div>
+          </div>
+          <% end %>
+          <!--感想-->
+
+          <% if current_user != nil %>
+          <div class="post-open-review-btn-sp-rank"><%= link_to("/user/#{current_user.userid}/post/review=#{@post.id}") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+          <% else %>
+          <div class="post-open-review-btn-sp-rank"><%= link_to("/users/sign_in") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+          <% end %>
+
+          </div><!--感想マイリス終了-->
+
+        <div class="rank-menu-area"><!--メニュー全体-->
+          <div class="rank-menu-area-in"><!--中-->
+            <p><%= link_to("/posts/anime/#{@post.id}") do %>作品情報<% end %></p>
+            <p class="now-currentmypage"><%= link_to("/posts/anime/#{@post.id}/episode") do %>エピソード<% end %></p>
+            <p><%= link_to("/posts/anime/#{@post.id}/review=all") do %>感想<% end %></p>
+            <p> <%= link_to("/posts/anime/#{@post.id}/items") do %>アイテム<% end %></p>
+            <span class="rank-menu-area-bar"></span>
+          </div><!--中終了-->
+        </div><!--メニュー全体終了-->
+
+
+
+        <div class="episode-list-area"><!--エピソードエリア全体-->
+
+        <div class="episode-list-midasi-area"><h1>話数</h1><h2>タイトル</h2><h3>評価・感想数</h3></div><!--見出しエリア-->
+
+          <%= link_to("/posts/anime/#{@post.id}/review=all") do %>
+          <div class="episode-list-one"><!--単体-->
+            <% @all_reviewcount = Review.where(animetitle: @post.title , state: 'all').count %>
+            <h1>総評</h1><h2>-</h2><h3><%= @all_reviewcount %></h3>
+            </div><!--単体終了-->
+            <% end %>
+
+              <%= link_to("/posts/anime/#{@post.id}/review=watch_pv") do %>
+            <div class="episode-list-one"><!--単体-->
+            <% @pv_reviewcount = Review.where(animetitle: @post.title , state: 'watch_pv').count %>
+              <h1>PV</h1><h2>-</h2><h3><%= @pv_reviewcount %></h3>
+              </div><!--単体終了-->
+              <% end %>
+
+        <% @episodes.each do |episodes| %>
+        <% @reviewcount = Review.where(animetitle: @post.title , state: episodes.counter.to_s).count %>
+        <%= link_to("/posts/anime/#{@post.id}/review=#{episodes.counter}") do %>
+        <div class="episode-list-one"><!--単体-->
+          <h1><%= episodes.str_count %></h1>
+          <h2><% if episodes.title != nil %><%= episodes.title %><% else %>-<%end %></h2>
+          <h3><%= @reviewcount %></h3>
+          </div><!--単体終了-->
+          <% end %>
+          <% end %>
+
+          </div><!--エピソードエリア全体-->
+
+
+                </div><!--中央絡む終了-->
+
+
+                  <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+                    <%= render partial:'/sidebar/sidebar_post' %>
+                    </div><!--サイドバーカラム終了-->
+
+
+              </div><!--wrapper-->

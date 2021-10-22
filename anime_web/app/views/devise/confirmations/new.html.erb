@@ -1,0 +1,34 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+<div class="login-wrapper"><!--サイド＆＆全体-->
+
+  <div class="login-wrapper-midasi-area">
+    <div class="login-wrapper-midasi">認証メールが届かない</div>
+    </div>
+
+
+
+
+<div class="login-user-help-datails-text">お使いのメールの種類により、タイムラグが発生する可能性があります。しばらくお待ちになってから再送信を行って下さい。</div>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="user-input-area-m2-area"><!--中央揃え-->
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-datails">
+  <div class="user-input-area-in-m2"><%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email ),placeholder: 'メールアドレスを再入力' %></div>
+  <div class="user-input-area-text"></div>
+    </div>
+  </div><!--ユーザーID入力欄終了-->
+
+
+  <div class="actions-login-or-singup-new">
+    <div class="login-form-botan"><%= f.submit "再送信" %></div>
+  </div>
+</div><!--中央揃え終了-->
+<% end %>
+
+
+
+</div><!--wrapper-->

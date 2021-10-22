@@ -1,0 +1,81 @@
+<!--タイトル-->
+<% content_for :title do %>
+<%= @puts %>ランキング(<%= @puts_one %>) - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+  <div class="wrapper"><!--サイド＆＆全体-->
+
+
+    <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+
+
+
+
+        <div class="sp-ranking-midasi"><!--スマホ見出し-->
+          <h2><%= @puts %>ランキング(<%= @puts_one %>)
+          </h2>
+          <p>ユーザーの評価やマイリストを元に人気アニメをランキング化！おすすめのアニメや覇権アニメが分かるかも！？ぜひご覧ください。(<%= Time.now.strftime("%Y.%m.%d") %>更新)</p>
+          </div>
+
+          <div class="ranking-other-season-more"><%= link_to("/ranking/choice") do %><i class="fas fa-tag"></i> シーズンごとのランキング<% end %></div>
+
+          <!--メニューラベル-->
+          <div class="rank-menu-area"><!--メニュー全体-->
+          <div class="rank-menu-area-in"><!--中-->
+            <% unless @puts == '2020年冬アニメ' or @puts == '2020年春アニメ' %><!--下バー非表示-->
+            <style type="text/css">
+              .rank-menu-area-bar{ display:none; }
+              .rank-menu-area-in .now-currentmypage a{color: #5F6368;}
+              </style>
+            <% end %>
+              <p><%= link_to("/ranking/weekly=total") do %>週間<% end %></p>
+              <p <% if @year == '2020' && @season == 'winter' %>class="now-currentmypage"<% end %>><%= link_to("#{@new_term.this_term}") do %>今期<% end %></p>
+              <p <% if @year == '2020' && @season == 'spring' %>class="now-currentmypage"<% end %>><%= link_to("#{@new_term.next_term}") do %>来期<% end %></p>
+              <p> <%= link_to("/ranking/total=total") do %>全期間<% end %></p>
+              <span class="rank-menu-area-bar"></span>
+            </div><!--中終了-->
+          </div><!--メニュー全体終了-->
+
+
+
+              <div class="ranking-menu-hide"><!--メニュー表示-->
+                <%= link_to("/ranking/#{@year}/#{@season}=total") do %>総合スコア<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=ave") do %>満足度<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=mylist") do %>マイリスト数<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=review") do %>評価・感想数<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=story") do %>物語の評価が高い順<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=art") do %>作画の評価が高い順<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=music") do %>音楽の評価が高い順<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=voice") do %>声優の評価が高い順<% end %>
+                <%= link_to("/ranking/#{@year}/#{@season}=chara") do %>キャラの評価が高い順<% end %>
+            </div><!--ソードエリア終了-->
+
+
+
+        <div class="ranking-open-doc-m1"><!--ランキング一覧全体-->
+          <div id="ranking-all"><!--ajax-->
+            <%= render partial: 'ranking/ranking_season_pgn'%>
+          </div><!--ajax終了-->
+          <div class="more-ranking-area"><!--もっと見るボタン全体-->
+            <%= link_to_next_page @ranking, 'もっと見る', id: 'more-ranking', class: 'more-ranking-btn', params: { type: :ranking_season_pgn }, remote: true %>
+          </div>
+
+          </div><!--ランキング一覧全体終了-->
+
+
+
+          </div><!--中央絡む終了-->
+
+
+            <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+              <%= render partial:'/sidebar/sidebar' %>
+              </div><!--サイドバーカラム終了-->
+
+
+        </div><!--wrapper-->

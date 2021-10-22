@@ -1,0 +1,160 @@
+<!--タイトル-->
+<% content_for :title do %>
+シーズンを選択 - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+  <div class="wrapper"><!--サイド＆＆全体-->
+
+    <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+      <div class="sp-ranking-midasi"><!--スマホ見出し-->
+        <h2>シーズンを選択する</h2>
+      </div>
+
+      <div class="select-anime-area-one"><!--エリア単体-->
+
+      <div class="select-season-midasi">2020年</div>
+      <div class="select-sideani-area"><!--アニメエリア-->
+
+
+      <% @first = Ranking.where(year: '2020').where(season: 'winter').order(rank_total_season: "ASC").first %>
+      <div class="select-anione"><!--単体-->
+      <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+      <div class="select-sideani-area-one">
+      <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+      <div class="select-sideani-onimage"><h3>2020年冬アニメ</h3></div>
+      </div>
+      <div class="select-anione-nono">
+        <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+      <% @post.each do |post| %>
+      <% anime = AnimeList.find_by(id: post.anime_id) %>
+      <p><%= anime.title %></p>
+      <% end %>
+      </div>
+      <% end %>
+      </div><!--単体-->
+
+      <% @first = Ranking.where(year: '2020').where(season: 'spring').order(rank_total_season: "ASC").first %>
+      <div class="select-anione"><!--単体-->
+      <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+      <div class="select-sideani-area-one">
+      <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+      <div class="select-sideani-onimage"><h3>2020年春アニメ</h3></div>
+      </div>
+      <div class="select-anione-nono">
+        <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+      <% @post.each do |post| %>
+      <% anime = AnimeList.find_by(id: post.anime_id) %>
+      <p><%= anime.title %></p>
+      <% end %>
+      </div>
+      <% end %>
+      </div><!--単体-->
+
+
+
+
+      </div><!--アニメエリア-->
+      </div><!--エリア単体-->
+
+
+      <div class="select-anime-area-one"><!--エリア単体-->
+      <div class="select-season-midasi">2019年</div>
+      <div class="select-sideani-area"><!--アニメエリア-->
+
+
+        <% @first = Ranking.where(year: '2019').where(season: 'autumn').order(rank_total_season: "ASC").first %>
+        <div class="select-anione"><!--単体-->
+        <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+        <div class="select-sideani-area-one">
+        <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+        <div class="select-sideani-onimage"><h3>2019年秋アニメ</h3></div>
+        </div>
+        <div class="select-anione-nono">
+          <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+        <% @post.each do |post| %>
+        <% anime = AnimeList.find_by(id: post.anime_id) %>
+        <p><%= anime.title %></p>
+        <% end %>
+        </div>
+        <% end %>
+        </div><!--単体-->
+
+
+
+
+        <% @first = Ranking.where(year: '2019').where(season: 'summer').order(rank_total_season: "ASC").first %>
+        <div class="select-anione"><!--単体-->
+        <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+        <div class="select-sideani-area-one">
+        <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+        <div class="select-sideani-onimage"><h3>2019年夏アニメ</h3></div>
+        </div>
+        <div class="select-anione-nono">
+          <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+        <% @post.each do |post| %>
+        <% anime = AnimeList.find_by(id: post.anime_id) %>
+        <p><%= anime.title %></p>
+        <% end %>
+        </div>
+        <% end %>
+        </div><!--単体-->
+
+
+        <% @first = Ranking.where(year: '2019').where(season: 'spring').order(rank_total_season: "ASC").first %>
+        <div class="select-anione"><!--単体-->
+        <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+        <div class="select-sideani-area-one">
+        <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+        <div class="select-sideani-onimage"><h3>2019年春アニメ</h3></div>
+        </div>
+        <div class="select-anione-nono">
+          <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+        <% @post.each do |post| %>
+        <% anime = AnimeList.find_by(id: post.anime_id) %>
+        <p><%= anime.title %></p>
+        <% end %>
+        </div>
+        <% end %>
+        </div><!--単体-->
+
+
+        <% @first = Ranking.where(year: '2019').where(season: 'winter').order(rank_total_season: "ASC").first %>
+        <div class="select-anione"><!--単体-->
+        <%= link_to("/ranking/#{@first.year}/#{@first.season}=total") do %>
+        <div class="select-sideani-area-one">
+        <img src="/anime/<%= @first.year %>/<%= @first.season %>/<%= @first.anime_id %>/<%= @first.anime_id %>.jpg" class="select-sideani-area-one-img">
+        <div class="select-sideani-onimage"><h3>2019年冬アニメ</h3></div>
+        </div>
+        <div class="select-anione-nono">
+          <% @post = Ranking.where(year: @first.year).where(season: @first.season).order(rank_total_season: "ASC").first(3) %>
+        <% @post.each do |post| %>
+        <% anime = AnimeList.find_by(id: post.anime_id) %>
+        <p><%= anime.title %></p>
+        <% end %>
+        </div>
+        <% end %>
+        </div><!--単体-->
+
+        </div><!--アニメエリア-->
+
+        </div><!--エリア単体-->
+
+
+
+
+
+          </div><!--中央絡む終了-->
+
+
+            <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+              <%= render partial:'/sidebar/sidebar' %>
+              </div><!--サイドバーカラム終了-->
+
+
+        </div><!--wrapper-->

@@ -1,0 +1,478 @@
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+  <div class="wrapper"><!--サイド＆＆全体-->
+
+
+    <div class="wrapper-new-doc-m1"><!--メニューカラム-->
+
+<%= render partial:'/sidebar/sidebar_left' %>
+      </div><!--メニューカラム-->
+
+    <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+
+      <div class="mobile-select-area-season"><!--モバイル-->
+
+        <select class="mobile-select-area-box-year">
+          <option class="mobile-season-select-box-one" value="/ranking/total=total">全期間</option>
+          <option class="mobile-season-select-box-one"  value="/ranking/2019/autumn=total">2019年秋アニメ（来期）</option>
+          <option class="mobile-season-select-box-one"  value="/ranking/2019/summer=total">2019年夏アニメ（今期）</option>
+          <option class="mobile-season-select-box-one"  value="/ranking/2019/spring=total">2019年春アニメ（前期）</option>
+          <option class="mobile-season-select-box-one"  value="/ranking/2019/winter=total">2019年冬アニメ</option>
+          <option class="mobile-season-select-box-one"  value="/ranking/2019/total=total">2019年アニメ</option>
+          <option class="mobile-season-select-box-one"  value="">2018年秋アニメ</option>
+          <option class="mobile-season-select-box-one"  value="">2018年夏アニメ</option>
+          <option class="mobile-season-select-box-one"  value="">2018年春アニメ</option>
+          <option class="mobile-season-select-box-one"  value="">2018年冬アニメ</option>
+          <option class="mobile-season-select-box-one"  value="">2018年アニメ</option>
+
+          <script type="text/javascript">
+            $(function(){
+            $('.mobile-select-area-box-year').on('change',function(){
+              if ($(this).val() != '') {
+                window.location.href = $(this).val();
+              }
+            });
+          });
+          </script>
+
+        </select>
+
+        <select class="mobile-eselct-area-box-season">
+          <option class='mobile-sort-select-box-one' value="/ranking/total=total">総合スコア</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=ave">満足度</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=mylist">マイリスト数</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=review">評価・感想数</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=story">物語の評価が高い順</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=art">作画の評価が高い順</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=music">音楽の評価が高い順</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=voice">声優の評価が高い順</option>
+        <option class='mobile-sort-select-box-one' value="/ranking/total=chara">キャラの評価が高い順</option>
+        </select>
+
+        <script type="text/javascript">
+          $(function(){
+          $('.mobile-eselct-area-box-season').on('change',function(){
+            if ($(this).val() != '') {
+              window.location.href = $(this).val();
+            }
+          });
+        });
+        </script>
+        </div><!--モバイル用セレクト終了-->
+
+          <div class="season-sort-select-area-wall"><!--ボックス全体-->
+
+          <div class="season-sort-select-area-text"><i class="fas fa-info-circle" style='color:#acacac;'></i> ランキングは1日1回更新されています</div>
+
+          <div class="season-sort-select-area"><!--シーズン・ソート選択全体-->
+
+            <div class="season-select-area"><!--シーズン選択エリア-->
+              <div class="season-select-now"><P>全期間</p><i class="fas fa-angle-down"></i></div>
+              <div class="season-select-box">
+                <div class="season-select-box-in"><!--中身-->
+                <option class="season-select-box-one" value="/ranking/total=total">全期間</option>
+                <option class="season-select-box-one"  value="/ranking/2020/winter=total">2020年冬アニメ（来期）</option>
+                <option class="season-select-box-one"  value="/ranking/2019/autumn=total">2019年秋アニメ（今期）</option>
+                <option class="season-select-box-one"  value="/ranking/2019/summer=total">2019年夏アニメ（前期）</option>
+                <option class="season-select-box-one"  value="/ranking/2019/spring=total">2019年春アニメ</option>
+                <option class="season-select-box-one"  value="/ranking/2019/winter=total">2019年冬アニメ</option>
+                <option class="season-select-box-one"  value="">2018年秋アニメ</option>
+                <option class="season-select-box-one"  value="">2018年夏アニメ</option>
+                <option class="season-select-box-one"  value="">2018年春アニメ</option>
+                <option class="season-select-box-one"  value="">2018年冬アニメ</option>
+                </div>
+              </div>
+              </div><!--シーズン選択エリア終了-->
+
+              <script type="text/javascript">
+              	$(function(){
+              		$('.season-select-area').on('click',function(){
+              			if($('.season-select-box').css("display")=="none"){
+              		$('.season-select-box').css('display','block');
+              		}else{
+              		$('.season-select-box').css('display','none');
+              		}
+              		});
+              		//ホバー解除でアップ
+              		$('.season-select-area').hover(function () {
+              		 },
+              			function () {
+              				$('.season-select-box').css('display','none');
+              	});
+                $('.season-select-box-one').on('click',function(){
+                  if ($(this).val() != '') {
+                    window.location.href = $(this).val();
+                  }
+                });
+
+              });
+              </script>
+
+
+              <div class="sort-select-area"><!--並び替えエリア-->
+                <div class="sort-select-now"><P>
+                  総合スコア
+                </p><i class="fas fa-angle-down"></i></div>
+                <div  class='sort-select-box'><!--箱-->
+                  <div class="sort-select-box-in"><!--中身-->
+                  <option class='sort-select-box-one' value="/ranking/total=total">総合スコア</option>
+                  <option class='sort-select-box-one' value="/ranking/total=ave">満足度</option>
+                  <option class='sort-select-box-one' value="/ranking/total=mylist">マイリスト数</option>
+                  <option class='sort-select-box-one' value="/ranking/total=review">評価・感想数</option>
+                  <option class='sort-select-box-one' value="/ranking/total=story">物語の評価が高い順</option>
+                  <option class='sort-select-box-one' value="/ranking/total=art">作画の評価が高い順</option>
+                  <option class='sort-select-box-one' value="/ranking/total=music">音楽の評価が高い順</option>
+                  <option class='sort-select-box-one' value="/ranking/total=voice">声優の評価が高い順</option>
+                  <option class='sort-select-box-one' value="/ranking/total=chara">キャラの評価が高い順</option>
+                  </div><!--中身-->
+                </div><!--箱-->
+                </div>
+
+            </div><!--シーズン・ソート選択終了-->
+          </div><!--ボックス全体終了-->
+
+            <script type="text/javascript">
+              $(function(){
+                $('.sort-select-area').on('click',function(){
+                  if($('.sort-select-box').css("display")=="none"){
+                $('.sort-select-box').css('display','block');
+                }else{
+                $('.sort-select-box').css('display','none');
+                }
+                });
+                //ホバー解除でアップ
+                $('.sort-select-area').hover(function () {
+                 },
+                  function () {
+                    $('.sort-select-box').css('display','none');
+              });
+              $('.sort-select-box-one').on('click',function(){
+                if ($(this).val() != '') {
+                  window.location.href = $(this).val();
+                }
+              });
+
+            });
+            </script>
+
+
+        <div class="ranking-open-doc-m1"><!--ランキング一覧全体-->
+
+          <% @ranking.each do |anime| %>
+          <% @ranking_info = Ranking.find_by(anime_id: anime.id) %>
+
+          <div class="mobile-ranking-open-area"><!--アニメ単体モバイル-->
+
+
+            <div class="mobile-ranking-open-area-flex"><!--画像と横並び-->
+            <div class="mobile-ranking-open-img-and-review"><!--画像と評価もろもろ-->
+
+            <%= link_to("/posts/anime/#{anime.id}") do %><img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id%>.jpg" class="ranking-open-img"><% end %>
+
+            </div><!--画像と評価もろもろ終了-->
+
+            <div class="mobile-ranking-open-area-flex-side"><!--タイトルとか-->
+
+
+              <div class="ranking-open-title"><%= anime.title %></div><!--タイトルエリア-->
+              <div class="ranking-open-score-wall"><!--星情報-->
+
+                <% if params[:ranking_select] == 'total' || params[:ranking_select] == 'ave' || params[:ranking_select] == 'mylist' || params[:ranking_select] == 'review' %>
+
+                <div class="ranking-open-star-rank-flex"><!--ランクと評価横並び-->
+                  <div class="mobile-total-point-area"><b><%= @ranking_info.total_point %></b><p>pt</p></div>
+                  <div class="ranking-open-rank-area"><b>(rank</b> <p>#<%= anime.rank_total %></p><b>)</b></div>
+                </div><!--ランクと評価横並び終了-->
+                <% end %>
+              </div><!--星情報終了-->
+
+              <div class="mobile-ranking-open-count-area"><!--マイリス数・コメント数-->
+                <div class="ranking-open-star"><p><% if @ranking_info.ave_score %><%= @ranking_info.ave_score %><b>/5.0</b><% else %>0.0<% end %></p></div>
+                <div class="ranking-open-mylist-count"><i class="fas fa-heart"></i><p><%= @ranking_info.mylist_count %></p></div>
+                <div class="ranking-open-mylist-count"><i class="fas fa-comments"></i><p><%= @ranking_info.review_count %></p></div>
+            </div><!--マイリス数・コメント数終了-->
+            <% if current_user !=nil %>
+            <div class="post-open-select-btn-area" id='select-btn-area-m2-<%= anime.id %>'>
+            <%= render partial:'/states/state_mobile', locals:{ post: anime, current_user: current_user} %>
+            </div>
+            <% end %>
+
+              </div><!--タイトルとか終了-->
+
+            </div><!--画像と横並びエリア終了-->
+
+            <% if anime.story != nil %>
+            <div class="ranking-open-datails-midasi-top">あらすじ</div>
+            <div class="post-text"><p><%= anime.story.truncate(150) %></p></div><!--本文-->
+            <% end %>
+
+
+            <% if anime.pv1 != nil %>
+
+            <div class="ranking-open-datails-midasi">PV</div>
+            <div class="post-content-video-area"><!--ビデオエリア-->
+
+              <% if File.exist?("#{Rails.root}/public/anime/#{anime.year}/#{anime.season}/#{anime.id}/pv1.jpg")%><!--PV動画があるか判定 -->
+
+            <div class="video-all" id="pv1-<%=anime.id %>"><!--ビデオ全体-->
+            <div class="post-video" id="pv1-<%=anime.id %>"><img src='/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/pv1.jpg' class="video-img"></div>
+             <p class="video-all-p" id='pv1-<%=anime.id %>'><i class="far fa-play-circle"></i></p>
+             </div><!--ビデオ終了-->
+
+             <div class="pv-modal" id="pv1-<%=anime.id %>">
+               <div class="pv-modal-datails" id="pv1-<%=anime.id %>">
+               </div>
+             </div>
+             <% end %>
+
+             <% if File.exist?("#{Rails.root}/public/anime/#{anime.year}/#{anime.season}/#{anime.id}/pv2.jpg")%><!--PV動画があるか判定 -->
+
+             <div class="video-all" id="pv2-<%=anime.id %>"><!--ビデオ全体-->
+             <div class="post-video" id="pv2-<%=anime.id %>"><img src='/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/pv2.jpg' class="video-img"></div>
+              <p class="video-all-p" id='pv2-<%=anime.id %>'><i class="far fa-play-circle"></i></p>
+              </div><!--ビデオ終了-->
+
+              <div class="pv-modal" id="pv2-<%=anime.id %>">
+                <div class="pv-modal-datails" id="pv2-<%=anime.id %>">
+                </div>
+              </div>
+              <% end %>
+
+
+            </div><!--ビデオエリア終了-->
+             <% else %>
+             <% end %>
+
+
+
+
+
+          <script type="text/javascript">
+
+        <% if anime.pv1 != nil %>
+               //PV処理------------------
+               $( function(){
+
+                 //ホバー
+                 $('.video-all' + '#pv1-<%=anime.id %>').hover(
+                function() {
+
+                    //マウスカーソルが重なった時の処理
+                    $('.video-all' + '#pv1-<%=anime.id %>').css('background-color','#c4c4c4' )
+                    $('.video-all-p' + '#pv1-<%=anime.id %>').css('color', '#F85B73');
+                    $('.post-video' + '#pv1-<%=anime.id %>').css('opacity', '0.9');
+
+                },
+                function() {
+
+                    //マウスカーソルが離れた時の処理
+                    $('.video-all' + '#pv1-<%=anime.id %>').css('background-color','#000')
+                    $('.video-all-p' + '#pv1-<%=anime.id %>').css('color', '#fff');
+                    $('.post-video' + '#pv1-<%=anime.id %>').css('opacity', '0.7');
+
+                }
+            );
+
+                 //フェードイン
+                 $('.video-all' + '#pv1-<%=anime.id %>').click(function() {
+                   $('.pv-modal'+ '#pv1-<%=anime.id %>').fadeIn(300).css('display','block');
+                   <% if anime.pv1 != nil %>
+                 $('.pv-modal-datails' + '#pv1-<%=anime.id %>' ).html('<%= anime.pv1.html_safe %>');
+                 <% end %>
+               });
+
+                 //アウト
+                 $('.pv-modal').click(function(){
+                   $('.pv-modal').fadeOut(300);
+                 });
+               } );
+        <% end %>
+
+        <% if anime.pv2 != nil %>
+        //PV処理------------------
+        $( function(){
+
+          //ホバー
+          $('.video-all' + '#pv2-<%=anime.id %>').hover(
+         function() {
+
+             //マウスカーソルが重なった時の処理
+             $('.video-all' + '#pv2-<%=anime.id %>').css('background-color','#c4c4c4' )
+             $('.video-all-p' + '#pv2-<%=anime.id %>').css('color', '#F85B73');
+             $('.post-video' + '#pv2-<%=anime.id %>').css('opacity', '0.9');
+
+         },
+         function() {
+
+             //マウスカーソルが離れた時の処理
+             $('.video-all' + '#pv2-<%=anime.id %>').css('background-color','#000')
+             $('.video-all-p' + '#pv2-<%=anime.id %>').css('color', '#fff');
+             $('.post-video' + '#pv2-<%=anime.id %>').css('opacity', '0.7');
+
+         }
+        );
+
+          //フェードイン
+          $('.video-all' + '#pv2-<%=anime.id %>').click(function() {
+            $('.pv-modal'+ '#pv2-<%=anime.id %>').fadeIn(300).css('display','block');
+            <% if anime.pv1 != nil %>
+          $('.pv-modal-datails' + '#pv2-<%=anime.id %>' ).html('<%= anime.pv2.html_safe %>');
+          <% end %>
+        });
+
+          //アウト
+          $('.pv-modal').click(function(){
+            $('.pv-modal').fadeOut(300);
+          });
+        } );
+        <% end %>
+
+          </script>
+
+            <% if anime.cv != nil %>
+            <div class="ranking-open-datails-midasi">キャスト</div>
+            <div class="ranking-open-cast"><%= anime.cv.truncate(100) %></div>
+            <% end %>
+
+
+
+            </div><!--アニメ単体モバイル終了-->
+
+          <div class="ranking-open-doc-m1-one"><!--アニメ単体PC-->
+
+            <div class="ranking-open-datails-title"><!--ランキングとタイトル-->
+
+              <!--ランク分岐-->
+
+
+            <div class="ranking-open-title"><%= link_to("/posts/anime/#{anime.id}") do %><%= anime.title %><% end %></div>
+            </div>
+
+
+              <div class="ranking-open-datails"><!--詳細エリア-->
+
+                <div class="ranking-open-datails-img-area"><!--画像エリア-->
+
+              <%= link_to("/posts/anime/#{anime.id}") do %><img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id%>.jpg" class="ranking-open-img"><% end %>
+
+              <div class="pc-mylist-act"><!--PC版-->
+              <% if current_user != nil %>
+              <div id="mylist-area" class="mylist-area-<%= anime.id %>">
+                <%= render partial:'/states/state_active', locals:{ post: anime, current_user: current_user} %>
+              </div>
+              <% else %>
+
+              <div class="rank-open-select-btn-area" id='select-btn-area-<%= anime.id %>'>
+              <div class="rank-open-select-btn"><i class="fas fa-heart"></i> マイリスト</div>
+              <div class="rank-open-select-menu" id='select-btn-menu-<%= anime.id %>'>
+                <div class="rank-open-select-menu-in">
+                <option class="rank-open-select-menu-one" id='select-val-<%= anime.id %>' value="/users/sign_in">見た</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= anime.id %>' value="/users/sign_in">見てる</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= anime.id %>' value="/users/sign_in">見たい</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= anime.id %>' value="/users/sign_in">一時中断</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= anime.id %>' value="/users/sign_in">視聴中止</option>
+                </div>
+              </div>
+              </div>
+
+              <script type="text/javascript">
+                $(function(){
+                  $('.rank-open-select-btn-area' + '#select-btn-area-<%= anime.id %>').on('click',function(){
+                    if($('.rank-open-select-menu' + '#select-btn-menu-<%= anime.id %>').css("display")=="none"){
+                  $('.rank-open-select-menu' + '#select-btn-menu-<%= anime.id %>').slideDown("fast");
+                  }else{
+                  $('.rank-open-select-menu' + '#select-btn-menu-<%= anime.id %>').slideUp("fast");
+                  }
+                  });
+                  //ホバー解除でアップ
+                  $('.rank-open-select-btn-area' + '#select-btn-area-<%= anime.id %>').hover(function () {
+                   },
+                    function () {
+                      $('.rank-open-select-menu' + '#select-btn-menu-<%= anime.id %>').slideUp("fast");
+                });
+
+              //送信処理
+              $('.rank-open-select-menu-one' + '#select-val-<%= anime.id %>').on('click',function(){
+
+                if ($(this).val() != '') {
+                  window.location.href = $(this).val();
+                }
+              });
+
+
+              });
+              </script>
+              <% end %>
+              </div><!--PC版-->
+
+              </div><!--画像エリア終了-->
+
+                <div class="ranking-open-datails-in"><!--タイトルともろもろ-->
+
+                  <div class="ranking-open-other-score"><!--マイリス数とかもろもろ-->
+                    <div class="anime-season-and-media"><!--シーズンとメディア表示-->
+                      <div class="ranking-tag"><% if anime.season_st != nil %><%= anime.season_st %><% else %>不明<% end %></div>
+                      <div class="ranking-tag"><% if anime.media != nil %><%= anime.media %><% else %>不明<% end %></div>
+                    </div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-heart"></i><p><%= @ranking_info.mylist_count %></p></div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-comments"></i><p><%= @ranking_info.review_count %></p></div>
+
+
+                    </div><!--マイリス数とかもろもろ終了-->
+
+
+                  <div class="ranking-open-score-wall"><!--スコア開示-->
+
+
+                    <div class="ranking-open-star"><!--スコア表示エリア-->
+                      <!--5点満点点数表示-->
+                      <div class="ranking-open-score-area"><!--評価表示-->
+                      <div class="ranking-open-score-area-named">評価:</div>
+                      <div class="ranking-open-star-p"><% if @ranking_info.ave_score %><%= @ranking_info.ave_score %><% else %>0.0<% end %></div>
+                      </div>
+                      <!--ポイント表示-->
+                      <div class="ranking-open-score-area"><!--評価表示-->
+                      <div class="ranking-open-score-area-named">総合スコア:</div>
+                      <div class="ranking-open-star-score"><%= @ranking_info.total_point %>pt</div>
+                      </div>
+
+
+                    </div>
+
+
+                  </div><!--スコア開示終了-->
+
+
+                       <% if anime.cv != nil %>
+                       <div class="ranking-open-midasi">キャスト</div>
+                       <div class="ranking-open-cast"><%= anime.cv.truncate(100) %></div>
+                       <% end %>
+
+                       <% if anime.story != nil %>
+                       <div class="ranking-open-story"><%= anime.story.truncate(100) %></div>
+                       <% end %>
+
+                  </div><!--タイトルともろもろ終了-->
+            </div><!--詳細エリア終了-->
+
+
+
+            </div><!--アニメ単体終了-->
+          <% end %>
+          </div><!--ランキング一覧全体終了-->
+
+          <%= paginate @ranking, prev_label: '&lt 前へ', next_label: '次へ &gt' %>
+
+
+          </div><!--中央絡む終了-->
+
+
+            <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+              <%= render partial:'/sidebar/sidebar' %>
+              </div><!--サイドバーカラム終了-->
+
+
+        </div><!--wrapper-->

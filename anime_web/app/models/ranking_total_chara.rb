@@ -1,0 +1,2 @@
+class RankingTotalChara < ApplicationRecord
+end

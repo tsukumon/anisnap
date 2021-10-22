@@ -1,0 +1,35 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+  <div class="wrapper-manage"><!--サイド＆＆全体-->
+<h1>Update#index</h1>
+<p><%= @post_cnt.id %>作品が投稿されてます</p>
+<br>
+
+アニメを追加する
+
+<%= form_tag("/mg/anime" , {multipart: true}) do %>
+
+タイトル<input name="title"><br>
+シーズン<input name="season" value="spring"><br>
+年<input name="year" value="2020"><br>
+メディア<input name="media" value="TV"><br>
+制作会社<input name="company"><br>
+あらすじ<input name="story"><br>
+キャスト<input name="cv"><br>
+スタッフ<input name="staff"><br>
+PV１ URL <input name="pv1"><br>
+PV 2 URL <input name="pv2"><br>
+サムネイル<input name="image" type="file"><br>
+<br>
+<br>
+<input type="submit" value="追加する">
+
+<% end %>
+<br><br><br>
+
+<h3>既存のアニメを編集</h3>
+<%= search_form_for @search, url: "/mg/search" do |f| %>
+  <%= f.text_field :title_or_cv_cont ,placeholder: '検索...' %>
+<% end %>
+</div><!--wrapper-->

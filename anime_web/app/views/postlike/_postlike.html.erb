@@ -1,0 +1,89 @@
+
+<% if Postlike.find_by(like: 'good' , review_id: review.id , user_id: current_user.id) %>
+
+<% @goodcount = Postlike.where(like: 'good' , review_id: review.id).count %>
+<% @badcount = Postlike.where(like: 'bad' , review_id: review.id).count %>
+
+<div class="review-review-good is-active-like" id="good-btn-<%= review.id %>"><i class="material-icons">thumb_up</i><p><%= @goodcount %></p></div>
+<div class="review-review-bad" id="bad-btn-<%= review.id %>"><i class="material-icons">thumb_down</i><p><%= @badcount %></p></div>
+
+
+<script type="text/javascript">
+  	$(function(){
+
+    $('.review-review-good' + '#good-btn-<%= review.id %>').on('click',function(){
+      $.ajax({
+          type:'POST',
+          url:'/postlike/<%= review.id %>/destroy'
+        });
+      });
+
+      $('.review-review-bad' + '#bad-btn-<%= review.id %>').on('click',function(){
+        $.ajax({
+            type:'POST',
+            url:'/postlike/<%= review.id %>/create/bad'
+          });
+        });
+
+      	 });
+</script>
+
+
+<% elsif Postlike.find_by(like: 'bad' , review_id: review.id , user_id: current_user.id) %>
+
+<% @goodcount = Postlike.where(like: 'good' , review_id: review.id).count %>
+<% @badcount = Postlike.where(like: 'bad' , review_id: review.id).count %>
+
+<div class="review-review-good" id="good-btn-<%= review.id %>"><i class="material-icons">thumb_up</i><p><%= @goodcount %></p></div>
+<div class="review-review-bad is-active-like" id="bad-btn-<%= review.id %>"><i class="material-icons">thumb_down</i><p><%= @badcount %></p></div>
+
+<script type="text/javascript">
+  	$(function(){
+
+    $('.review-review-bad' + '#bad-btn-<%= review.id %>').on('click',function(){
+      $.ajax({
+          type:'POST',
+          url:'/postlike/<%= review.id %>/destroy'
+        });
+      });
+
+      $('.review-review-good' + '#good-btn-<%= review.id %>').on('click',function(){
+        $.ajax({
+            type:'POST',
+            url:'/postlike/<%= review.id %>/create/good'
+          });
+        });
+
+      	 });
+</script>
+
+
+<% else %>
+
+<% @goodcount = Postlike.where(like: 'good' , review_id: review.id).count %>
+<% @badcount = Postlike.where(like: 'bad' , review_id: review.id).count %>
+
+<div class="review-review-good" id="good-btn-<%= review.id %>"><i class="material-icons">thumb_up</i><p><%= @goodcount %></p></div>
+<div class="review-review-bad" id="bad-btn-<%= review.id %>"><i class="material-icons">thumb_down</i><p><%= @badcount %></p></div>
+
+<script type="text/javascript">
+  	$(function(){
+
+    $('.review-review-bad' + '#bad-btn-<%= review.id %>').on('click',function(){
+      $.ajax({
+          type:'POST',
+          url:'/postlike/<%= review.id %>/create/bad'
+        });
+      });
+
+      $('.review-review-good' + '#good-btn-<%= review.id %>').on('click',function(){
+        $.ajax({
+            type:'POST',
+            url:'/postlike/<%= review.id %>/create/good'
+          });
+        });
+
+      	 });
+</script>
+
+<% end %>

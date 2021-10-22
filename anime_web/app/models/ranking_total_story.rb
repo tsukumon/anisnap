@@ -1,0 +1,2 @@
+class RankingTotalStory < ApplicationRecord
+end

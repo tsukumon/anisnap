@@ -1,0 +1,83 @@
+<!--タイトル-->
+<% content_for :title do %>
+設定 - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+<div class="setting-wrapper-doc-m1"><!--サイド＆＆全体-->
+
+
+  <div class="wrapper-setting-left"><!--左-->
+
+  <div class="content-area-setting"><!--コンテンツエリア-->
+
+    <div class="setting-select-midasi">設定</div>
+
+    <div class="setting-one setting-select-is-active"><i class="fas fa-user-circle"></i> プロフィール</div><!--一つ終了-->
+    <%=link_to("/users/edit") do %><div class="setting-one setting-select-not-active"><i class="fas fa-user-shield"></i> セキュリティ</div><% end %><!--一つ終了-->
+    <div class="setting-one setting-select-not-active"><i class="fab fa-twitter"></i> 連携（後日実装）</div>
+    <%= link_to  destroy_user_session_path, :method => :delete do %><div class="setting-one setting-select-not-active"><i class="fas fa-sign-out-alt"></i> ログアウト</div><% end %>
+  </div><!--コンテンツエリア-->
+
+</div><!--左終了-->
+
+
+
+  <div class="wrapper-setting-right"><!--左-->
+
+    <div class="setting-form-heading"><p>プロフィール</p></div>
+
+    <div class="settiing-form-area"><!--ログインフォーム全体-->
+
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <i class="fas fa-exclamation-triangle"></i> <%= message %>
+        </div>
+      <% end %>
+
+<div class="login-form-form"><!--フォーム入力欄全体-->
+
+          <%= form_tag("/setting/update" , {multipart: true}) do %>
+
+          <div class="user-input-area"><!--ユーザーID入力欄開始-->
+            <div class="user-input-area-h1">ユーザー名:</div>
+          <div class="user-input-area-in"><input name="username" value="<%= @user.username %>"></div>
+          <div class="user-input-area-text-side">最大25文字</div>
+          </div><!--ユーザーID入力欄終了-->
+
+          <div class="user-input-area"><!--ユーザーID入力欄開始-->
+            <div class="user-input-area-h1">ユーザーID:</div>
+          <div class="user-input-area-in"><input name="userid" value="<%= @user.userid %>"></div>
+          <div class="user-input-area-text-side">英数字で最大15文字</div>
+          </div><!--ユーザーID入力欄終了-->
+
+          <div class="user-input-area"　id="image-select"><!--ユーザーID入力欄開始-->
+            <div class="user-input-area-h1">プロフ画像:</div>
+        <input name="image" type="file">
+          <div class="user-input-area-text"></div>
+          </div><!--ユーザーID入力欄終了-->
+
+          <div class="user-input-area"><!--ユーザーID入力欄開始-->
+            <div class="user-input-area-h1">ヘッダー画像:</div>
+        <input name="bgimage" type="file">
+          <div class="user-input-area-text"></div>
+          </div><!--ユーザーID入力欄終了-->
+
+          <div class="user-input-area"><!--ユーザーID入力欄開始-->
+            <div class="user-input-area-h1">自己紹介:</div>
+          <div class="user-input-area-in"><div class="edit-text-area"><textarea name="intro"><%= @user.intro %></textarea></div></div>
+          </div><!--ユーザーID入力欄終了-->
+
+          <div class="user-setting-area-hr"></div>
+
+          <div class="submit-area"><input type="submit" value="保存する"></div>
+
+          <% end %>
+</div><!--フォーム入力欄全体-->
+    </div><!--ログインフォーム終了-->
+  </div><!--左-->
+
+  </div><!--wrapper-->

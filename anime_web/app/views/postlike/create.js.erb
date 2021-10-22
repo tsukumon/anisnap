@@ -1,0 +1,1 @@
+$('.review-review-area' + '#review-like-area-<%= @reviewnow.id %>').html("<%= escape_javascript(render partial: '/postlike/postlike', locals: {review: @reviewnow, current_user: current_user}) %>");

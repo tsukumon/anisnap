@@ -1,0 +1,3194 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//--------------PC-----------
+@media screen and (min-width: 640px) {
+  //--トップページ新規登録フォーム--//
+
+  //上までスクロールボタン
+  #page_top{
+    h2{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: -50px;
+    background: #3BC58A;
+    opacity: 0.9;
+    border-radius: 50%;
+  }
+  #page_top a{
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+  #page_top a::before{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f102';
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -5px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+  #page_top:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+
+
+  .title-logo-sp{
+    display: none;
+  }
+  .sp-menu-right{
+    display: none;
+  }
+
+  //全体
+  .regstraion-home{
+  }
+  //登録してない際の画像
+  .top-abount-img{
+    background-color: #64BD4A;
+    width:1100px;
+    height:300px;
+    vertical-align: bottom;
+  }
+
+  //お知らせエリア
+  .alert-area{
+    margin:10px 0px 40px 0px;
+  }
+  //お知らせ単体
+  .alert-one{
+    padding:10px 0px;
+    margin:0px 10px;
+    border-bottom: 1px solid #E6ECF0;
+    display: flex;
+    text-decoration: none;
+    //ベルマーク
+    i{
+      color:#FEDA4A;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    b{
+      font-size: 12px;
+      margin-right: 20px;
+      color:#4e4e4e;
+    }
+    p{
+      font-size: 12px;
+      color:#337AB7;
+      font-weight: bold;
+    }
+    p:hover{
+      transition: 0.2s;
+      color:#00A1D6;
+    }
+
+  }
+  .alert-one:hover{
+    transition: 0.2s;
+    background-color: #f9f9f9;
+  }
+
+
+
+.mobile-mylist-act{
+  display: none;
+}
+
+  //-------------頭メニューバー------------------------------------
+
+     /*トップバー全体*/
+     .top-page-head-ver{
+       padding: 0;
+       background-color: #fff;
+       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+       width:100%;
+       z-index: 2;
+     }
+
+     //トップバー内容全体
+     .top-page-head-ver-in{
+       width:1100px;
+       position: relative;
+       margin-left: auto;
+       margin-right: auto;
+       display: flex;
+       justify-content: space-between;
+     }
+
+     //左メニュー
+     .top-page-head-menu-m1{
+       display: flex;
+     }
+
+     //メニュー単体
+     .top-menu-one{
+       font-size: 13px;
+     }.top-menu-one i{
+       font-size: 18px;
+     }
+     .top-menu-one a{
+       text-decoration: none;
+       color:#272727;
+       display: block;
+       height:40px;
+       line-height: 40px;
+       padding:0px 10px 0px 10px;
+     }
+        .top-menu-one a:hover{
+          background-color: rgba(255,255,255,.2)!important;
+        }
+
+    //右メニュー
+    .top-page-head-menu-m2{
+      display: flex;
+    }
+
+    //検索
+    .top-page-seach-area{
+      line-height: 39px;
+    }
+
+    //検索フォーム
+    .top-page-seach-area input{
+      -webkit-appearance: none;
+      width:260px;
+      height:22px;
+      border: none;
+      border-radius: 3px;
+      padding:3px 3px 3px 8px;
+      background-color: #F4F4F4;
+    }
+    .top-page-seach-area input:focus{
+      outline: 0;
+      border: none;
+    }
+
+    //ユーザー情報エリア
+    .head-user-info{
+      display: flex;
+      margin-left: 20px;
+      margin-right: 70px;
+    }
+
+    .head-user-img{
+      width:30px;
+      height:30px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 5px;
+      display: block;
+      margin-right: 10px;
+    }
+
+    //投稿ボタン
+    .top-menu-one-post{
+      position: absolute;
+      right:0px;
+      background-color: #F85B73;
+      border-radius:  0px 0px 5px 5px;
+      z-index: 21;
+    }
+
+    .top-menu-one-post a{
+      text-decoration: none;
+      display: block;
+      height:45px;
+      width:65px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 13px;
+      color:#fff;
+    }
+
+    .top-menu-one-post:hover{
+      background-color: #f47c8e;
+      transition: 0.3s;
+    }
+
+
+  //-------------頭メニューバー終了------------------------------------
+
+
+
+ /*余白を生み出さないおまじない*/
+ * {
+     margin: 0px;
+     padding: 0px;
+ }
+
+ body{
+   background-color: #fff;
+   width:100%;
+   height: 100%;
+
+ }
+
+ footer{
+   max-width: 1100px;
+   max-width: 1100px;
+   margin-left:auto;    /* 左側マージンを自動的に空ける */
+   margin-right:auto;   /* 右側マージンを自動的に空ける */
+   margin-top: 50px;
+   margin-bottom: 50px;
+ }
+
+
+
+ //コピーライトエリア
+ .footer-copy{
+  color:#2e2e2e;
+  font-size: 13px;
+  display: flex;
+  margin-top: 60px;
+ }
+
+//フッダー内容エリア
+.footer-area{
+  justify-content: space-between;
+  display: flex;
+}
+
+//各項目
+.footer-area-one{
+  border-top: 2px solid;
+  border-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  border-image-slice: 1;
+  width:300px;
+  padding-top:10px;
+}
+//見出し
+.footer-area-one h1{
+  margin-bottom: 15px;
+  font-size: 15px;
+  color:#303030;
+}
+//内容
+.footer-area-one li{
+  text-decoration: none;
+  list-style: none;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color:#4d4d4d;
+  a{
+    text-decoration: none;
+    color:#4d4d4d;
+  }
+  a:hover{
+    color:#337AB7;
+  }
+}
+
+
+
+
+//アニメトップランキングエリア全体--------------------------
+
+//ランキング見出しエリア
+.home-ranking-midasi{
+  margin-top: 10px;
+  border-bottom: 1px solid #E6ECF0;
+}
+//大見出し1
+.home-ranking-midasi h2{
+  margin-bottom: -2px;
+  padding:0px 10px;
+  font-size: 16px;
+  color:#4c4c4c;
+  border-bottom: 3px solid #41C9B4;
+  display: inline-block;
+  margin-top: 30px;
+}
+//大見出し2
+.home-ranking-midasi h3{
+  margin-bottom: -2px;
+  padding:0px 10px;
+  font-size: 16px;
+  color:#4c4c4c;
+  border-bottom: 3px solid #41C9B4;
+  display: inline-block;
+}
+
+
+
+//他のシーズンセレクトurl
+.home-other-more{
+  text-decoration: none;
+  text-align: right;
+  margin-right: 10px;
+  font-size: 13px;
+}
+.home-other-more a{
+  text-decoration: none;
+  color:#5F6368;
+}
+.home-other-more a:hover{
+  transition: 0.2s;
+  color:#0366DB;
+}
+
+
+
+//今期アニメランキングエリア
+.home-ranking-now{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+//単体
+.home-ranking-now-one{
+ width:130px;
+}
+.home-ranking-now-one a{
+  text-decoration: none;
+}
+
+.home-ranking-now-one:hover{
+  .home-ranking-now-one-img{
+    transition: 0.3s;
+    opacity: 0.8;
+  }
+  .home-ranking-title{
+    transition: 0.3s;
+    color:#00A1D6;
+  }
+}
+
+//画像
+.home-ranking-now-one-img{
+  width:130px;
+  height:160px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
+//画像上
+.home-ranking-title-area{
+  z-index: 3;
+  width:100%;
+}
+//マイリス
+.home-ranking-mylist{
+  display: flex;
+  font-size: 11px;
+  b{
+    color:#444444;
+  }
+  p{
+    color: #757575;
+    margin-right: 2px;
+  }
+}
+
+//画像上タイトルエリア
+.home-ranking-title{
+  font-size: 12px;
+  color:#337AB7;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+//アニメトップランキングエリア全体--------------------------
+
+//----人気のニュースエリア--------------
+
+.home-favnews-area{
+  padding:10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+//単体
+.home-favnews-one{
+  width:165px;
+}
+.home-favnews-one a{
+  text-decoration: none;
+}
+
+.home-favnews-one:hover{
+  transition: 0.2s;
+  .home-favnews-img{
+    opacity: 0.8;
+  }
+  .home-favnews-title{
+    color:#0366DB;
+  }
+}
+
+//画像
+.home-favnews-img{
+  width:165px;
+  height:100px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//タイトル
+.home-favnews-title{
+  font-size: 13px;
+  color:#353535;
+}
+
+//----人気のニュースエリア--------------
+
+
+
+//----人気のニュースエリア(4)--------------
+
+.home-favnews-area-4{
+  padding:10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+//単体
+.home-favnews-one-4{
+  width:170px;
+  margin-bottom: 10px;
+}
+.home-favnews-one-4 a{
+  text-decoration: none;
+}
+
+.home-favnews-one-4:hover{
+  transition: 0.2s;
+  .home-favnews-img-4{
+    opacity: 0.8;
+  }
+  .home-favnews-title-4{
+    color:#0366DB;
+  }
+}
+
+//画像
+.home-favnews-img-4{
+  width:170px;
+  height:120px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//タイトル
+.home-favnews-title-4{
+  font-size: 13px;
+  color:#353535;
+}
+
+//----人気のニュースエリア(4)--------------
+
+
+//----良いね！レビューエリア------
+.home-favreview-area{
+  margin-bottom: 50px;
+}
+
+//単体
+.home-favreview-one{
+  display: flex;
+  padding:10px 0px;
+  margin:0px 10px;
+  border-bottom:1px solid #cccccc;
+  text-decoration: none;
+}
+
+.home-favreview-one:hover{
+  .home-favreview-side p{
+    color:#00A1D6;
+    transition: 0.3s;
+  }
+}
+//詳細エリア
+.home-favreview-side{
+  margin-left: 10px;
+}
+//画像
+.home-favreview-img{
+  width:50px;
+  height:50px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//内容
+.home-favreview-side p{
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:650px;
+  color:#2d2d2d;
+}
+
+//いいね
+.home-favreview-side b{
+  font-size: 12px;
+  color:#EDA715;
+}
+
+//----良いね！レビューエリア------
+
+
+
+//----来期アニメランキング------
+.home-nextseason-area{
+
+}
+
+//単体
+.home-nextseason-one{
+  display: flex;
+  padding:10px;
+  border-top:1px solid #EBF0F3;
+  text-decoration: none;
+}
+.home-nextseason-one:first-child{
+  border: none;
+}
+
+.home-nextseason-one:hover{
+  .home-nextseason-img{
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+  .home-nextseason-titile{
+    color:#337AB7;
+    transition: 0.3s;
+  }
+}
+
+//画像エリア
+.home-nextseason-img-area{
+  position: relative;
+  width:150px;
+}
+//画像
+.home-nextseason-img{
+  width:150px;
+  height:100px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//詳細エリア
+.home-nextseason-datials{
+  margin-left: 10px;
+}
+
+//タイトル
+.home-nextseason-titile{
+  font-size: 16px;
+  font-weight: bold;
+  color:#44444A;
+  margin-bottom: 5px;
+}
+
+
+//画像上ランキング
+.home-ranking-season-rank{
+  z-index: 3;
+  position: absolute;
+  top:0;
+  left:0;
+  display: inline-block;
+  min-width: 22px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0px 3px 0 0;
+  text-align: center;
+  background: #41C9B4;
+  font-size: 15px;
+  font-weight: bold;
+  color:#fff;
+}
+
+//キャスト
+.home-ranking-cast{
+  font-size: 12px;
+  color:#454545;
+  word-wrap: break-word;
+}
+
+
+//星表示エリア
+.home-ranking-star{
+  display: flex;
+  margin-bottom: 5px;
+}
+
+//平均スコア点数
+.home-ranking-star-p{
+  font-size: 14px;
+  font-weight: bold;
+  color:#FD8208;
+  margin-right: 15px;
+}
+
+//総合スコア
+.home-ranking-star-score{
+  font-size: 14px;
+  font-weight: bold;
+  color:#00A1D6;
+}
+
+//エリア一つ
+.home-ranking-score-area{
+  display: flex;
+  align-items: center;
+}
+//見出し
+.home-ranking-score-area-named{
+  color:#4c4c4c;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+
+
+
+//----来期アニメランキング------
+
+//---最新のニュース---------
+.home-news-area{
+
+}
+
+//単体
+.home-news-area-one{
+  display: flex;
+  padding:10px 20px;
+  border-top:1px solid #EBF0F3;
+  text-decoration: none;
+}
+.home-news-area-one:first-child{
+  border: none;
+}
+
+.home-news-area-one:hover{
+  .home-news-one-img{
+    transition: 0.2s;
+    opacity: 0.8;
+  }
+  .home-news-title{
+    transition: 0.2s;
+    color:#337AB7;
+  }
+}
+
+//画像エリア
+.home-news-img-area{
+  width: 150px;
+  margin-right: 10px;
+}
+//画像
+.home-news-one-img{
+  width:150px;
+  height:100px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//詳細
+.home-news-datails{
+  width:530px;
+  position: relative;
+}
+//タイトル
+.home-news-title{
+  font-size: 16px;
+  font-weight: bold;
+  color:#363636;
+}
+
+//固定
+.home-news-kotei{
+  position: absolute;
+  bottom: 0;
+  right:0;
+  color:#b4b4b4;
+  font-size: 13px;
+}
+
+//---最新のニュース---------
+
+
+//トップページ大見出しエリア
+.top-page-midasi-h1{
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+//トップページ大見出しアイコン
+.top-page-midasi-icon{
+  margin-right: 10px;
+  color: #FFBA00;
+  font-size: 18px;
+}
+//トップページ大見出し文字
+.top-page-midasi-text{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  color:#3a3a3a;
+}
+
+
+
+//トップページ大見出しエリア//ニュース
+.top-page-midasi-h1-news{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #02AAB0 0%, #E4CC43 100%);
+  border-image-slice: 1;
+  margin-top: 30px;
+}
+//トップページ大見出しアイコン//ニュース
+.top-page-midasi-icon-news{
+  margin-right: 10px;
+  color: #FFBA00;
+  font-size: 18px;
+}
+//トップページ大見出し文字//ニュース
+.top-page-midasi-text-news{
+  font-size: 16px;
+  font-weight: bold;
+  color:#3a3a3a;
+}
+
+//トップページ大見出しエリア//サイト情報
+.top-page-midasi-h1-datails{
+  display: flex;
+  align-items:flex-start;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  border-top: 2px solid;
+  border-image: linear-gradient(to right, #423D4B 0%, #E2E4B8 100%);
+  border-image-slice: 1;
+}
+//トップページ大見出しアイコン//サイト情報
+.top-page-midasi-icon-datails{
+  margin-right: 10px;
+  color: #2e2e2e;
+  font-size: 40px;
+}
+//トップページ大見出し文字//サイト情報
+.top-page-midasi-text-datails{
+  font-size: 16px;
+  font-weight: bold;
+  color:#3a3a3a;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+//サイト情報　個
+.top-page-midasi-right-p{
+  width:575px;
+  font-size: 13px;
+  border-bottom: 1px dotted #cccccc;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+//サイト情報　個 ラスト
+.top-page-midasi-right-p-last{
+  width:575px;
+  font-size: 13px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+//メンテナンス関連エリア全体
+.develop-area{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+//最新ニュースエリア----------------------------------
+.new-news-area-one{
+  display: flex;
+  border-bottom: 1px dotted #cfcfcf;
+  padding-bottom: 10px;
+  margin-top:10px;
+  position: relative;
+}
+
+//画像
+.new-news-area-img{
+  width:130px;
+  height:90px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+//右エリア
+.new-news-area-right{
+  margin-left: 10px;
+  padding-right: 30px;
+}
+
+//タイトル
+.new-news-area-title{
+  font-size: 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color:#333333;
+}
+.new-news-area-wall a{
+  text-decoration: none;
+  color:#333333;
+}
+.new-news-area-wall a:hover{
+  .new-news-area-title{
+    color:#0366DB;
+    transition: 0.3s;
+  }
+}
+
+//日付
+.new-news-area-date{
+  position: absolute;
+  font-size: 13px;
+  color:#c5c5c5;
+  right:0;
+  bottom:10px;
+}
+
+//ニュースジャンル処理---------
+
+
+//消すお
+.new-news-area-open{
+    display: none;
+    margin-bottom: 70px;
+}
+//全体
+.genre-select-area{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+//単体
+.genre-select-area-one{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 126px;
+  min-width: 126px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  font-size: 14px;
+  color:#2e2e2e;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 5px;
+}
+.genre-select-area-one:hover{
+  transition: 0.3s;
+}
+
+.genre-select-area-one i{
+  margin-right: 5px;
+}
+
+.is-active {
+  max-width: 126px;
+  min-width: 126px;
+  color:#00A1D6;
+  font-size: 14px;
+  border-bottom: 1px solid #00A1D6;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.is-active p {
+}
+
+
+//消すお
+.fav-now-anime-open{
+  display: none;
+}
+
+//全体
+.genre-select-area-anime{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+//単体
+.genre-select-area-anime-one{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 157px;
+  min-width: 157px;
+  cursor: pointer; //指
+  cursor: hand; //指
+  font-size: 14px;
+  color:#2e2e2e;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 5px;
+}
+.genre-select-area-anime-one:hover{
+  transition: 0.3s;
+}
+
+.genre-select-area-anime-one i{
+  margin-right: 5px;
+}
+
+.is-active-anime {
+  max-width: 157px;
+  min-width: 157px;
+  color:#00A1D6;
+  font-size: 14px;
+  border-bottom: 1px solid #00A1D6;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.is-active-anime p {
+}
+
+//人気アニメ単体---------------------
+.fav-now-anime-one{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E5E9EF;
+  padding-bottom: 10px;
+  margin-top:10px;
+}
+
+.fav-now-anime-one:last-child{
+  border: none;
+}
+
+//画像エリア
+.fav-now-anime-one-left{
+  width:120px;
+}
+//画像本体
+.now-fav-anime-img{
+  display: block;
+  width:120px;
+  height:120px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+//詳細エリア
+.fav-now-anime-one-right{
+  margin-left: 15px;
+  width:450px;
+}
+
+.ranking-open-cast-top{
+  font-size: 13px;
+  margin-top: 10px;
+  color:#318FB6;
+}
+
+
+//詳細エリアと総合スコアエリア
+.fav-now-anime-log-flex{
+  display: flex;
+  align-items: flex-start;
+}
+
+//タイトル
+.fav-now-anime-one-title{
+  font-size: 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color:#313131;
+  margin-bottom: 10px;
+}
+.fav-now-anime-one-title a{
+  text-decoration: none;
+  color:#303030;
+}
+.fav-now-anime-one-title a:hover{
+  color:#0366DB;
+  transition: 0.3s;
+}
+
+
+
+//星表示エリア
+.now-ranking-open-star{
+  display: flex;
+  align-items: center;
+}
+//平均スコア点数
+.now-ranking-open-star p{
+  font-size: 14px;
+  font-weight: bold;
+  color:#FFB042;
+  margin-right: 5px;
+}
+//星
+.now-ranking-open-star i{
+  font-size: 13px;
+  color:#FFB042;
+  margin-right: 3px;
+  padding-bottom: 3px;
+}
+
+
+
+
+
+//スコアエリア全体
+.now-ranking-open-score-wall{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+//マイリスト数などもろもろ
+.now-ranking-open-other-score{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+//マイリスト数エリア
+.now-ranking-open-mylist-count{
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+//アイコン
+.now-ranking-open-mylist-count i{
+  font-size: 12px;
+  margin-right: 5px;
+  color:#98A2AA;
+}
+//カウント
+.now-ranking-open-mylist-count p{
+  font-size: 12px;
+  color:#98A2AA;
+  margin-top: 2px;
+}
+
+
+
+//総合スコア表示エリア
+.now-ranking-open-score{
+  text-align: center;
+  margin-left: 10px;
+  width:105px;
+
+}
+//スコア本体
+.now-ranking-open-score b{
+  font-size: 18px;
+  color:#00A4DE;
+}
+//見出し
+.now-ranking-open-score p{
+  font-size: 11px;
+  color:#ababab;
+}
+
+
+
+ //コンテンツ非表示にする場合
+ .all-no{
+
+ }
+
+ //コンテンツ表示
+ .all{
+   width:100%;
+   margin-bottom: 50px;
+   padding-bottom: 10px;
+   background-color: #fff;
+ }
+
+ /*トップバー全体*/
+ .head-ver{
+   background-color:#fff;
+   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+   min-width: 980px;
+   padding:0px 0px 5px 10px;
+   display: flex; /*横並び*/
+   z-index: 9999;
+ }
+
+ //スマホメニュー非表示
+ .menu-bottom{
+   display: none;
+ }
+
+
+
+
+ /*あとでロゴと置換*/
+ .head-title{
+   font-size:30px;
+   font-weight: bold;
+   color:#00A1DB;
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+   margin-left: 20px;
+ }
+
+  .head-title a{
+    text-decoration: none;
+    color:#00A1DB;
+  }
+
+
+ /*メニュー全体*/
+ .head-menu-full{
+   display:flex;
+   margin-left: 30px;
+ }
+
+ .head-menu-one{
+   align-self: center;
+   font-size:15px;
+   color:#292929;
+   margin-right: 20px;
+   list-style: none;
+ }
+
+ .head-menu-one li{
+     list-style: none;
+ }
+
+
+ .head-menu-one a{
+   text-decoration: none;
+   color:#5D576B;
+ }
+
+
+ /*検索フォーム*/
+ .head-menu-one input{
+   -webkit-appearance: none;
+     border: solid 1px #c4c4c4;
+     border-radius:2px;
+     padding:10px;
+     font-size: 15px;
+     height:10px;
+     margin-left: 10px;
+     height:5px;
+ }
+
+ /*ログイン関連（右寄せ）*/
+ .user-up{
+   display: flex;
+   margin: 0 0 0 auto; /*右寄せ*/
+   margin-right: 20px;
+   margin-top: 5px;
+ }
+
+ .user-up a{
+   text-decoration: none;
+ }
+
+ .log-in:hover{
+   background-color: #00BFAF;
+   color:#fff;
+   transition: 0.3s ; //ゆっくり変化
+ }
+
+ /*ログインボタン*/
+ .log-in{
+   align-self: center;
+   padding:3px 6px 3px 6px;
+   border-radius: 2px;
+   border: 1px solid #AFE6E1;
+   color:#5CCCB8;
+   margin-right: 20px;
+   margin-top: 4px;
+   text-decoration: none;
+ }
+
+
+ //ユーザーアイコン
+ .head-icon {
+   margin-right: 20px;
+   width:40px;
+   height:40px;
+   object-fit:cover;
+   border-radius: 50%;
+ }
+
+
+
+
+ /*トップ画像全体*/
+ .topimg{
+   background-color: #bce2e8;  /* カラーフィルタ効果の色を指定 */
+   position: relative; /*上の画像置くための設定*/
+   margin-bottom: 40px;
+ }
+
+ /*トップ画像*/
+ .imgin{
+   display: block;
+   width:100%;
+   height:300px;
+   object-fit: cover;
+   opacity: 0.9;    /* カラーフィルタ効果の度合いを指定 */
+ }
+
+ //見出し
+ .midasi{
+   text-align: center;
+   font-size: 22px;
+   font-weight: normal;
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+   color:#4e4e4e;
+   margin-bottom: 5px;
+ }
+
+ //見出し　年代
+ .midasi-year{
+   text-align: center;
+   font-size: 15px;
+   color:#a2a2a2;
+ }
+
+
+
+//------------記事-------------
+
+//wrapperの上
+.top-wrapper{
+  max-width: 1100px;
+  max-width: 1100px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+//wrapperの上
+.top-wrapper-home{
+  max-width: 980px;
+  max-width: 980px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+
+//横並びにしない全体
+.wrapper-doc1{
+  max-width: 980px;
+  max-width: 980px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+}
+//全体
+.wrapper{
+  max-width: 1100px;
+  max-width: 1100px;
+  display: flex;
+  align-items: flex-start;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+}
+
+//ランキング全タイ
+.ranking-wrapper{
+  max-width: 1100px;
+  max-width: 1100px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+}
+
+//マイリス全体
+.wrapper-mylist{
+  max-width: 1100px;
+  max-width: 1100px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+}
+
+//全体左
+.wrapper-left{
+  width: 770px;
+  margin-right: 10px;
+
+}
+
+.wrapper-right{
+  width: 340px;
+  margin-top: 33px;
+}
+
+
+//見出しなし
+.wrapper-right-no-midasi{
+  width: 330px;
+}
+
+//マイページサイド右
+.wrapper-right-mypage{
+  width: 330px;
+  word-break: break-all;
+}
+
+//マイページメイン左
+.wrapper-left-mypage{
+  min-width: 760px;
+  max-width: 760px;
+  margin-right: 20px;
+}
+
+
+
+//コンテンツエリア
+.content{
+  margin-top: 5px;
+  margin-bottom: 50px;
+  border: 1px #efefef solid;
+  background-color: #fff;
+  padding:10px;
+  word-break: break-all;
+}
+
+//サイド　コンテンツエリア
+.content-side{
+  margin-bottom: 20px;
+  word-break: break-all;
+  background-color: #fff;
+  border-radius: 4px;
+  padding:0px 0px 10px 0px;
+  border: 1px solid #E6ECF0;
+}
+//リンク
+.content-side a{
+  text-decoration: none;
+}
+
+//サイド　固定コンテンツエリア
+.content-side-fixed{
+  margin-bottom: 20px;
+  word-break: break-all;
+  background-color: #fff;
+  border-radius: 4px;
+  padding:0px 0px 10px 0px;
+  border: 1px solid #E6ECF0;
+  position: -webkit-sticky; /* safari対応 */
+  position: sticky;
+  top: 10px;
+}
+//リンク固定
+.content-side-fixed a{
+  text-decoration: none;
+}
+
+//サイドタイトルエリア
+.content-side-title-area{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+//サイドタイトル
+.content-side-title{
+  padding-left: 3px;
+  color:#4b4b4b;
+  font-weight: bold;
+  font-size: 18px;
+}
+.content-side-title-icon{
+  color:#FFBA00;
+  font-size: 18px;
+}
+
+
+
+//サイドタイトルエリア（下）
+.content-side-title-area-2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding:5px 10px 5px 10px;
+  background-color: #F5F8FA;
+}
+//サイドタイトル（下）
+.content-side-title-2{
+  color:#343434;
+  font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+//（下）
+.content-side-title-icon-2{
+  color:#343434;
+  font-size: 18px;
+}
+
+
+//----新作アニメを探す
+.sideani-area{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding:10px 10px 0px 10px;
+}
+//単体
+.sideani-area-one{
+  overflow: hidden;
+  position: relative;
+  width:160px;
+  margin-bottom: 10px;
+}
+.sideani-area-one-img{
+  width:160px;
+  height:100px;
+  object-fit: cover;
+ vertical-align: bottom;
+ display: block;
+	transition-duration: 0.2s;	/*変化に掛かる時間*/
+}
+.sideani-area-one-img:hover{
+  transform: scale(1.1);	/*画像の拡大率*/
+	transition-duration: 0.2s;	/*変化に掛かる時間*/
+}
+//画像上
+.sideani-onimage{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background-image: linear-gradient(-180deg, transparent, rgba(0,0,0,.7));
+  width:160px;
+  height:30px;
+}
+//見出し
+.sideani-area-one h3{
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 13px;
+  color:#fff;
+  font-weight: normal;
+}
+
+//他のシーズンセレクトurl
+.side-other-season-more{
+  text-decoration: none;
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+.side-other-season-more a{
+  text-decoration: none;
+  color:#5F6368;
+}
+.side-other-season-more a:hover{
+  transition: 0.2s;
+  color:#0366DB;
+}
+
+
+//---------最新レビューエリア-------------------
+
+//リンク囲い
+.review-new-area-wall{
+  border-bottom:  1px dotted #EEEEEE;
+  padding:0px 10px 0px 10px;
+}
+
+.review-new-area-wall:last-child{
+  border: none;
+}
+.review-new-area{
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.review-new-area:hover{
+  p{
+    color:#0366DB;
+    transition: 0.3s;
+  }
+}
+
+.review-new-area p{
+ color:#262626;
+ font-size: 12px;
+}
+
+.review-new-area b{
+  color:#FB7299;
+  font-size: 11px;
+}
+
+.review-new-area h2{
+  font-size: 13px;
+  font-weight: bold;
+  color:#EDA715;
+}
+//右
+.review-new-are-right{
+  margin-right: 10px;
+  width:230px;
+}
+//画像
+.review-new-area-img{
+  width:80px;
+  height:70px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+//もっとみる（レビュー）
+.review-more-area{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+//文字
+.review-more-area p{
+  font-size: 13px;
+  font-weight: bold;
+  color: #00A1D6;
+}
+//アイコン
+.review-more-area i{
+  font-size: 15px;
+  margin-right: 5px;
+  color: #00A1D6;
+}
+
+
+//------------レビューエリア終了-----------------
+
+//---サイドアクセスランキング--------------------
+
+//単体
+.newnews-side-area{
+  display: flex;
+  border-bottom: 1px solid #E6ECF0;
+  padding:10px 10px 10px 10px;
+}
+
+.newnews-side-area a{
+  text-decoration: none;
+}
+
+
+//タイトルエリア
+.favnews-side-side{
+  margin-left: 10px;
+}
+
+//タイトル
+.newnews-side-title{
+  z-index: 1;
+  font-size: 12px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color:#474747;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//人気記事タイトル
+.favnews-side-title{
+  z-index: 1;
+  font-size: 12px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color:#474747;
+}
+
+//画像えりあ
+.favnews-img-area{
+  width:100px;
+  height:70px;
+}
+//画像
+.newnews-side-img{
+  position: relative;
+  width:100px;
+  height:70px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+//リンク全体
+.newnews-side-area-wall{
+  text-decoration: none;
+  color:#333333;
+}
+.newnews-side-area-wall:hover{
+  .newnews-side-title{
+    color:#0366DB;
+    transition: 0.3s;
+  }
+}
+
+.newnews-side-area-wall:hover{
+  .favnews-side-title{
+    color:#0366DB;
+    transition: 0.3s;
+  }
+}
+
+//PVカウント
+.count-pv-side{
+  position: absolute;
+  display: inline-block;
+  background-color: #AFC1D1;
+  font-size: 12px;
+  padding:2px 5px 2px 5px;
+}
+
+//---サイドアクセスランキング終了----------------
+
+//サイドアドセンスエリア
+.side-add-area{
+  margin-bottom: 50px;
+  min-height:300px;
+  border: 1px #dddddd solid;
+  background-color: #f4f4f4;
+}
+
+//ニュースエリア全体
+.top-news-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;  /*縦幅を統一*/
+  justify-content:space-around; /*均等に配置*/
+  padding:10px;
+}
+
+//リンクの設定
+.top-news-content a{
+  text-decoration: none;
+}
+
+.top-news-content a:hover{
+  color:#4b4b4b;
+  text-decoration: underline;
+}
+
+
+//記事単体の全体
+.top-news-content-one{
+  width: 24%;
+}
+
+//画像重ね全体
+
+//記事サムネ全体
+.top-news-content-img{
+}
+
+//サムネ画像自体の設定
+.top-news-content-img-datails{
+  width:100%;
+  border-radius: 3px;
+  border: 1px solid #f4f4f4;
+}
+
+.top-news-content-img-datails:hover{
+  opacity: 0.9;
+  transition: 0.4s;
+  background-color: #fff;
+}
+
+
+
+//記事タイトル
+.top-news-content-title{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color:#4b4b4b;
+  width:100%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+//記事抜粋
+.top-bassui{
+  margin: 20px 0px 10px 0px;
+  font-size: 14px;
+  color:#8b8b8b;
+}
+
+//記事投稿時記
+.top-news-conetnt-date{
+  font-size: 15px;
+  color:#c9c9c9;
+  position: absolute; //位置固定
+  right:0;
+  bottom: 0;
+}
+
+//人気アニメ------
+
+//全体
+.fav-anime-all{
+  overflow: hidden;
+}
+//単体
+.fav-anime-one{
+  display: flex;
+  margin-top: -1px;
+  border-top: 1px solid #e6e6e6;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+//画像
+.fav-anime-img{
+  width:80px;
+  height:80px;
+  object-fit: cover;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+}
+
+//右エリア
+.fav-anime-right{
+  margin-left: 5px;
+}
+
+//タイトル
+.fav-anime-titile{
+  color:#0366D6;
+  font-size: 14px;
+  font-weight: bold;
+}
+.fav-anime-titile a{
+  text-decoration: underline;
+  color:#0366D6;
+}
+
+//リスト情報
+.fav-anime-list{
+  margin-top: 5px;
+  color:#474747;
+  font-size: 12px;
+}
+
+
+#state-area select{
+  cursor: pointer; //指
+  cursor: hand; //指
+  width:100%;
+  height:30px;
+  border-radius: 2px;
+  border-color: #1ACCAB;
+  color:#fff;
+  font-size: 16px;
+  background-color: #1ACCAB;
+}
+#state-area option{
+  font-size: 17px;
+  background-color: #656565;
+  color:#fff;
+}
+
+ //すべて見る
+
+ .more-all{
+   text-align: center;
+   display: flex;
+   justify-content: flex-end;
+ }
+
+  .more-all a{
+   border: 1px solid #E5E9EF;
+   color:#222222;
+   font-size: 12px;
+   text-decoration: none;
+   border-radius: 4px;
+   padding:2px 10px 2px 10px;
+ }
+
+  .more-all a:hover{
+    background-color:#CCD0D7;
+    color:#222222;
+    transition: 0.5s;
+ }
+
+ .more-all i{
+   color:#9199A0;
+   font-size: 12px;
+ }
+
+
+
+ //-----------ホバー時に出るやつ----
+
+ ul{
+   list-style: none;
+ }
+ nav {
+ }
+
+ /* 親メニュー - Parent nav */
+ nav > ul > li {
+   position: relative;
+ }
+ nav a {
+   color: #0bd;
+   text-decoration: none;
+ }
+ nav ul a:hover {
+
+ }
+
+ /* 子メニュー - .sub-menu */
+ nav .sub-menu {
+   position: absolute;
+   width: 140px;
+   background-color: #fff;
+   border: 1px solid #d0d0d0;
+   border-radius: 4px;
+   top: 40px;
+   right:0;
+   display: none;
+   font-size: 12px;
+   padding: 5px;
+ }
+ nav .sub-menu a {
+   color: #505050;
+   padding: 10px 15px;
+   display: block;
+ }
+ nav .sub-menu a:hover {
+   color: #505050;
+ }
+
+ /* ホバー＆フォーカスで子メニュー表示 */
+ /* Display sub menu by hover & focus */
+ nav .menu-item-has-children:hover ul,
+ nav .menu-item-has-children ul.focused {
+   display: block;
+   transition: 0.3s;
+ }
+ nav li.menu-item-has-children li a:hover,
+ nav li.menu-item-has-children li a:focus {
+   background: #f0f0f0;
+   transition: 0.3s;
+ }
+
+ //-----------------------
+ /* 子メニュー - .sub-menu */
+ nav .sub-menu1 {
+   position: absolute;
+   width: 140px;
+   background-color: #fff;
+   border: 1px solid #d0d0d0;
+   border-radius: 4px;
+   top: 25px;
+   display: none;
+   font-size: 14px;
+   padding: 5px;
+   z-index: 2999;
+ }
+ nav .sub-menu1 a {
+   color: #505050;
+   padding: 10px 15px;
+   display: block;
+ }
+ nav .sub-menu1 a:hover {
+   color: #505050;
+ }
+
+ /* ホバー＆フォーカスで子メニュー表示 */
+ /* Display sub menu by hover & focus */
+ nav .menu-item-has-children1:hover ul,
+ nav .menu-item-has-children ul.focused {
+   display: block;
+ }
+ nav li.menu-item-has-children1 li a:hover,
+ nav li.menu-item-has-children1 li a:focus {
+   background: #f0f0f0;
+ }
+
+
+} //-------PC end--------
+
+ //メニュー関連　スマホ-----------------------------------------------------------------------------------
+  @media screen and (max-width: 640px){
+
+    .pc-mylist-act{
+      display: none;
+    }
+
+    body{
+      width:100%;
+      height:100%;
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+
+    /*余白を生み出さないおまじない*/
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /*トップバー全体*/
+    .top-page-head-ver{
+      position: fixed;
+      top:0;
+      padding: 0;
+      background-color: rgba(255,255,255,0.95);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+      width:100%;
+      z-index: 5;
+    }
+    //トップバー内容全体
+    .top-page-head-ver-in{
+      padding:1% 1% 1% 0%;
+      width:99%;
+      position: relative;
+      display: flex;
+      justify-content:space-between;
+    }
+
+.global-nav {
+  position: fixed;
+  right: -70%; /* これで隠れる */
+  top: 0;
+  width: 65%; /* スマホに収まるくらい */
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 200;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  padding:10px 1% 0px 1%;
+}
+.global-nav a{
+  text-decoration: none;
+}
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+  height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+  cursor: pointer;
+  z-index: 300;
+}
+.global-nav__item {
+  font-size: 14px;
+  color:#444444;
+  border-bottom: 1px solid #fbfbfb;
+  i{
+    margin-right: 5px;
+    font-size: 15px;
+    width:20px;
+  }
+}
+.global-nav__item:last-child{
+  border: none;
+}
+.global-nav__item a {
+  padding:5px 0;
+  display: block;
+  text-decoration: none;
+  color:#444444;
+}
+
+.hamburger__line {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 3px;
+  background-color: #111;
+  transition: all .6s;
+}
+.hamburger__line--1 {
+  top: 11px;
+}
+.hamburger__line--2 {
+  top: 20px;
+}
+.hamburger__line--3 {
+  top: 29px;
+}
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+/* 表示された時用のCSS */
+.nav-open .global-nav {
+  right: 0;
+}
+.nav-open .black-bg {
+  opacity: .5;
+  visibility: visible;
+}
+.nav-open .hamburger__line--1 {
+  transform: rotate(45deg);
+  top: 20px;
+}
+.nav-open .hamburger__line--2 {
+  width: 0;
+  left: 50%;
+}
+.nav-open .hamburger__line--3 {
+  transform: rotate(-45deg);
+  top: 20px;
+}
+
+    //タイトルロゴ
+    .title-logo-sp{
+      margin:5px 0px 5px 10px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .title-logo-sp a{
+      text-decoration: none;
+      color:#444444;
+    }
+
+    //右
+    .sp-menu-right{
+      display: flex;
+      align-items: center;
+    }
+
+    //ログインボタン
+    .sp-login-bar{
+      text-decoration: none;
+      background-color: #41C9B4;
+      border:1px solid #41C9B4;
+      color:#fff;
+      display: inline-block;
+      margin:5px 55px 5px 5px;
+      padding:1px 7px 1px 7px;
+      font-size: 12px;
+    }
+
+    //ユーザーエリア
+    .sp-nav-user-area{
+      width:98%;
+      border-bottom: 2px solid #E8EEF1;
+      padding: 5px 1% 5px 1%;
+      list-style: none;
+    }
+    //メニュー単体
+    .sp-nav-list-one{
+      color:#444444;
+      font-size: 15px;
+      i{
+        margin-right: 5px;
+        font-size: 15px;
+        width:20px;
+      }
+    }
+    .sp-nav-list-one:last-child{
+      padding:0;
+    }
+
+
+    //ログイン
+    .search-area-sp{
+      color:#464646;
+      font-size: 31px;
+      margin-right: 10px;
+    }
+
+
+    /*アイコンのスペース*/
+    #nav-open-m1 {
+        display: inline-block;
+        width: 35px;
+        height: 25px;
+        vertical-align: middle;
+        padding-left: 3vw;
+    }
+
+    /*ハンバーガーアイコンをCSSだけで表現*/
+    #nav-open-m1 span, #nav-open-m1 span:before, #nav-open-m1 span:after {
+        position: absolute;
+        height: 3px;/*線の太さ*/
+        width: 30px;/*長さ*/
+        border-radius: 3px;
+        background: #3a3a3a;
+        display: block;
+        content: '';
+        cursor: pointer;
+    }
+    #nav-open-m1 span:before {
+        bottom: -10px;
+    }
+    #nav-open-m1 span:after {
+        bottom: -20px;
+    }
+
+
+
+    //ランキング、ニュースなど
+    .top-page-head-menu-m1{
+      display: none;
+    }
+    //右メニュー
+    .top-page-head-menu-m2{
+      display: none;
+    }
+
+    .top-wrapper{
+      max-width:100%;
+      max-width: 100%;
+      margin-top: 70px;
+      margin-bottom: 10px;
+    }
+    //全体
+    .wrapper{
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    //左メニュー非表示
+    .wrapper-new-doc-m1{
+      display: none;
+    }
+
+    //内容カラム
+    .wrapper-new-doc-m2{
+      max-width:100%;
+      min-width: 100%;
+    }
+
+    //サイドバーカラム
+    .wrapper-new-doc-m3{
+      max-width:100%;
+      min-width: 100%;
+      margin-top: 30px;
+    }
+
+
+    //画像上文字
+    .swiper-slide-title{
+      position: absolute;
+      bottom:0;
+      left:0;
+      background-image: linear-gradient(-180deg, transparent, rgba(0,0,0,.7));
+      width: 100%;
+    }
+    //画像上文字内部
+    .swiper-slide-title-in{
+      padding:5px;
+      color:#fff;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+    }
+
+    //画像
+    .swiper-img{
+      width:100%;
+      height:200px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+
+    .swiper-slide-next{
+           opacity: 0.5;
+         }
+         .swiper-slide-prev{
+           opacity: 0.5;
+         }
+
+         //トップページ大見出しエリア(silider)
+         .top-page-midasi-h1-top{
+           margin-left: 5px;
+           display: flex;
+           align-items: center;
+           margin-top: 5vw;
+           font-size: 4vw;
+         }
+         //トップページ大見出し文字
+         .top-page-midasi-text{
+           font-family: 'Noto Sans JP', sans-serif;
+           font-size: 4vw;
+           color:#3a3a3a;
+         }
+         //トップページ大見出しエリア
+         .top-page-midasi-h1{
+           display: flex;
+           align-items: center;
+           margin-top: 40px;
+           margin-left: 5px;
+         }
+         //トップページ大見出しアイコン
+         .top-page-midasi-icon{
+           margin-right: 10px;
+           color: #FFBA00;
+           font-size: 4vw;
+         }
+
+         //全体
+         .genre-select-area{
+           display: flex;
+           margin-top: 10px;
+           margin-bottom: 10px;
+           width:100%;
+         }
+         //単体
+         .genre-select-area-one{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           max-width: 20%;
+           min-width: 20%;
+           cursor: pointer; //指
+           cursor: hand; //指
+           font-size: 3vw;
+           color:#2e2e2e;
+           text-align: center;
+           border-bottom: 1px solid #eaeaea;
+           padding-bottom: 5px;
+           position: relative;
+           z-index: 1;
+         }
+        .genre-select-area-one a{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-indent:-999px;
+          z-index: 2;
+        }
+
+         .genre-select-area-one i{
+           margin-right: 3px;
+         }
+
+         .is-active {
+           max-width: 20%;
+           min-width: 20%;
+           color:#00A1D6;
+           font-size: 3vw;
+           border-bottom: 1px solid #00A1D6;
+           text-align: center;
+           padding-bottom: 5px;
+         }
+         .is-active p {
+         }
+
+          .more-all{
+            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10px;
+          }
+
+           .more-all a{
+            border: 1px solid #E5E9EF;
+            color:#222222;
+            font-size: 3vw;
+            text-decoration: none;
+            border-radius: 4px;
+            padding:2px 10px 2px 10px;
+          }
+
+          .more-all i{
+            color:#9199A0;
+            font-size:3vw;
+          }
+
+         //消すお
+         .new-news-area-open{
+             display: none;
+             margin-bottom: 70px;
+         }
+
+         //記事単体
+         .news-article-one-doc1{
+           display: flex;
+           text-decoration: none;
+           padding:5px;
+           border-bottom: 1px solid #E6ECF0;
+         }
+         .news-article-one-doc1:last-child{
+           border: none;
+         }
+
+
+         //タイトルエリア
+         .news-article-one-doc1-title-area{
+           width:70%;
+         }
+         //タイトル
+         .news-article-one-doc1-title{
+           font-family: 'Noto Sans JP', sans-serif;
+           margin-top: 3px;
+           font-size: 3.4vw;
+           color:#353535;
+         }
+         //画像エリア
+         .news-article-one-doc1-img-area{
+           padding-left: 2%;
+           padding-right: 2%;
+           width:30%;
+         }
+         //画像が左の時
+         .news-article-one-doc1-img-area-m2{
+           width:30%;
+           padding-left: 2%;
+           padding-right: 2%;
+         }
+         //画像本体
+         .news-article-one-doc1-img{
+           width:100%;
+           height:20vw;
+           object-fit: cover;
+           border-radius: 5px;
+           display: block;
+         }
+
+
+         //日付・カテゴリエリア
+         .news-article-one-doc1-dtails{
+           display: flex;
+           align-items: center;
+           margin-bottom:5px;
+         }
+
+
+         //カテゴリエリア
+         .news-article-one-doc1-relation-area{
+           width:50px;
+           margin-right:10px;
+         }
+         //カテゴリ(アニメ)
+         .news-article-one-doc1-relation-m1{
+           text-align: center;
+           display: inline-block;
+           margin-right: 10px;
+           font-size: 2.5vw;
+           background-color: #F97E76;
+           border-radius: 4px;
+           color:#fff;
+           width:50px;
+           line-height: 5vw;
+           vertical-align: middle;
+}
+
+         //日付
+         .news-article-one-doc1-date{
+           font-size: 2.8vw;
+           color:#6b6b6b;
+         }
+
+
+
+         //消すお
+         .fav-now-anime-open{
+           display: none;
+         }
+
+         //全体
+         .genre-select-area-anime{
+           width:100%;
+           display: flex;
+           margin-top: 10px;
+           margin-bottom: 10px;
+         }
+         //単体
+         .genre-select-area-anime-one{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           max-width: 25%;
+           min-width: 25%;
+           cursor: pointer; //指
+           cursor: hand; //指
+           font-size: 3vw;
+           color:#2e2e2e;
+           text-align: center;
+           border-bottom: 1px solid #eaeaea;
+           padding-bottom: 5px;
+         }
+
+         .genre-select-area-anime-one i{
+           margin-right: 5px;
+         }
+
+         .is-active-anime {
+           max-width: 25%;
+           min-width: 25%;
+           color:#00A1D6;
+           font-size: 3vw;
+           border-bottom: 1px solid #00A1D6;
+           text-align: center;
+           padding-bottom: 5px;
+         }
+         .is-active-anime p {
+         }
+
+
+         //マイリス選択エリア(可変)
+         .post-open-select-btn-area-act{
+           margin-right: 5vw;
+         }
+         //マイリス選択ボタン(可変)
+         .post-open-select-btn-act{
+           position: relative;
+           font-size: 3.5vw;
+           display: inline-block;
+           text-align: center;
+           vertical-align: middle;
+           width:100%;
+           line-height: 35px;
+           height:35px;
+           border: 1px solid #41C9B4;
+           background-color: #41C9B4;
+           border-radius: 3px;
+           cursor: pointer; //指
+           cursor: hand; //指
+           -webkit-appearance: none;
+           -moz-appearance: none;
+           appearance: none;
+         }
+
+         //人気アニメ単体---------------------
+         .fav-now-anime-one{
+           width: 96%;
+           display: flex;
+           align-items: center;
+           border-bottom: 1px solid #E5E9EF;
+           padding-bottom: 10px;
+           margin-top:10px;
+           padding-left: 2%;
+           padding-right: 2%;
+           position: relative;
+         }
+
+         .fav-now-anime-one:last-child{
+           border: none;
+         }
+
+
+         //順位表示エリア
+         .ranking-open-rank{
+           position: absolute;
+           bottom: 0;
+           right:10px;
+           font-size: 20vw;
+           color:#e8e8e8;
+           z-index: -1;
+         }
+
+
+         //画像エリア
+         .fav-now-anime-one-left{
+           width:25%;
+         }
+         //画像本体
+         .now-fav-anime-img{
+           display: block;
+           width:100%;
+           height:120px;
+           object-fit: cover;
+           border-radius: 2px;
+           margin-bottom: 5px;
+         }
+         //詳細エリア
+         .fav-now-anime-one-right{
+           padding-left: 4%;
+           width:75%;
+         }
+
+         //詳細エリアと総合スコアエリア
+         .fav-now-anime-log-flex{
+           display: flex;
+           align-items: flex-start;
+           width:100%;
+         }
+
+         //タイトル
+         .fav-now-anime-one-title{
+           font-size: 3.5vw;
+           font-family: sans-serif;
+           color:#313131;
+         }
+         .fav-now-anime-one-title a{
+           text-decoration: none;
+           color:#303030;
+         }
+         .fav-now-anime-one-title a:hover{
+           color:#0366DB;
+           transition: 0.3s;
+         }
+
+         //メディア・シーズン表示エリア
+         .anime-season-and-media{
+           display: flex;
+           align-items: center;
+         }
+         //エリア単体
+
+         //あらすじ本文
+         .ranking-open-story{
+           font-size: 13px;
+           color:#474747;
+           margin-top: 10px;
+         }
+
+         .ranking-open-cast-top{
+           font-size: 3vw;
+           margin-top: 10px;
+           color:#318FB6;
+         }
+
+
+         //星表示エリア
+         .now-ranking-open-star{
+           display: flex;
+           align-items: center;
+         }
+         //平均スコア点数
+         .now-ranking-open-star p{
+           font-size: 14px;
+           font-weight: bold;
+           color:#FFB042;
+           margin-right: 5px;
+         }
+         //星
+         .now-ranking-open-star i{
+           font-size: 13px;
+           color:#FFB042;
+           margin-right: 3px;
+         }
+
+
+
+         //スコアエリア全体
+         .now-ranking-open-score-wall{
+           margin-top: 5px;
+           display: flex;
+           align-items: center;
+         }
+
+         //マイリスト数などもろもろ
+         .now-ranking-open-other-score{
+           display: flex;
+           align-items: center;
+           margin-left: 10px;
+         }
+         //マイリスト数エリア
+         .now-ranking-open-mylist-count{
+           margin-right: 15px;
+           display: flex;
+           align-items: center;
+         }
+
+         //アイコン
+         .now-ranking-open-mylist-count i{
+           font-size: 12px;
+           margin-right: 5px;
+           color:#98A2AA;
+         }
+         //カウント
+         .now-ranking-open-mylist-count p{
+           font-size: 12px;
+           color:#98A2AA;
+           margin-top: 2px;
+         }
+
+
+
+         //総合スコア表示エリア
+         .now-ranking-open-score{
+           text-align: center;
+           margin-left: 10px;
+           width:105px;
+
+         }
+         //スコア本体
+         .now-ranking-open-score b{
+           font-size: 18px;
+           color:#00A4DE;
+         }
+         //見出し
+         .now-ranking-open-score p{
+           font-size: 11px;
+           color:#ababab;
+         }
+
+
+
+    footer{
+      background-color: #5b5b5b;
+      max-width: 100%;
+      max-width: 100%;
+      margin-top: 50px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+
+
+    //コピーライトエリア
+    .footer-copy{
+    width:100%;
+     color:#fff;
+     font-size: 13px;
+     display: flex;
+     margin-top: 10px;
+    }
+
+   //フッダー内容エリア
+   .footer-area{
+     margin-left: 4%;
+     margin-right: 2%;
+     width:94%;
+     display: flex;
+     flex-wrap: wrap;
+   }
+
+   //各項目
+   .footer-area-one{
+     width:45%;
+     margin-right: 5%;
+     padding-top:10px;
+     margin-bottom: 30px;
+   }
+
+   //見出し
+   .footer-area-one h1{
+     margin-bottom: 15px;
+     font-size: 15px;
+     color:#e5e5e5;
+   }
+   //内容
+   .footer-area-one li{
+     text-decoration: none;
+     list-style: none;
+     font-size: 13px;
+     margin-bottom: 5px;
+     color:#c5c5c5;
+   }
+
+
+   //---デベロプ---
+
+   //メンテナンス関連エリア全体
+   .develop-area{
+     margin-top: 40px;
+     margin-bottom: 50px;
+   }
+
+
+   //トップページ大見出しエリア//サイト情報
+   .top-page-midasi-h1-datails{
+     display: flex;
+     align-items:flex-start;
+     padding-left: 10px;
+     margin-bottom: 15px;
+   }
+   //トップページ大見出しアイコン//サイト情報
+   .top-page-midasi-icon-datails{
+     margin-right: 10px;
+     color: #2e2e2e;
+     font-size: 40px;
+   }
+   //トップページ大見出し文字//サイト情報
+   .top-page-midasi-text-datails{
+     font-size: 16px;
+     font-weight: bold;
+     color:#3a3a3a;
+     margin-top: 10px;
+     margin-bottom: 15px;
+   }
+
+   //サイト情報　個
+   .top-page-midasi-right-p{
+     width:95%;
+     font-size: 13px;
+     border-bottom: 1px dotted #cccccc;
+     margin-right: 5%;
+     padding-bottom: 8px;
+     margin-bottom: 8px;
+   }
+
+   //サイト情報　個 ラスト
+   .top-page-midasi-right-p-last{
+      width:95%;
+     font-size: 13px;
+     margin-right: 5%;
+     padding-bottom: 8px;
+     margin-bottom: 8px;
+   }
+   //--デベロップ終了--
+
+
+
+   //アニメトップランキングエリア全体--------------------------
+
+
+   //ランキング見出しエリア
+   .home-ranking-midasi{
+     margin-top: 10px;
+     border-bottom: 1px solid #E6ECF0;
+   }
+   //大見出し1
+   .home-ranking-midasi h2{
+     margin-bottom: -2px;
+     padding:0px 10px;
+     font-size: 16px;
+     color:#4c4c4c;
+     border-bottom: 3px solid #64BC4B;
+     display: inline-block;
+     margin-top: 30px;
+   }
+   //大見出し2
+   .home-ranking-midasi h3{
+     margin-bottom: -2px;
+     padding:0px 10px;
+     font-size: 16px;
+     color:#4c4c4c;
+     border-bottom: 3px solid #64BC4B;
+     display: inline-block;
+   }
+
+
+   //お知らせエリア
+   .alert-area{
+     margin:10px 0px 40px 0px;
+   }
+   //お知らせ単体
+   .alert-one{
+     padding:10px 0px;
+     margin:0px 10px;
+     border-bottom: 1px solid #E6ECF0;
+     display: flex;
+     flex-wrap: wrap;
+     text-decoration: none;
+     //ベルマーク
+     i{
+       color:#FEDA4A;
+       font-size: 15px;
+       margin-right: 5px;
+     }
+
+     b{
+       font-size: 11px;
+       margin-right: 5px;
+       color:#4e4e4e;
+     }
+     p{
+       font-size: 12px;
+       color:#337AB7;
+       font-weight: bold;
+     }
+   }
+
+
+   //他のシーズンセレクトurl
+   .home-other-more{
+     text-decoration: none;
+     text-align: right;
+     margin-right: 10px;
+     margin-bottom: 20px;
+     margin-top: 10px;
+     font-size: 13px;
+   }
+   .home-other-more a{
+     text-decoration: none;
+     color:#5F6368;
+   }
+   .home-other-more a:hover{
+     transition: 0.2s;
+     color:#0366DB;
+   }
+
+
+   //今期アニメランキングエリア
+   .home-ranking-now{
+     display: flex;
+     flex-wrap: wrap;
+     margin-top: 10px;
+     justify-content: space-around;
+    -webkit-overflow-scrolling: touch;
+   }
+
+   //単体
+   .home-ranking-now-one{
+    width:45%;
+    margin-bottom: 30px;
+   }
+   .home-ranking-now-one a{
+     text-decoration: none;
+   }
+
+   //5番目非表示
+   .home-ranking-now-one:nth-child(5){
+     display: none;
+   }
+
+
+   //画像
+   .home-ranking-now-one-img{
+     width:100%;
+     height:auto;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+
+   //画像上
+   .home-ranking-title-area{
+     z-index: 3;
+     width:100%;
+   }
+   //マイリス
+   .home-ranking-mylist{
+     display: flex;
+     font-size: 11px;
+     b{
+       color:#444444;
+     }
+     p{
+       color: #757575;
+       margin-right: 2px;
+     }
+   }
+
+   //画像上タイトルエリア
+   .home-ranking-title{
+     font-size: 13px;
+     color:#337AB7;
+     font-weight: bold;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+   }
+
+
+
+
+   //アニメトップランキングエリア全体--------------------------
+
+   //----人気のニュースエリア--------------
+
+   .home-favnews-area{
+     padding:10px 5px 10px 5px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+   }
+
+   //単体
+   .home-favnews-one{
+     width:48%;
+     margin-bottom: 10px;
+   }
+   .home-favnews-one a{
+     text-decoration: none;
+   }
+
+
+   //画像
+   .home-favnews-img{
+     width:100%;
+     height:100px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //タイトル
+   .home-favnews-title{
+     font-size: 12px;
+     color:#353535;
+   }
+
+   //----人気のニュースエリア--------------
+
+   //----人気のニュースエリア(4)--------------
+
+   .home-favnews-area-4{
+     padding:10px 5px 10px 5px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+   }
+
+   //単体
+   .home-favnews-one-4{
+     width:48%;
+     margin-bottom: 10px;
+   }
+   .home-favnews-one-4 a{
+     text-decoration: none;
+   }
+
+
+   //画像
+   .home-favnews-img-4{
+     width:100%;
+     height:100px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //タイトル
+   .home-favnews-title-4{
+     font-size: 12px;
+     color:#353535;
+   }
+
+   //----人気のニュースエリア(4)--------------
+
+
+   //----良いね！レビューエリア------
+   .home-favreview-area{
+     margin-bottom: 10px;
+   }
+
+   //単体
+   .home-favreview-one{
+     display: flex;
+     padding:10px;
+     border-top:1px solid #EBF0F3;
+     text-decoration: none;
+   }
+   .home-favreview-one:first-child{
+     border: none;
+   }
+
+
+   //詳細エリア
+   .home-favreview-side{
+     margin-left: 10px;
+     width:85%;
+   }
+   //画像
+   .home-favreview-img{
+     width:50px;
+     height:50px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //内容
+   .home-favreview-side p{
+     font-size: 12px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     width:100%;
+     color:#2d2d2d;
+   }
+
+   //いいね
+   .home-favreview-side b{
+     font-size: 12px;
+     color:#EDA715;
+   }
+
+   //----良いね！レビューエリア------
+
+
+
+   //----来期アニメランキング------
+   .home-nextseason-area{
+
+   }
+
+   //単体
+   .home-nextseason-one{
+     display: flex;
+     padding:10px;
+     border-top:1px solid #EBF0F3;
+     text-decoration: none;
+   }
+   .home-nextseason-one:first-child{
+     border: none;
+   }
+
+
+   //画像エリア
+   .home-nextseason-img-area{
+     position: relative;
+     width:130px;
+   }
+   //画像
+   .home-nextseason-img{
+     width:130px;
+     height:100px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //詳細エリア
+   .home-nextseason-datials{
+     margin-left: 10px;
+   }
+
+   //タイトル
+   .home-nextseason-titile{
+     font-size: 14px;
+     font-weight: bold;
+     color:#303030;
+     margin-bottom: 5px;
+   }
+
+
+   //画像上ランキング
+   .home-ranking-season-rank{
+     z-index: 3;
+     position: absolute;
+     top:0;
+     left:0;
+     display: inline-block;
+     min-width: 20px;
+     height: 22px;
+     line-height: 25px;
+     margin: -1px 3px 0 0;
+     padding: 0 2px;
+     text-align: center;
+     background: #FA7639;
+     font-size: 16px;
+     font-weight: bold;
+     color:#fff;
+   }
+
+   //キャスト
+   .home-ranking-cast{
+     font-size: 10px;
+     color:#454545;
+     word-wrap: break-word;
+   }
+
+
+   //星表示エリア
+   .home-ranking-star{
+     display: flex;
+     margin-bottom: 5px;
+   }
+
+   //平均スコア点数
+   .home-ranking-star-p{
+     font-size: 13px;
+     font-weight: bold;
+     color:#FD8208;
+     margin-right: 15px;
+   }
+
+   //総合スコア
+   .home-ranking-star-score{
+     font-size: 13px;
+     font-weight: bold;
+     color:#00A1D6;
+   }
+
+   //エリア一つ
+   .home-ranking-score-area{
+     display: flex;
+     align-items: center;
+   }
+   //見出し
+   .home-ranking-score-area-named{
+     color:#4c4c4c;
+     font-size: 12px;
+     margin-right: 5px;
+   }
+
+
+
+
+   //----来期アニメランキング------
+
+   //---最新のニュース---------
+   .home-news-area{
+
+   }
+
+   //単体
+   .home-news-area-one{
+     display: flex;
+     padding:10px 2% 10px 2%;
+     width:96%;
+     border-top:1px solid #EBF0F3;
+     text-decoration: none;
+   }
+   .home-news-area-one:first-child{
+     border: none;
+   }
+
+
+   //画像エリア
+   .home-news-img-area{
+     width: 30%;
+     margin-right: 2%;
+   }
+   //画像
+   .home-news-one-img{
+     width:100%;
+     height:100px;
+     object-fit: cover;
+     vertical-align: bottom;
+   }
+
+   //詳細
+   .home-news-datails{
+     width:68%;
+     position: relative;
+   }
+   //タイトル
+   .home-news-title{
+     font-size: 14px;
+     font-weight: bold;
+     color:#363636;
+   }
+
+   //固定
+   .home-news-kotei{
+     position: absolute;
+     bottom: 0;
+     right:0;
+     color:#b4b4b4;
+     font-size: 10px;
+   }
+
+   //---最新のニュース---------
+
+
+
+  }//responsive end------------------------

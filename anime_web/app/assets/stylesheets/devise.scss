@@ -1,0 +1,467 @@
+
+
+//メーラー画像
+.mailer-img-area{
+  width:100%;
+  height:300px;
+}
+//メーラー本文エリア
+.mailer-front-area{
+  width:96%;
+  margin:10px 1%;
+}
+//メールbottom
+.mailer-bottom{
+  margin-top: 30px;
+}
+
+//--------------PC-----------
+@media screen and (min-width: 640px) {
+//ログインフォーム囲い全体
+.login-wrapper{
+  width:980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.login-wrapper-midasi-area{
+  text-align: center;
+}
+//ページ見出し
+
+.login-wrapper-midasi {
+	color: #444;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+  margin-bottom: 50px;
+}
+.login-wrapper-midasi:before, .login-wrapper-midasi:after {
+	content: "";
+	flex-grow: 1;
+	height: 1px;
+	background: #DDDDDD;
+	display: block;
+}
+.login-wrapper-midasi:before {
+	margin-right: .4em;
+}
+.login-wrapper-midasi:after {
+	margin-left: .4em;
+}
+
+
+//ログインフォーム
+.user-login-input-area-in input{
+  border: 1px solid #BFCBD9;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  padding:5px;
+  width:420px;
+  height:25px;
+}
+.user-login-input-area-in input:focus{
+  outline: 0;
+  border: 1px solid #00A1D7;
+}
+
+
+
+//入力単体全体
+.user-input-area-m2-area{
+  width:420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//入力単体
+.user-input-area-m2{
+  margin-bottom: 30px;
+}
+
+
+//入力見出し2
+.user-input-area-h3{
+  font-size: 15px;
+  color: #48576A;
+  padding-right: 30px;
+}
+
+//自動ログインチェックボックス
+.field-remenber{
+  font-size: 13px;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+//ログイン＆新規登録ボタン
+.actions-login-or-singup{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+//ログインボタン
+.login-form-botan input[type="submit"] {
+  border:none;
+  -webkit-appearance: none;
+  background-color: #00A1D6;
+  color: #fff;
+  cursor: pointer;
+  max-width: 180px;
+  min-width: 180px;
+  height:40px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form-botan input:hover[type="submit"]{
+  background-color: #00B5E5;
+  color: #fff;
+  transition: 0.3s;
+}
+
+
+.sign-up-botan input{
+  -webkit-appearance: none;
+  border:none;
+  background-color: #fff;
+  color: #555555;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  max-width: 180px;
+  min-width: 180px;
+  height:40px;
+  border-radius: 2px;
+  border:  1px solid #CCCCCC;
+}
+.sign-up-botan input:hover{
+  background-color: #F7F7F7;
+  color: #555555;
+  transition: 0.3s;
+}
+
+//ヘルプエリア
+.login-help-area{
+  display: flex;
+  align-items: center;
+}
+
+//ヘルプエリア単体
+.setting-one-help{
+  font-size: 13px;
+  margin-right: 20px;
+}
+.setting-one-help a{
+  text-decoration: none;
+  color:#00A1D6;
+}
+
+
+
+//入力エリア
+.user-input-area-in-m2{
+
+}
+.user-input-area-in-m2 input{
+  -webkit-appearance: none;
+  border: 1px solid #BFCBD9;
+  border-radius: 4px;
+  padding:5px;
+  width:420px;
+  height:30px;
+}
+.user-input-area-in-m2 input:focus{
+  outline: 0;
+  border: 1px solid #00A1D7;
+}
+
+
+//ログインボタン全体
+.actions-login-or-singup-new{
+  text-align: center;
+  margin-top: 60px;
+}
+
+//ログインボタン
+.login-form-botan-new input[type="submit"] {
+  -webkit-appearance: none;
+  border:none;
+  background-color: #00A1D6;
+  color: #fff;
+  cursor: pointer;
+  max-width: 300px;
+  min-width: 300px;
+  height:40px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form-botan-new input:hover[type="submit"]{
+  -webkit-appearance: none;
+  background-color: #00B5E5;
+  color: #fff;
+  transition: 0.3s;
+}
+
+
+//既にアカウントを持っている
+.user-login-help-m2{
+  font-size: 13px;
+  text-align: right;
+  margin-bottom: 50px;
+}
+.user-login-help-m2 a{
+  text-decoration: none;
+  color:#00A1D6;
+}
+
+//メールパスワードを忘れたページの入力エリア
+.login-user-help-datails-text{
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+
+//リザルト画面下空白
+.login-user-help-datails-text-hr{
+  margin-bottom: 200px;
+}
+
+
+}
+//--------------PC-----------
+
+
+//------------スマホ---------------
+ @media screen and (max-width: 640px){
+
+   //ログインフォーム囲い全体
+   .login-wrapper{
+     width:96%;
+     padding:0 2%;
+   }
+
+
+   .login-wrapper-midasi-area{
+     text-align: center;
+   }
+   //ページ見出し
+
+   .login-wrapper-midasi {
+   	color: #444;
+   	font-size: 20px;
+   	display: flex;
+   	align-items: center;
+     margin-bottom: 50px;
+   }
+   .login-wrapper-midasi:before, .login-wrapper-midasi:after {
+   	content: "";
+   	flex-grow: 1;
+   	height: 1px;
+   	background: #DDDDDD;
+   	display: block;
+   }
+   .login-wrapper-midasi:before {
+   	margin-right: .4em;
+   }
+   .login-wrapper-midasi:after {
+   	margin-left: .4em;
+   }
+
+
+   //ログインフォーム
+   .user-login-input-area-in input{
+     font-size: 16px;
+     -webkit-appearance: none;
+     border: 1px solid #BFCBD9;
+     border-radius: 4px;
+     padding:5px 2%;
+     width:96%;
+     height:25px;
+   }
+   .user-login-input-area-in input:focus{
+     outline: 0;
+     border: 1px solid #00A1D7;
+   }
+
+
+
+   //入力単体全体
+   .user-input-area-m2-area{
+     width:100%;
+   }
+
+   //入力単体
+   .user-input-area-m2{
+     margin-bottom: 30px;
+   }
+
+
+   //入力見出し2
+   .user-input-area-h3{
+     font-size: 15px;
+     color: #48576A;
+     padding-right: 30px;
+   }
+
+   //自動ログインチェックボックス
+   .field-remenber{
+     font-size: 13px;
+     margin-top: 70px;
+     margin-bottom: 10px;
+   }
+
+   //ログイン＆新規登録ボタン
+   .actions-login-or-singup{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+
+
+   //ログインボタン
+   .login-form-botan{
+     max-width:45%;
+     min-width: 45%;
+   }
+   .login-form-botan input[type="submit"] {
+     -webkit-appearance: none;
+     border:none;
+     background-color: #00A1D6;
+     color: #fff;
+     cursor: pointer;
+     max-width: 100%;
+     min-width: 100%;
+     height:40px;
+     border-radius: 2px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+   }
+
+   .login-form-botan input:hover[type="submit"]{
+     background-color: #00B5E5;
+     color: #fff;
+     transition: 0.3s;
+   }
+
+   .sign-up-botan{
+     max-width: 45%;
+     min-width: 45%;
+   }
+   .sign-up-botan input{
+     -webkit-appearance: none;
+     border:none;
+     background-color: #fff;
+     color: #555555;
+     cursor: pointer;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     max-width: 100%;
+     min-width: 100%;
+     height:40px;
+     border-radius: 2px;
+     border:  1px solid #CCCCCC;
+   }
+   .sign-up-botan input:hover{
+     background-color: #F7F7F7;
+     color: #555555;
+     transition: 0.3s;
+   }
+
+   //ヘルプエリア
+   .login-help-area{
+     display: flex;
+     align-items: center;
+   }
+
+   //ヘルプエリア単体
+   .setting-one-help{
+     font-size: 13px;
+     margin-right: 20px;
+   }
+   .setting-one-help a{
+     text-decoration: none;
+     color:#00A1D6;
+   }
+
+
+
+   //入力エリア
+   .user-input-area-in-m2{
+   }
+   .user-input-area-in-m2 input{
+     font-size: 16px;
+transform: scale(0.8);
+     -webkit-appearance: none;
+     border: 1px solid #BFCBD9;
+     border-radius: 4px;
+     padding:5px 2%;
+     width:96%;
+     height:30px;
+   }
+   .user-input-area-in-m2 input:focus{
+     outline: 0;
+     border: 1px solid #00A1D7;
+   }
+
+
+   //ログインボタン全体
+   .actions-login-or-singup-new{
+     text-align: center;
+     margin-top: 60px;
+   }
+
+   //ログインボタン
+   .login-form-botan-new input[type="submit"] {
+     -webkit-appearance: none;
+     border:none;
+     background-color: #00A1D6;
+     color: #fff;
+     cursor: pointer;
+     max-width: 300px;
+     min-width: 300px;
+     height:40px;
+     border-radius: 2px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+   }
+
+   .login-form-botan-new input:hover[type="submit"]{
+     background-color: #00B5E5;
+     color: #fff;
+     transition: 0.3s;
+   }
+
+
+   //既にアカウントを持っている
+   .user-login-help-m2{
+     font-size: 13px;
+     text-align: right;
+     margin-bottom: 50px;
+   }
+   .user-login-help-m2 a{
+     text-decoration: none;
+     color:#00A1D6;
+   }
+
+   //メールパスワードを忘れたページの入力エリア
+   .login-user-help-datails-text{
+     text-align: center;
+     font-size: 13px;
+     margin-bottom: 30px;
+   }
+
+
+   //リザルト画面下空白
+   .login-user-help-datails-text-hr{
+     margin-bottom: 200px;
+   }
+}
+//------------スマホ---------------

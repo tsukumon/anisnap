@@ -1,0 +1,58 @@
+<!--タイトル-->
+<% content_for :title do %>
+「<%= @search_name %>」の検索結果(<%= @search_articles.count %>) - アニスナップ
+<% end %>
+<!--タイトル終了-->
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+  <div class="wrapper"><!--サイド＆＆全体-->
+
+
+    <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+      <div class="search-result"><!--検索結果-->
+      「<%= @search_name %>」の検索結果は <b><%= @search_articles.count %></b>件です
+      </div>
+
+          <div class="ranking-other-season-more"><%= link_to("/ranking/choice") do %><i class="fas fa-tag"></i> シーズンごとのランキング<% end %></div>
+
+          <!--メニューラベル-->
+          <div class="rank-menu-area"><!--メニュー全体-->
+          <div class="rank-menu-area-in"><!--中-->
+            <style type="text/css">
+              .rank-menu-area-bar{ display:none; }
+              .rank-menu-area-in .now-currentmypage a{color: #5F6368;}
+              </style>
+              <p><%= link_to("/ranking/weekly=total") do %>週間<% end %></p>
+              <p><%= link_to("#{@new_term.this_term}") do %>今期<% end %></p>
+              <p><%= link_to("#{@new_term.next_term}") do %>来期<% end %></p>
+              <p> <%= link_to("/ranking/total=total") do %>全期間<% end %></p>
+              <span class="rank-menu-area-bar"></span>
+            </div><!--中終了-->
+          </div><!--メニュー全体終了-->
+
+
+
+        <div class="ranking-open-doc-m1"><!--ランキング一覧全体-->
+          <div id="ranking-all"><!--ajax-->
+            <%= render partial: 'ranking/ranking_search'%>
+          </div><!--ajax終了-->
+          <div class="more-ranking-area"><!--もっと見るボタン全体-->
+            <%= link_to_next_page @ranking, 'もっと見る', id: 'more-ranking', class: 'more-ranking-btn', params: { type: :ranking_search }, remote: true %>
+          </div>
+
+          </div><!--ランキング一覧全体終了-->
+
+
+
+          </div><!--中央絡む終了-->
+
+
+            <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+              <%= render partial:'/sidebar/sidebar' %>
+              </div><!--サイドバーカラム終了-->
+
+
+        </div><!--wrapper-->

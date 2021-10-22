@@ -1,0 +1,1 @@
+$('#mylist-area' + '.mylist-area-<%= @anime_info.id %>').html("<%= escape_javascript(render partial: '/states/state_active', locals: {post: @anime_info, current_user: @current_user}) %>");

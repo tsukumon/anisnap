@@ -1,0 +1,297 @@
+
+          <% @ranking.each do |anime| %>
+          <% @anime_info = AnimeList.find_by(id: anime.anime_id) %>
+
+
+
+          <div class="ranking-open-doc-m1-one"><!--アニメ単体PC-->
+
+            <div class="ranking-open-datails-title"><!--ランキングとタイトル-->
+
+              <!--ランク分岐-->
+
+              <!--総合スコア-->
+              <% if params[:ranking_select] == 'total' %>
+              <% if anime.rank_total == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_total %></div><!--ランク-->
+              <% elsif anime.rank_total == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_total %></div><!--ランク-->
+              <% elsif anime.rank_total == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_total %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_total %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'ave' %>
+              <% if anime.rank_ave == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_ave %></div><!--ランク-->
+              <% elsif anime.rank_ave == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_ave %></div><!--ランク-->
+              <% elsif anime.rank_ave == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_ave %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_ave %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'mylist' %>
+              <% if anime.rank_mylist == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_mylist %></div><!--ランク-->
+              <% elsif anime.rank_mylist == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_mylist %></div><!--ランク-->
+              <% elsif anime.rank_mylist == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_mylist %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_mylist %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'review' %>
+              <% if anime.rank_review == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_review %></div><!--ランク-->
+              <% elsif anime.rank_review == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_review %></div><!--ランク-->
+              <% elsif anime.rank_review == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_mylist %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_review %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'story' %>
+              <% if anime.rank_story == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_story %></div><!--ランク-->
+              <% elsif anime.rank_story == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_story %></div><!--ランク-->
+              <% elsif anime.rank_story == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_story %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_story %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'art' %>
+              <% if anime.rank_write == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_write %></div><!--ランク-->
+              <% elsif anime.rank_write == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_write %></div><!--ランク-->
+              <% elsif anime.rank_write == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_write %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_write %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'music' %>
+              <% if anime.rank_music == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_music %></div><!--ランク-->
+              <% elsif anime.rank_music == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_music %></div><!--ランク-->
+              <% elsif anime.rank_music == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_music %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_music %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'voice' %>
+              <% if anime.rank_voice == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_voice %></div><!--ランク-->
+              <% elsif anime.rank_voice == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_voice %></div><!--ランク-->
+              <% elsif anime.rank_voice == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_voice %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_voice %></div><!--ランク-->
+              <% end %>
+
+              <% elsif params[:ranking_select] == 'chara' %>
+              <% if anime.rank_chara == 1 %>
+              <div class="ranking-open-rank-1"><%= anime.rank_chara %></div><!--ランク-->
+              <% elsif anime.rank_chara == 2 %>
+              <div class="ranking-open-rank-2"><%= anime.rank_chara %></div><!--ランク-->
+              <% elsif anime.rank_chara == 3 %>
+              <div class="ranking-open-rank-3"><%= anime.rank_chara %></div><!--ランク-->
+              <% else %>
+              <div class="ranking-open-rank-other"><%= anime.rank_chara %></div><!--ランク-->
+              <% end %>
+
+              <% end %>
+              <!--ランク分岐終了-->
+            <%= link_to("/posts/anime/#{anime.anime_id}", class: 'ranking-open-title') do %><%= @anime_info.title %><% end %>
+            </div><!--タイトルエリア終了-->
+
+
+              <div class="ranking-open-datails"><!--詳細エリア-->
+
+                <div class="ranking-open-datails-img-area"><!--画像エリア-->
+
+              <%= link_to("/posts/anime/#{anime.anime_id}") do %>
+              <% if @anime_info.year and @anime_info.season != nil %>
+              <img src="/anime/<%= @anime_info.year %>/<%= @anime_info.season %>/<%= @anime_info.id %>/<%= @anime_info.id %>.jpg" class="ranking-open-img">
+              <% else %>
+              <img src="/anime/unknown/<%= @anime_info.id %>/<%= @anime_info.id %>.jpg" class="ranking-open-img">
+              <% end %>
+              <% end %>
+
+              <div class="pc-mylist-act"><!--PC版-->
+              <% if current_user != nil %>
+              <div id="mylist-area" class="mylist-area-<%= @anime_info.id %>">
+                <%= render partial:'/states/state_active', locals:{ post: @anime_info, current_user: current_user} %>
+              </div>
+              <% else %>
+
+              <div class="rank-open-select-btn-area" id='select-btn-area-<%= @anime_info.id %>'>
+              <div class="rank-open-select-btn-no-select"><i class="fas fa-heart"></i> マイリストする</div>
+              <div class="rank-open-select-menu" id='select-btn-menu-<%= @anime_info.id %>'>
+                <div class="rank-open-select-menu-in">
+                <option class="rank-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見た</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見てる</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見たい</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">一時中断</option>
+                <option class="rank-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">視聴中止</option>
+                </div>
+              </div>
+              </div>
+
+              <script type="text/javascript">
+                $(function(){
+                  $('.rank-open-select-btn-area' + '#select-btn-area-<%= @anime_info.id %>').on('click',function(){
+                    if($('.rank-open-select-menu' + '#select-btn-menu-<%= @anime_info.id %>').css("display")=="none"){
+                  $('.rank-open-select-menu' + '#select-btn-menu-<%= @anime_info.id %>').slideDown("fast");
+                  }else{
+                  $('.rank-open-select-menu' + '#select-btn-menu-<%= @anime_info.id %>').slideUp("fast");
+                  }
+                  });
+                  //ホバー解除でアップ
+                  $('.rank-open-select-btn-area' + '#select-btn-area-<%= @anime_info.id %>').hover(function () {
+                   },
+                    function () {
+                      $('.rank-open-select-menu' + '#select-btn-menu-<%= @anime_info.id %>').slideUp("fast");
+                });
+
+              //送信処理
+              $('.rank-open-select-menu-one' + '#select-val-<%= @anime_info.id %>').on('click',function(){
+
+                if ($(this).val() != '') {
+                  window.location.href = $(this).val();
+                }
+              });
+
+
+              });
+              </script>
+              <% end %>
+              </div><!--PC版-->
+
+              </div><!--画像エリア終了-->
+
+                <div class="ranking-open-datails-in"><!--タイトルともろもろ-->
+
+                  <div class="ranking-open-other-score"><!--マイリス数とかもろもろ-->
+                    <div class="anime-season-and-media"><!--シーズンとメディア表示-->
+                      <div class="ranking-tag"><% if @anime_info.season_st != nil %><%= @anime_info.season_st %><% else %>不明<% end %></div>
+                      <div class="ranking-tag"><% if @anime_info.media != nil %><%= @anime_info.media %><% else %>不明<% end %></div>
+                    </div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-heart"></i><p><%= anime.mylist_count %></p></div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-comments"></i><p><%= anime.review_count %></p></div>
+
+
+                    </div><!--マイリス数とかもろもろ終了-->
+
+
+                  <div class="ranking-open-score-wall"><!--スコア開示-->
+
+
+                    <div class="ranking-open-star"><!--スコア表示エリア-->
+                      <!--5点満点点数表示-->
+                      <div class="ranking-open-score-area"><!--評価表示-->
+                      <div class="ranking-open-score-area-named">評価:</div>
+                      <div class="ranking-open-star-p"><% if anime.ave_score %><%= anime.ave_score %><% else %>0.0<% end %></div>
+                      </div>
+                      <!--ポイント表示-->
+                      <div class="ranking-open-score-area"><!--評価表示-->
+                      <div class="ranking-open-score-area-named">総合スコア:</div>
+                      <div class="ranking-open-star-score"><%= anime.total_point %>pt</div>
+                      </div>
+
+                    </div>
+
+                  </div><!--スコア開示終了-->
+
+
+                  <div class="ranking-open-midasi">キャスト</div>
+                       <% if @anime_info.cv != nil %>
+                       <div class="ranking-open-cast"><%= @anime_info.cv.truncate(80) %></div>
+                       <% else %>
+                       <div class="ranking-open-cast">情報がまだありません。</div>
+                       <% end %>
+
+                       <% if @anime_info.story != nil %>
+                       <div class="ranking-open-story"><%= @anime_info.story.truncate(100) %></div>
+                       <% else %>
+                       <div class="ranking-open-story">あらすじが公開されてないか情報が追加されていません。</div>
+                       <% end %>
+
+                  </div><!--タイトルともろもろ終了-->
+            </div><!--詳細エリア終了-->
+
+
+
+            <div class="select-mylist-kansou-sp-rank"><!--感想マイリス-->
+              <!--マイリスト-->
+            <% if current_user != nil %>
+            <div class="mylist-select-rank-sp">
+              <div class="mylist-area-<%= @anime_info.id %>" id='mylist-area'>
+                <%= render partial:'/states/state_mobile_act', locals:{ post: @anime_info, current_user: current_user} %>
+              </div>
+            </div>
+            <% else %>
+            <div class="mylist-select-rank-sp">
+              <div class="mylist-area-<%= @anime_info.id %>" id='mylist-area'>
+
+                <div class="post-open-select-btn-act" style='border: 1px solid #f4f4f4;'>
+                <p class="label-mobile-rank"><i class="fas fa-heart"></i> マイリスト</p>
+                <select class="mylist-select-mobile" id='select-val-<%= @anime_info.id %>'>
+                  <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">マイリスト</option>
+                <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見た</option>
+                <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見てる</option>
+                <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">見たい</option>
+                <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">一時中断</option>
+                <option class="post-open-select-menu-one" id='select-val-<%= @anime_info.id %>' value="/users/sign_in">視聴中止</option>
+                </select>
+                </div>
+
+
+                <script type="text/javascript">
+                $(function(){
+
+                //送信処理
+                $('.mylist-select-mobile' + '#select-val-<%= @anime_info.id %>').on('change',function(){
+
+                  if ($(this).val() != '') {
+                    window.location.href = $(this).val();
+                  }
+                });
+
+                });
+                </script>
+              </div>
+            </div>
+            <% end %>
+            <!--感想-->
+
+            <% if current_user != nil %>
+            <div class="post-open-review-btn-sp-rank"><%= link_to("/user/#{current_user.userid}/post/review=#{@anime_info.id}") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+            <% else %>
+            <div class="post-open-review-btn-sp-rank"><%= link_to("/users/sign_in") do %><i class="far fa-edit"></i> 感想を書く<% end %></div>
+            <% end %>
+
+            </div><!--感想マイリス終了-->
+
+            <div class="ranking-open-midasi-story-sp">あらすじ</div>
+            <% if @anime_info.story != nil %>
+            <div class="ranking-open-story-sp"><%= @anime_info.story.truncate(150) %></div>
+            <% else %>
+            <div class="ranking-open-story-sp">情報がまだありません。</div>
+            <% end %>
+
+            <div class="rank-more-sp"><%= link_to("/posts/anime/#{anime.anime_id}") do %>詳細・PVを見る<% end %></div>
+
+
+            </div><!--アニメ単体終了-->
+          <% end %>

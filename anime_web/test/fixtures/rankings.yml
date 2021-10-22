@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anime_id: 1
+  mylist_count: 1
+  review_count: 1
+  score_total: 1
+  score_stroy: 1
+  score_write: 1
+  score_music: 1
+  score_voice: 1
+  score_char: 1
+
+two:
+  anime_id: 1
+  mylist_count: 1
+  review_count: 1
+  score_total: 1
+  score_stroy: 1
+  score_write: 1
+  score_music: 1
+  score_voice: 1
+  score_char: 1

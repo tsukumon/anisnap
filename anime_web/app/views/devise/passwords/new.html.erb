@@ -1,0 +1,35 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+<div class="login-wrapper"><!--サイド＆＆全体-->
+
+  <div class="login-wrapper-midasi-area">
+    <div class="login-wrapper-midasi">パスワードを忘れた</div>
+    </div>
+
+
+
+
+<div class="login-user-help-datails-text">
+  パスワードをリセットするメールを送信します。送られてきたメールよりパスワードの再設定を行って下さい。
+</div>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="user-input-area-m2-area"><!--中央揃え-->
+  <div class="user-input-area"><!--ユーザーID入力欄開始-->
+    <div class="user-input-area-datails">
+  <div class="user-input-area-in-m2"><%= f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder: 'メールアドレスを入力'%></div>
+  <div class="user-input-area-text"></div>
+    </div>
+  </div><!--ユーザーID入力欄終了-->
+
+
+  <div class="actions-login-or-singup-new">
+    <div class="login-form-botan"><%= f.submit "メールを送信" %></div>
+  </div>
+</div><!--中央揃え終了-->
+<% end %>
+
+
+</div><!--wrapper-->

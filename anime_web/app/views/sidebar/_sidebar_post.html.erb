@@ -1,0 +1,115 @@
+<div class="content-side"><!--サイドコンテンツエリア-->
+  <div class="content-side-title-area-2"><!--タイトルエリア-->
+    <div class="content-side-title-2">最近投稿されたレビュー</div>
+  </div><!--タイトルエリア終了-->
+
+  <% @review.each do |review| %>
+  <% anime = AnimeList.find_by(title: review.animetitle) %>
+  <% count = Episodelist.find_by(counter: review.state , anime_id: review.anime_id) %>
+  <div class="review-new-area-wall"><!--最新レビューエリアリンク終了-->
+    <%= link_to("/posts/anime/#{anime.id}/review=#{review.state}") do %>
+    <div class="review-new-area"><!--最新レビューエリア-->
+
+      <div class="review-new-are-right"><!--右-->
+        <p><%= truncate(review.kansou, length:40) %></p>
+        <% if review.state == 'all' %>
+        <b>総評</b>
+        <% elsif review.state == 'watch_pv' %>
+        <b>PVを見た感想</b>
+        <% else %>
+        <b><%= count.str_count %></b>
+        <% end %>
+        <b><%= "「#{review.animetitle}」".truncate(15) %></b>
+      </div><!--右-->
+      <% if anime.year and anime.season != nil %>
+      <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id%>.jpg"  class="review-new-area-img">
+      <% else %>
+      <img src="/anime/unknown/<%= anime.id %>/<%= anime.id%>.jpg"  class="review-new-area-img">
+      <% end %>
+    </div><!--最新レビューエリア終了-->
+    <% end %>
+  </div><!--最新レビューエリアリンク終了-->
+  <% end %>
+
+</div><!--サイドコンテンツ終了-->
+
+<div class="content-side"><!--サイドコンテンツエリア-->
+
+  <div class="content-side-title-area-2"><!--タイトルエリア-->
+    <div class="content-side-title-2">新作アニメを探す</div>
+  </div><!--タイトルエリア終了-->
+
+    <div class="sideani-area"><!--アニメエリア-->
+      <%= link_to("/ranking/2019/autumn=total" , class: 'sideani-area-one') do %><!--単体-->
+      <img src="/anime/2019/autumn/77/77.jpg" class="sideani-area-one-img">
+      <div class="sideani-onimage"><h3>2019年秋アニメ</h3></div>
+      <% end %><!--単体-->
+
+      <%= link_to("/ranking/2020/winter=total" , class: 'sideani-area-one') do %><!--単体-->
+      <img src="/anime/2020/winter/127/127.jpg" class="sideani-area-one-img">
+      <div class="sideani-onimage"><h3>2020年冬アニメ</h3></div>
+      <% end %><!--単体-->
+
+      <%= link_to("/ranking/2019/summer=total" , class: 'sideani-area-one') do %><!--単体-->
+      <img src="/anime/2019/summer/15/15.jpg" class="sideani-area-one-img">
+      <div class="sideani-onimage"><h3>2019年夏アニメ</h3></div>
+      <% end %><!--単体-->
+
+
+      <%= link_to("/ranking/2019/spring=total" , class: 'sideani-area-one') do %><!--単体-->
+      <img src="/anime/2019/spring/1/1.jpg" class="sideani-area-one-img">
+      <div class="sideani-onimage"><h3>2019年春アニメ</h3></div>
+      <% end %><!--単体-->
+
+      </div><!--アニメエリア-->
+
+      <div class="side-other-season-more"><%= link_to("/ranking/choice") do %><i class="fas fa-chevron-right"></i> 他のシーズンを探す<% end %></div>
+
+
+  </div><!--サイドコンテンツエリア終了-->
+
+
+
+<div class="content-side"><!--サイドコンテンツエリア-->
+  <div class="content-side-title-area-2"><!--タイトルエリア-->
+    <div class="content-side-title-2">最新のニュース</div>
+  </div><!--タイトルエリア終了-->
+
+  <% @new_tyoko.each_with_index do |news| %>
+  <%= link_to("#{news.url}" , class: 'newnews-side-area-wall') do %><!--リンク-->
+  <div class="newnews-side-area"><!--単体-->
+    <div class="newnews-side-title"><%= news.info %></div>
+  </div><!--単体終了-->
+  <% end %><!--リンク終了-->
+  <% end %>
+  <br>
+  <div class="side-other-season-more"><%= link_to("/news") do %><i class="fas fa-chevron-right"></i> もっと見る<% end %></div>
+</div><!--サイドコンテンツ終了-->
+
+<div class="content-side"><!--サイドコンテンツエリア-->
+<div class="content-side-title-area-2"><!--タイトルエリア-->
+  <div class="content-side-title-2">今週のいいね！レビュー</div>
+</div><!--タイトルエリア終了-->
+
+  <% @review_fav.each do |review| %>
+  <% anime = AnimeList.find_by(title: review.animetitle) %>
+  <% count = Episodelist.find_by(counter: review.state , anime_id: review.anime_id) %>
+    <div class="review-new-area-wall"><!--最新レビューエリアリンク終了-->
+  <%= link_to("/posts/anime/#{anime.id}/review=#{review.state}") do %>
+  <div class="review-new-area"><!--最新レビューエリア-->
+
+  <div class="review-new-are-right"><!--右-->
+    <h2><%= review.good_count %>いいね！</h2>
+  <p><%= truncate(review.kansou, length:40) %></p>
+  </div><!--右-->
+<% if anime.year and anime.season != nil %>
+  <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id%>.jpg"  class="review-new-area-img">
+  <% else %>
+  <img src="/anime/unknown/<%= anime.id %>/<%= anime.id%>.jpg"  class="review-new-area-img">
+  <% end %>
+  </div><!--最新レビューエリア終了-->
+  <% end %>
+    </div><!--最新レビューエリアリンク終了-->
+  <% end %>
+
+</div><!--サイドコンテンツ終了-->

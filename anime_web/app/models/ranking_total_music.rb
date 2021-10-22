@@ -1,0 +1,2 @@
+class RankingTotalMusic < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class RankingTotalPoint < ApplicationRecord
+end

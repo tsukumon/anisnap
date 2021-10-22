@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "アニスナップ ～見たアニメを楽しく管理しよう～"%></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css' ,media: 'all'  %>
+
+
+    <!--googleフォントのリンク-->
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+1p|Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--viewport-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-language" content="ja">
+
+
+  </head>
+  <body>
+
+<!--jquery呼び出し-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+<div class="top-page-head-ver"><!--ヘッド固定-->
+<div class="top-page-head-ver-in"><!--内容-->
+
+  <div class="title-logo-sp"><%= link_to("/") do %>アニスナップ<% end %></div><!--ロゴ-->
+
+  <div class="sp-menu-right"><!--右-->
+
+    <% if current_user == nil %><%= link_to("/users/sign_in" ,  class: 'sp-login-bar') do %>ログインする<% end %><% end %>
+
+    <!--メニュー-->
+    <nav class="global-nav">
+         <% if current_user != nil %>
+              <%=link_to("/user/#{current_user.userid}") do %>
+              <div class="nav-user-area"><!--ユーザー情報-->
+                <div class="nav-user-area-img-area"><!--アイコン-->
+                  <img src="<%= "#{current_user.image}" %>" class="nav-user-area-img">
+                  </div>
+                <div class="nav-user-area-name-area"><!--名前エリア-->
+                  <div class="nav-user-name"><%= current_user.username %></div>
+                  <div class="nav-user-name-id">@<%= current_user.userid %></div>
+                  </div>
+                </div><!--ユーザー情報終了-->
+                <% end %>
+                <div class="sp-nav-user-area"><!--ユーザーエリア-->
+                  <li class="global-nav__item"><%= link_to("/user/#{current_user.userid}") do %><i class="far fa-user"></i>マイページ<% end %></li>
+                   <li class="global-nav__item"><%= link_to("/user/#{current_user.userid}/post") do %><i class="far fa-edit"></i>投稿する<% end %></li>
+                   <li class="global-nav__item"><%= link_to("/user/#{current_user.userid}/watch") do %><i class="far fa-folder"></i>マイリスト<% end %></li>
+                </div><!--ユーザーエリア-->
+
+                <% else %>
+                <div class="sp-nav-user-area"><!--ユーザーエリア-->
+                <li class="global-nav__item"><%= link_to("/users/sign_in") do %><i class="fas fa-sign-in-alt"></i>ログインする<% end %></li>
+                </div><!--ユーザーエリア-->
+                <% end %>
+                <div class="sp-nav-user-area"><!--ユーザーエリア-->
+                <li class="global-nav__item"><%= link_to("/ranking/total=total") do %><i class="fas fa-chart-bar"></i>全期間ランキング<% end %></li>
+                <li class="global-nav__item"><%= link_to("/weekly=total") do %><i class="fas fa-chart-bar"></i>週間ランキング<% end %></li>
+                <li class="global-nav__item"><%= link_to("#{@new_term.this_term}") do %><i class="fas fa-chart-bar"></i>今期アニメ<% end %></li>
+                <li class="global-nav__item"><%= link_to("#{@new_term.next_term}") do %><i class="fas fa-chart-bar"></i>来期アニメ<% end %></li>
+                <li class="global-nav__item"><%= link_to("/ranking/choice") do %><i class="fas fa-search"></i>他のシーズンを探す<% end %></li>
+                </div><!--ユーザーエリア-->
+                <div class="sp-nav-user-area"><!--ユーザーエリア-->
+                  <li class="global-nav__item"><%= link_to("/news") do %><i class="far fa-bell"></i>ちょこっとニュース<% end %></li>
+                </div><!--ユーザーエリア-->
+     </nav>
+     <div class="hamburger" id="js-hamburger">
+       <span class="hamburger__line hamburger__line--1"></span>
+       <span class="hamburger__line hamburger__line--2"></span>
+       <span class="hamburger__line hamburger__line--3"></span>
+     </div>
+     <div class="black-bg" id="js-black-bg"></div>
+
+  <script type="text/javascript">
+  function toggleNav() {
+   var body = document.body;
+   var hamburger = document.getElementById('js-hamburger');
+   var blackBg = document.getElementById('js-black-bg');
+
+   hamburger.addEventListener('click', function() {
+     body.classList.toggle('nav-open');
+   });
+   blackBg.addEventListener('click', function() {
+     body.classList.remove('nav-open');
+   });
+   }
+   toggleNav();
+  </script>
+
+</div><!--みぎ-->
+
+  <div class="top-page-head-menu-m1"><!--左メニュー-->
+  <div class="top-menu-one"><%= link_to("/") do %><i class="fas fa-home" style="color:#41C9B4;"></i><% end %></div>
+  <div class="top-menu-one"><%= link_to("/ranking/total=total") do %>ランキング<% end %></div>
+  <div class="top-menu-one"><%= link_to("/news") do %>ニュース<% end %></div>
+  <div class="top-menu-one"><%= link_to("#{@new_term.this_term}") do %>今期アニメ<% end %></div>
+  <div class="top-menu-one"><%= link_to("#{@new_term.next_term}") do %>来期アニメ<% end %></div>
+  </div><!--左メニュー終了-->
+
+  <div class="top-page-head-menu-m2"><!--右メニュー-->
+
+    <div class="top-page-seach-area"><!--検索-->
+    <%= search_form_for @search, url: "/posts/anime/search" do |f| %>
+      <%= f.text_field :title_or_cv_cont ,placeholder: 'アニメ・声優を検索...' %>
+    <% end %>
+    </div><!--検索終了-->
+    <% if current_user != nil %>
+    <div class="head-user-info"><!--ユーザー情報-->
+      <%=link_to("/user/#{current_user.userid}") do %><img src="<%= "#{current_user.image}" %>" class="head-user-img"><% end %>
+      <div class="top-menu-one"><%= link_to("/user/#{current_user.userid}/mylist/watch") do %>マイリスト<% end %></div>
+      </div>
+      <div class="top-menu-one-post"><%= link_to("/user/#{current_user.userid}/post") do %>投稿<% end %></div>
+    <% else %>
+    <div class="head-user-info"><!--ユーザー情報-->
+      <div class="top-menu-one"><%= link_to("/users/sign_in") do %>ログイン<% end %></div>
+      </div>
+      <div class="top-menu-one-post"><%= link_to("/users/sign_in") do %>投稿<% end %></div>
+    <% end %>
+  </div><!--右メニュー終了-->
+
+</div><!--内容終了-->
+</div><!--ヘッド固定終了-->
+
+
+
+
+
+    <%= yield %>
+
+
+<div id="page_top"><a href="#"></a></div>
+
+<script type="text/javascript">
+  jQuery(function() {
+  var appear = false;
+  var pagetop = $('#page_top');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      if (appear == false) {
+        appear = true;
+        pagetop.stop().animate({
+          'bottom': '50px'
+        }, 300);
+      }
+    } else {
+      if (appear) {
+        appear = false;
+        pagetop.stop().animate({
+          'bottom': '-50px'
+        }, 300);
+      }
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500);
+    return false;
+  });
+});
+</script>
+
+
+    <footer>
+      <div class="footer-area">
+
+        <div class="footer-area-one"><!--単体-->
+          <h1>アニスナップについて</h1>
+          <li>アニスナップとは</li>
+          <li><%= link_to("/terms") do %>利用規約<% end %></li>
+          <li><%= link_to("/privacy") do %>プライバシーポリシー<% end %></li>
+          </div><!--単体終了-->
+          <div class="footer-area-one"><!--単体-->
+            <h1>お問い合わせ</h1>
+            <li><%= link_to("/contacts") do %>ご意見・ご要望<% end %></li>
+            <li><%= link_to("/contacts") do %>不具合報告<% end %></li>
+            <li><%= link_to("/contacts") do %>広告に関して<% end %></li>
+            </div><!--単体終了-->
+
+            <div class="footer-area-one"><!--単体-->
+              <h1>外部リンク</h1>
+              <a href="https://twitter.com/tkm_cham?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tkm_cham</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <div class="footer-copy">©2019 アニスナップ</div>
+              </div><!--単体終了-->
+
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!--タイトル-->
+<% content_for :title do %>
+<%= @puts %>ランキング(<%= @puts_one %>) - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+
+  <div class="wrapper"><!--サイド＆＆全体-->
+
+    <div class="wrapper-new-doc-m2"><!--中央絡む-->
+
+
+
+
+
+        <div class="sp-ranking-midasi"><!--スマホ見出し-->
+          <h2>週間アニメランキング トップ100(<%= @puts_one %>)
+          </h2>
+          <p>ユーザーの評価やマイリストを元に今週の人気アニメをランキング化！おすすめのアニメや覇権アニメが分かるかも！？今週のトップ100位をぜひご覧ください。
+            (<%= Time.now.strftime("%Y.%m.%d") %>更新)
+          </p>
+          </div>
+
+          <div class="ranking-other-season-more"><%= link_to("/ranking/choice") do %><i class="fas fa-tag"></i> シーズンごとのランキング<% end %></div>
+
+          <!--メニューラベル-->
+          <div class="rank-menu-area"><!--メニュー全体-->
+          <div class="rank-menu-area-in"><!--中-->
+              <p class="now-currentmypage" ><%= link_to("/ranking/weekly=total") do %>週間<% end %></p>
+              <p><%= link_to("#{@new_term.this_term}") do %>今期<% end %></p>
+              <p><%= link_to("#{@new_term.next_term}") do %>来期<% end %></p>
+              <p> <%= link_to("/ranking/total=total") do %>全期間<% end %></p>
+              <span class="rank-menu-area-bar"></span>
+            </div><!--中終了-->
+          </div><!--メニュー全体終了-->
+
+
+              <div class="ranking-menu-hide"><!--メニュー表示-->
+                <%= link_to("/ranking/weekly=total") do %>総合スコア<% end %>
+                <%= link_to("/ranking/weekly=ave") do %>満足度<% end %>
+                <%= link_to("/ranking/weekly=mylist") do %>マイリスト数<% end %>
+                <%= link_to("/ranking/weekly=review") do %>評価・感想数<% end %>
+                <%= link_to("/ranking/weekly=story") do %>物語の評価が高い順<% end %>
+                <%= link_to("/ranking/weekly=art") do %>作画の評価が高い順<% end %>
+                <%= link_to("/ranking/weekly=music") do %>音楽の評価が高い順<% end %>
+                <%= link_to("/ranking/weekly=voice") do %>声優の評価が高い順<% end %>
+                <%= link_to("/ranking/weekly=chara") do %>キャラの評価が高い順<% end %>
+            </div><!--ソードエリア終了-->
+
+
+
+
+
+        <div class="ranking-open-doc-m1"><!--ランキング一覧全体-->
+          <div id="ranking-all"><!--ajax-->
+            <%= render partial: 'ranking/weekly_pgn'%>
+          </div><!--ajax終了-->
+          <div class="more-ranking-area"><!--もっと見るボタン全体-->
+            <%= link_to_next_page @ranking, '下位のランキングも見る', id: 'more-ranking', class: 'more-ranking-btn', params: { type: :weekly_pgn }, remote: true %>
+          </div>
+
+          </div><!--ランキング一覧全体終了-->
+
+
+
+          </div><!--中央絡む終了-->
+
+
+            <div class="wrapper-new-doc-m3"><!--サイドバーカラム-->
+              <%= render partial:'/sidebar/sidebar' %>
+              </div><!--サイドバーカラム終了-->
+
+
+        </div><!--wrapper-->

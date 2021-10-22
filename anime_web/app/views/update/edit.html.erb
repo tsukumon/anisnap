@@ -1,0 +1,38 @@
+<div class="top-wrapper">
+  </div><!--topwrpaeer-->
+
+  <div class="wrapper-manage"><!--サイド＆＆全体-->
+<h1>Update#index</h1>
+<p><%= @post_cnt.id %>作品が投稿されてます</p>
+<br>
+
+既存のアニメを編集
+
+<%= form_tag("/mg/anime/edit/#{params[:id]}" , {multipart: true}) do %>
+
+タイトル<input name="title" value="<%=@anime.title%>"><br>
+シーズン<input name="season" value="<%=@anime.season%>"><br>
+年<input name="year" value="<%=@anime.year%>"><br>
+メディア<input name="media" value="<%=@anime.media%>"><br>
+制作会社<input name="company" value="<%=@anime.company%>"><br>
+あらすじ<input name="story" value="<%=@anime.story %>"><br>
+キャスト<input name="cv" value="<%=@anime.cv %>"><br>
+スタッフ<input name="staff" value="<%=@anime.staff%>"><br>
+PV１ URL <input name="pv1" value="<%=@anime.pv1 %>"><br>
+PV 2 URL <input name="pv2" value="<%=@anime.pv2 %>"> <br>
+サムネイル<input name="image" type="file"><br>
+<br>
+<br>
+<input type="submit" value="編集する">
+
+<% end %>
+<br><br><br>
+
+<br><br>
+<%= link_to("/mg/anime") do %>新規アニメを追加<% end %>
+
+<h3>既存のアニメを編集</h3>
+<%= search_form_for @search, url: "/mg/search" do |f| %>
+  <%= f.text_field :title_or_cv_cont ,placeholder: '検索...' %>
+<% end %>
+</div><!--wrapper-->

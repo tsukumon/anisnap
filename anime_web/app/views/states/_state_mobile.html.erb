@@ -1,0 +1,204 @@
+
+<!--みた-->
+<% if Mitalist.find_by(anime_id: post.id, user_id: current_user.id, state: 1) %>
+
+  <div class="post-open-select-btn">
+  <p class="label-mobile"><i class="fas fa-heart"></i> 見た</p>
+  <select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見た</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">外す</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見てる</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+</select>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+	 var state_id = $(this).val();
+	 $.ajax({
+			 type:'POST',
+			 url:'/state/<%= post.id %>/create_mobile/'+state_id
+	 });
+
+});
+
+
+});
+</script>
+
+
+<!--みてる-->
+<% elsif Mitalist.find_by(anime_id: post.id, user_id: current_user.id, state: 2) %>
+
+  <div class="post-open-select-btn">
+  <p class="label-mobile"><i class="fas fa-heart"></i> 見てる</p>
+  <select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+    <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見てる</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">外す</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見た</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+</select>
+</div>
+
+
+<script type="text/javascript">
+	$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+	 var state_id = $(this).val();
+	 $.ajax({
+			 type:'POST',
+			 url:'/state/<%= post.id %>/create_mobile/'+state_id
+	 });
+});
+
+});
+</script>
+
+
+<!--みたい-->
+<% elsif Mitalist.find_by(anime_id: post.id, user_id: current_user.id, state: 3) %>
+
+
+<div class="post-open-select-btn">
+<p class="label-mobile"><i class="fas fa-heart"></i> 見たい</p>
+<select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">外す</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見た</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見てる</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+</select>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+ var state_id = $(this).val();
+ $.ajax({
+     type:'POST',
+     url:'/state/<%= post.id %>/create_mobile/'+state_id
+ });
+});
+
+});
+</script>
+
+
+
+<!--一時中断-->
+<% elsif Mitalist.find_by(anime_id: post.id, user_id: current_user.id, state: 4) %>
+
+
+<div class="post-open-select-btn">
+<p class="label-mobile"><i class="fas fa-heart"></i> 一時中断</p>
+<select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">外す</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見た</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見てる</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+</select>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+ var state_id = $(this).val();
+ $.ajax({
+     type:'POST',
+     url:'/state/<%= post.id %>/create_mobile/'+state_id
+ });
+});
+
+});
+</script>
+
+
+<!--視聴中止-->
+<% elsif Mitalist.find_by(anime_id: post.id, user_id: current_user.id, state: 5) %>
+
+<div class="post-open-select-btn">
+<p class="label-mobile"><i class="fas fa-heart"></i> 視聴中止</p>
+<select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">外す</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見た</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見てる</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+</select>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+ var state_id = $(this).val();
+ $.ajax({
+     type:'POST',
+     url:'/state/<%= post.id %>/create_mobile/'+state_id
+ });
+});
+
+});
+</script>
+
+
+<!--なにもないとき-->
+<% else %>
+
+<div class="post-open-select-btn">
+<p class="label-mobile"><i class="fas fa-heart"></i> マイリスト</p>
+<select class="mylist-select-mobile" id='select-val-<%= post.id %>'>
+  <option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="0">マイリスト</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="1">見た</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="2">見てる</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="3">見たい</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="4">一時中断</option>
+<option class="post-open-select-menu-one" id='select-val-<%= post.id %>' value="5">視聴中止</option>
+</select>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+
+//送信処理
+$('.mylist-select-mobile' + '#select-val-<%= post.id %>').on('change',function(){
+
+ var state_id = $(this).val();
+ $.ajax({
+     type:'POST',
+     url:'/state/<%= post.id %>/create_mobile/'+state_id
+ });
+});
+
+});
+</script>
+
+
+<% end %>

@@ -1,0 +1,8 @@
+<div class="home-news-area"><!--エリア-->
+  <% @news.each do |alert| %>
+    <%= link_to("#{alert.url}" , class: "alert-one") do %><!--単体-->
+    <b><%= alert.updated_at.strftime("%Y/%m/%d") %></b><p><%= alert.info %></p>
+    <% end %><!--単体終了-->
+    <% end %>
+
+  </div><!--エリア-->

@@ -1,0 +1,10 @@
+<% if resource.errors.any? %>
+  <div class="form-error">
+    <i class="fas fa-exclamation-triangle"></i> エラーがあります。
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

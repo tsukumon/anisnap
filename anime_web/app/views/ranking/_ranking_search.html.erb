@@ -1,0 +1,56 @@
+<% @ranking = @search_articles.page(params[:page]).per(20) %><!--サーチリザルト読み込み-->
+
+
+          <% @ranking.each do |anime| %>
+          <% @anime_info = Ranking.find_by(anime_id: anime.id) %>
+
+
+
+          <div class="ranking-open-doc-m1-one"><!--アニメ単体PC-->
+
+
+
+              <div class="ranking-open-datails"><!--詳細エリア-->
+
+                <div class="ranking-open-datails-img-area-src"><!--画像エリア-->
+
+              <%= link_to("/posts/anime/#{anime.id}") do %>
+              <% if anime.year and anime.season != nil %>
+              <img src="/anime/<%= anime.year %>/<%= anime.season %>/<%= anime.id %>/<%= anime.id %>.jpg" class="ranking-open-img-src">
+              <% else %>
+              <img src="/anime/unknown/<%= anime.id %>/<%= anime.id %>.jpg" class="ranking-open-img-src">
+              <% end %>
+              <% end %>
+
+
+              </div><!--画像エリア終了-->
+
+                <div class="ranking-open-datails-in"><!--タイトルともろもろ-->
+                  <%= link_to("/posts/anime/#{anime.id}", class: 'ranking-open-title-src') do %><%= anime.title %><% end %>
+                  <div class="ranking-open-other-score"><!--マイリス数とかもろもろ-->
+                    <div class="anime-season-and-media"><!--シーズンとメディア表示-->
+                      <div class="ranking-tag"><% if anime.season_st != nil %><%= anime.season_st %><% else %>不明<% end %></div>
+                      <div class="ranking-tag"><% if anime.media != nil %><%= anime.media %><% else %>不明<% end %></div>
+                    </div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-heart"></i><p><% if @anime_info != nil %><%= @anime_info.mylist_count %><% else %>-<% end %></p></div>
+                    <div class="ranking-open-mylist-count"><i class="fas fa-comments"></i><p><% if @anime_info != nil %><%= @anime_info.review_count %><% else %>-<% end %></p></div>
+
+                    </div><!--マイリス数とかもろもろ終了-->
+
+                    <% if anime.story != nil %>
+                    <div class="ranking-open-story-src"><%= anime.story.truncate(80) %></div>
+                    <% else %>
+                    <div class="ranking-open-story-src">あらすじが公開されてないか情報が追加されていません。</div>
+                    <% end %>
+
+
+                  </div><!--タイトルともろもろ終了-->
+            </div><!--詳細エリア終了-->
+
+
+
+
+
+
+            </div><!--アニメ単体終了-->
+          <% end %>

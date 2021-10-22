@@ -1,0 +1,3 @@
+class UserlogMylist < ApplicationRecord
+
+end

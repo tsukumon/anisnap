@@ -1,0 +1,221 @@
+<!--タイトル-->
+<% content_for :title do %>
+<%= @user.username %>(@<%= @user.userid %>)さんの投稿一覧 - アニスナップ
+<% end %>
+<!--タイトル終了-->
+
+<% if current_user != nil %>
+<% if current_user.userid == params[:id] %>
+<div class="post-anime-select-modall-all"><!--モーダル全体-->
+<div class="post-anime-select-modal-area"><!--表示エリア-->
+  <div class="post-anime-select-mylist-area">
+    <div class="post-anime-select-mylist-area-one"><p>見てる</p><b>（<%= @watch_now_count %>）</b></div>
+    <div class="post-anime-select-mylist-area-one"><p>見た</p><b>（<%= @watched_count %>）</b></div>
+    <div class="post-anime-select-mylist-area-one"><p>見たい</p><b>（<%= @will_watch_count %>）</b></div>
+    <div class="post-anime-select-mylist-area-one"><p>一時中断</p><b>（<%= @stop_count %>）</b></div>
+    <div class="post-anime-select-mylist-area-one"><p>視聴中止</p><b>（<%= @drop_count %>）</b></div>
+  </div>
+  <div class="post-oepn-anime-area-wall"><!--zenntai-->
+
+
+    <div class="post-oepn-anime-area-in-wall"><!--要素ない全体-------------->
+  <div class="post-oepn-anime-area" id="select_now">
+  <%= render partial: 'user/select_now'%>
+  </div>
+  <div class="more-userlog-area" id="select_now"><!--もっと見るボタン全体-->
+  <%= link_to_next_page @select_now, 'もっと見る', id: 'select_now-btn', class: 'more-userlog-btn', params: { type: :select_now }, remote: true %>
+  </div>
+  </div><!--要素ない全体終了-->
+
+
+<div class="post-oepn-anime-area-in-wall"><!--要素ない全体----------------->
+<div class="post-oepn-anime-area" id="select_done">
+<%= render partial: 'user/select_done'%>
+</div>
+<div class="more-userlog-area" id="select_done"><!--もっと見るボタン全体-->
+<%= link_to_next_page @select_done, 'もっと見る', id: 'select_done-btn', class: 'more-userlog-btn', params: { type: :select_done }, remote: true %>
+</div>
+</div><!--要素ない全体終了-->
+
+<div class="post-oepn-anime-area-in-wall"><!--要素ない全体----------------->
+  <div class="post-oepn-anime-area" id="select_will">
+    <%= render partial: 'user/select_will'%>
+  </div>
+  <div class="more-userlog-area" id="select_will"><!--もっと見るボタン全体-->
+    <%= link_to_next_page @select_will, 'もっと見る', id: 'select_will-btn', class: 'more-userlog-btn', params: { type: :select_will }, remote: true %>
+  </div>
+</div><!--要素ない全体終了-->
+
+<div class="post-oepn-anime-area-in-wall"><!--要素ない全体----------------->
+<div class="post-oepn-anime-area" id="select_keep">
+<%= render partial: 'user/select_keep'%>
+</div>
+<div class="more-userlog-area" id="select_keep"><!--もっと見るボタン全体-->
+<%= link_to_next_page @select_keep, 'もっと見る', id: 'select_keep-btn', class: 'more-userlog-btn', params: { type: :select_keep }, remote: true %>
+</div>
+</div><!--要素ない全体終了-->
+
+<div class="post-oepn-anime-area-in-wall"><!--要素ない全体----------------->
+  <div class="post-oepn-anime-area" id="select_stop">
+    <%= render partial: 'user/select_stop'%>
+  </div>
+  <div class="more-userlog-area" id="select_stop"><!--もっと見るボタン全体-->
+    <%= link_to_next_page @select_stop, 'もっと見る', id: 'select_stop-btn', class: 'more-userlog-btn', params: { type: :select_stop }, remote: true %>
+  </div>
+</div><!--要素ない全体終了-->
+
+  </div><!--zentai-->
+</div><!--表示終了-->
+
+
+<div class="post-anime-select-modal-are_bg"></div><!--背景-->
+</div><!--モーダル全体終了-->
+<script type="text/javascript">
+  $(function(){
+    $('.mypage-left-dogs-m2').on('click',function(){
+        $('.post-anime-select-modall-all').fadeIn();
+    });
+    $('.post-anime-select-modal-are_bg').on('click',function(){
+        $('.post-anime-select-modall-all').fadeOut();
+    });
+    $('.post-oepn-anime-image-area').on('click',function(){
+        $('.post-anime-select-modall-all').css('display','none');
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+  $(function () {
+    /*初期表示*/
+    $('.post-oepn-anime-area-in-wall').hide();
+    $('.post-oepn-anime-area-in-wall').eq(0).show();
+    $('.post-anime-select-mylist-area-one').eq(0).addClass('is-active-select');
+    /*クリックイベント*/
+    $('.post-anime-select-mylist-area-one').each(function () {
+      $(this).on('click', function () {
+        var index = $('.post-anime-select-mylist-area-one').index(this);
+        $('.post-anime-select-mylist-area-one').removeClass('is-active-select');
+        $(this).addClass('is-active-select');
+        $('.post-oepn-anime-area-in-wall').hide();
+        $('.post-oepn-anime-area-in-wall').eq(index).show();
+      });
+    });
+  });
+  </script>
+  <% end %>
+<% end %>
+
+<div class="top-wrapper">
+</div><!--topwrpaeer-->
+
+<div class="wrapper"><!--サイド＆＆全体-->
+
+  <div class="wrapper-new-doc-m2"><!--内容カラム--><!--左-->
+
+<div class="top-wrapper-mylist"><!--topwrapper-->
+
+  <img src="<%= "#{@user.bgimage}" %>" class="user-image-background"><!--背景-->
+
+  <div class="user-image-on-area"><!--画像上エリア全体-->
+      <div class="user-main-profile-area"><!--ユーザーメイン情報-->
+    <img src="<%= "#{@user.image}" %>" class="user-image-on-icon">
+    <% if current_user != nil and current_user.userid == @user.userid %>
+    <%= link_to("/setting/profile" , class: "user-profile-btn-area") do %>プロフィール編集<% end %>
+    <% else %>
+    <div class="user-follow-btn">フォロー(実装予定)</div>
+    <% end %>
+    </div><!--ユーザーメイン情報終了-->
+  </div><!--画像上エリア全体終了-->
+  </div><!--topwrapper-->
+
+  <div class="user-main-profile-area-1"><!--メイン1-->
+    <div class="user-name-mypage-area"><!--ユーザー名エリア-->
+      <div class="user-name-mypage"><%= @user.username %></div>
+      <% if @job != nil %>
+<div class="user-job-mypage" <% if @job.job == 'supporter' %>style='background-color:#00C091;'<%end%> ><%= @job.job %></div>
+<% end %>
+      <div class="user-id-mypage">@<%= @user.userid %></div>
+    </div><!--ユーザー名エリア終了-->
+
+      <div class="user-intro-area"><!--自己紹介-->
+      <% if @user.intro != nil %>
+      <div class="user-intro"><%= @user.intro %></div>
+      <% end %>
+      <div class="user-create-date"><i class="fas fa-calendar-alt"></i>  <%= @user.created_at.strftime("%Y年%m月%d日") %>から利用してます</div>
+      </div><!--自己紹介-->
+
+  </div><!--メイン1終了-->
+  <div class="user-menu-mypage"><!--メニュー全体-->
+    <p><%= link_to("/user/#{@user.userid}") do %><i class="fas fa-home" style="color:#00C091;"></i> ホーム<% end %></p>
+    <p class="now-currentmypage"><%= link_to("/user/#{@user.userid}/post") do %><i class="fas fa-envelope" style="color:#FB7299;"></i> 投稿<b>（<%= @reviewcount %>）</b><% end %></p>
+    <p><%= link_to("/user/#{@user.userid}/mylist/watch") do %>見てる<b>（<%= @watch_now_count %>）</b><% end %></p>
+    <p><%= link_to("/user/#{@user.userid}/mylist/wanna_watch") do %>見たい<b>（<%= @will_watch_count %>）</b><% end %></p>
+    <span class="user-menu-mypage-bar"></span>
+  </div>
+
+
+  <div class="mypage-left-dogs-m1"><!--コンテンツエリア-->
+
+
+    <% if current_user != nil %>
+
+    <% if current_user.userid == params[:id] %>
+      <div class="mypage-left-dogs-m2"><!--コンテンツエリア-->
+        <div class="mypage-post-select-anime-btn-area"><!--ボタンエリア-->
+        <div class="mypage-post-select-anime-btn-icon"><i class="far fa-edit"></i></div>
+        <div class="mypage-post-select-anime-btn">感想を書くアニメを選択する</div>
+        </div><!--ボタンエリア終了-->
+       </div><!--コンテンツエリア終了-->
+    <% end %>
+    <% end %>
+
+
+      <% if current_user != nil and current_user.userid == @user.userid %>
+      <div class="user-mypage-midasi-bottom-info"><i class="far fa-question-circle"></i> 感想を書くとここに表示されるよ！</div>
+      <% end %>
+
+      <div id="userlog-all"><!--ajax-->
+     <%= render partial: 'user/userpostlog'%>
+     </div><!--ajax終了-->
+     <div class="more-userlog-area"><!--もっと見るボタン全体-->
+     <%= link_to_next_page @userpostlog, 'もっと見る', id: 'more-userlog', class: 'more-userlog-btn', params: { type: :userpostlog }, remote: true %>
+     </div>
+
+   </div><!--コンテンツエリア終了-->
+
+
+   </div><!--左-->
+
+<div class="wrapper-new-doc-m3"><!--サイドバーカラム--><!--右-->
+
+  <% if current_user != nil and current_user.userid == @user.userid %>
+       <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+         <h1>お知らせ</h1>
+         <div class="mypage-right-dogs-m2-no">まだお知らせはありません</div>
+         </div><!--コンテンツエリア終了-->
+         <% end %>
+
+         <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+           <h1>マイリスト</h1>
+           <div class="mypage-side-mylist-area"><!--マイリスエリア-->
+             <%= link_to("/user/#{@user.userid}/mylist/watch" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見てる</p><b>（<%= @watch_now_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watched" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見た</p><b>（<%= @watched_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/wanna_watch" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>見たい</p><b>（<%= @will_watch_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watch_hold" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>一時中断</p><b>（<%= @stop_count %>）</b><% end %>
+             <%= link_to("/user/#{@user.userid}/mylist/watch_drop" , class: "mypage-side-mylist-one") do %><i class="fas fa-folder"></i><p>視聴中止</p><b>（<%= @drop_count %>）</b><% end %>
+             </div><!--マイリスエリア-->
+           </div><!--コンテンツエリア終了-->
+
+                <div class="mypage-right-dogs-m2"><!--コンテンツエリア-->
+                  <h1>ステータス</h1>
+                  <div class="mypage-state-area"><!--すてーたす終了-->
+                  <div class="mypage-state">全マイリス数: <%= @all_mylist %></div>
+                  <div class="mypage-state">投稿数: <%= @reviewcount %></div>
+                  <div class="mypage-state">獲得いいね数: <%= @good_get %></div>
+                  <% if  @job != nil %><div class="mypage-state">役職: <%= @job.job %></div><% end %>
+                  </div><!--すてーたす終了-->
+                  </div><!--コンテンツエリア終了-->
+
+     </div><!--右-->
+ </div><!--全体終了------------->
