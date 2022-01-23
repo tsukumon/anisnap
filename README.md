@@ -18,7 +18,7 @@
 
 ## Function  
 ### User function
-ロール（役職）によって可能な操作が変わります。Suporter、Adminはアニメデータベースにアクセスでき情報を管理することができます。  その他のユーザーは通常の機能のみになります。 通常機能は以下になります。　　
+ロール（役職）によって可能な操作が変わります。Supporter、Adminはアニメデータベースにアクセスでき情報を管理することができます。  その他のユーザーは通常の機能のみになります。 通常機能は以下になります。　　
 
 | Name | Datail |
 |:---|:---:|
@@ -63,9 +63,9 @@ SQLite3
 | Gem | Purpose |
 |:---|:---:|
 |SQLite |データベース |
-|devise |画像処理 |
+|devise |ユーザー機能 |
 |carriewave |画像処理 |
-|mini-magick |ユーザー機能 |
+|mini-magick |画像処理 |
 |kaminari |ページネーション |
 |friendly_id |ユーザーID |
 |ransack |検索機能 |
