@@ -50,6 +50,9 @@
 アニメをタイトル、声優より検索することができる。  
 
 ## Use Library
+### FrameWork
+Ruby on Rails
+
 ### Front
 Awesome Font, jQuery, Ajax
 
