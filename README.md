@@ -1,6 +1,36 @@
-# anisnap
-アニメの視聴管理ができるwebアプリ「アニスナップ」
+## About
+アニメ視聴管理が簡単にできるwebアプリ『アニスナップ』
 
 
-![c913ce2e-410d-4909-83b0-281dd879e246](https://user-images.githubusercontent.com/92311154/150058046-a87f3f3a-2ebf-4ff6-aa6a-5608cba47a6a.jpg)
-![345b1d74-5828-4fa7-8b37-2b9806065014](https://user-images.githubusercontent.com/92311154/150058053-1b95561f-1373-43df-8978-055d8586a78d.jpg)
+## How to use
+
+
+## Function
+
+
+## Use Library
+### Front
+Awesome Font, jQuery, Ajax
+
+### Database
+SQLite3
+
+### Gemfile  
+| Gem | Purpose |
+|:---|:---:|
+|SQLite |データベース |
+|devise |画像処理 |
+|carriewave |画像処理 |
+|mini-magick |ユーザー機能 |
+|kaminari |ページネーション |
+|friendly_id |ユーザーID |
+|ransack |検索機能 |
+|impressionist |ビュー数管理 |
+|chartkick |評価グラフで使用 |
+|other |please read Gemfile |
+
+
+
+## In the future
+著作権上問題のあるアニメのキービジュアルをサムネイル画像として使用することを改善し、機械学習を用いてオススメ作品を表示させてデプロイしたい。  
+Ruby on Railsを使ってて思ったのがgemが豊富で楽に機能を追加していけるが、処理が重いのと柔軟性に欠けると感じたのでシンプルにLaravelを使うか、JSをバックエンドで用いて作り直したほうが良い気がした...。  
