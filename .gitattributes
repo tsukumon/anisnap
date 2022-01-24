@@ -1,1 +1,1 @@
-*.html linguist-language=Ruby
+*.html.erb linguist-language=Ruby
