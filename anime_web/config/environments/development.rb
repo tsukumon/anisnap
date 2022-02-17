@@ -57,7 +57,7 @@ Rails.application.configure do
 
 
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = { host: '172.16.96.80:3000', port: 3000 }
+  config.action_mailer.default_url_options = { host: '**********', port: 3000 }
     # mail setting
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
@@ -65,8 +65,8 @@ Rails.application.configure do
       :address => "smtp.gmail.com",
       :port => 25,
       :domain => 'smtp.gmail.com',
-      :user_name => "syou.1225st@gmail.com", #gmailアドレス
-      :password => "st1225st", #gmailパスワード
+      :user_name => "**********", #gmailアドレス
+      :password => "**********", #gmailパスワード
       :authentication => 'login',
     }
   # Use an evented file watcher to asynchronously detect changes in source code,
